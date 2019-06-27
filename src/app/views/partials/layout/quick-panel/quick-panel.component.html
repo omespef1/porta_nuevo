@@ -1,0 +1,426 @@
+<!-- begin::Offcanvas Toolbar Quick Actions -->
+<div ktOffcanvas [options]="offcanvasOptions" id="kt_quick_panel" class="kt-quick-panel" [ngStyle]="{'overflow': 'hidden'}">
+	<a href="javascript:;" class="kt-quick-panel__close" id="kt_quick_panel_close_btn"><i class="flaticon2-delete"></i></a>
+
+	<div class="kt-quick-panel__nav">
+		<ul ktTabClickEvent class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand kt-notification-item-padding-x" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" href="javascript:;" (click)="tab.select('tab-id-1');" role="tab">Notificaciones</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="javascript:;" (click)="tab.select('tab-id-2');" role="tab">Logs de auditoría</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="javascript:;" (click)="tab.select('tab-id-3');" role="tab">Ajustes</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="kt-quick-panel__content">
+		<ngb-tabset #tab="ngbTabset">
+			<ngb-tab id="tab-id-1">
+				<ng-template ngbTabContent>
+					<div [perfectScrollbar]="{wheelPropagation: false}" [ngStyle]="{'max-height': '85vh', 'position': 'relative'}" class="kt-notification">
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-line-chart kt-font-success"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									Una nueva orden ha sido recibida
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 2 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-box-1 kt-font-brand"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									Nuevo cliente registrado
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 3 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-chart2 kt-font-danger"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									La aplicación ha sido aprobada
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 3 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-image-file kt-font-warning"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									Nuevo archivo subido
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 5 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-bar-chart kt-font-info"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									Nueva evaluación trimestral recibida
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 8 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-pie-chart-2 kt-font-success"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									Reinicio del sistema completado
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 12 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-favourite kt-font-focus"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									
+									Se ha realizado un nuevo pedido
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 15 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item kt-notification__item--read">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-safe kt-font-primary"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									Reunión de la empresa cancelada
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 19 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-psd kt-font-success"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									Se ha recibido nuevo informe.
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 23 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon-download-1 kt-font-danger"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									Se ha generado informe financiero
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 25 horas
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon-security kt-font-warning"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">									
+								Nuevo comentario de cliente recibido
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 2 días
+								</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="kt-notification__item">
+							<div class="kt-notification__item-icon">
+								<i class="flaticon2-pie-chart kt-font-focus"></i>
+							</div>
+							<div class="kt-notification__item-details">
+								<div class="kt-notification__item-title">
+									El nuevo cliente registrado
+								</div>
+								<div class="kt-notification__item-time">
+									Hace 3 días
+								</div>
+							</div>
+						</a>
+					</div>
+				</ng-template>
+			</ngb-tab>
+			<ngb-tab id="tab-id-2">
+				<ng-template ngbTabContent>
+					<div perfectScrollbar [ngStyle]="{'max-height': '85vh', 'position': 'relative'}" class="kt-notification-v2">
+						<a href="javascript:;" class="kt-notification-v2__item">
+							<div class="kt-notification-v2__item-icon">
+								<i class="flaticon-bell kt-font-brand"></i>
+							</div>
+							<div class="kt-notification-v2__itek-wrapper">
+								<div class="kt-notification-v2__item-title">									
+									5 nuevo informe generado por el usuario
+								</div>
+								<div class="kt-notification-v2__item-desc">
+									Reporte basado en ventas
+								</div>
+							</div>
+						</a>
+
+						<a href="javascript:;" class="kt-notification-v2__item">
+							<div class="kt-notification-v2__item-icon">
+								<i class="flaticon2-box kt-font-danger"></i>
+							</div>
+							<div class="kt-notification-v2__itek-wrapper">
+								<div class="kt-notification-v2__item-title">
+									2 nuevos artículos enviados
+								</div>
+								<div class="kt-notification-v2__item-desc">
+									por Omar Pérez
+								</div>
+							</div>
+						</a>
+
+						<a href="javascript:;" class="kt-notification-v2__item">
+							<div class="kt-notification-v2__item-icon">
+								<i class="flaticon-psd kt-font-brand"></i>
+							</div>
+							<div class="kt-notification-v2__itek-wrapper">
+								<div class="kt-notification-v2__item-title">
+									79 archivos PSD generados
+								</div>
+								<div class="kt-notification-v2__item-desc">
+									Informes basados ​​en ventas
+								</div>
+							</div>
+						</a>
+
+						<a href="javascript:;" class="kt-notification-v2__item">
+							<div class="kt-notification-v2__item-icon">
+								<i class="flaticon2-supermarket kt-font-warning"></i>
+							</div>
+							<div class="kt-notification-v2__itek-wrapper">
+								<div class="kt-notification-v2__item-title">
+									$2900 por valor de productos vendidos
+								</div>
+								<div class="kt-notification-v2__item-desc">
+									Total 234 items
+								</div>
+							</div>
+						</a>
+
+						<a href="javascript:;" class="kt-notification-v2__item">
+							<div class="kt-notification-v2__item-icon">
+								<i class="flaticon-paper-plane-1 kt-font-success"></i>
+							</div>
+							<div class="kt-notification-v2__itek-wrapper">
+								<div class="kt-notification-v2__item-title">
+									Estado del sistema
+								</div>
+								<div class="kt-notification-v2__item-desc">
+									Funcionando
+								</div>
+							</div>
+						</a>
+
+						<a href="javascript:;" class="kt-notification-v2__item">
+							<div class="kt-notification-v2__item-icon">
+								<i class="flaticon2-information kt-font-danger"></i>
+							</div>
+							<div class="kt-notification-v2__itek-wrapper">
+								<div class="kt-notification-v2__item-title">
+									Servidor de la base de datos apagado
+								</div>
+								<div class="kt-notification-v2__item-desc">
+									hace 10 mins 
+								</div>
+							</div>
+						</a>
+
+						<a href="javascript:;" class="kt-notification-v2__item">
+							<div class="kt-notification-v2__item-icon">
+								<i class="flaticon2-mail-1 kt-font-brand"></i>
+							</div>
+							<div class="kt-notification-v2__itek-wrapper">
+								<div class="kt-notification-v2__item-title">
+									Reporte de sistema generado
+								</div>
+								<div class="kt-notification-v2__item-desc">
+									Fostest is Barry
+								</div>
+							</div>
+						</a>
+
+						<a href="javascript:;" class="kt-notification-v2__item">
+							<div class="kt-notification-v2__item-icon">
+								<i class="flaticon2-hangouts-logo kt-font-warning"></i>
+							</div>
+							<div class="kt-notification-v2__itek-wrapper">
+								<div class="kt-notification-v2__item-title">
+									4.5h-avarage response time
+								</div>
+								<div class="kt-notification-v2__item-desc">
+									Fostest is Barry
+								</div>
+							</div>
+						</a>
+					</div>
+				</ng-template>
+			</ngb-tab>
+			<ngb-tab id="tab-id-3">
+				<ng-template ngbTabContent>
+					<div class="kt-quick-panel__content-padding-x">
+						<form class="kt-form">
+							<div class="kt-heading kt-heading--sm kt-heading--space-sm">Atención al cliente</div>
+
+							<div class="form-group form-group-xs row">
+								<label class="col-8 col-form-label">Habilitar notificaciones:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--success kt-switch--sm">
+								<label>
+									<input type="checkbox" checked="checked" name="quick_panel_notifications_1">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+							<div class="form-group form-group-xs row">
+								<label class="col-8 col-form-label">Habilitar seguimiento de casos:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--success kt-switch--sm">
+								<label>
+									<input type="checkbox" name="quick_panel_notifications_2">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+							<div class="form-group form-group-last form-group-xs row">
+								<label class="col-8 col-form-label">Soporte Portal:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--success kt-switch--sm">
+								<label>
+									<input type="checkbox" checked="checked" name="quick_panel_notifications_2">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+
+							<div class="kt-separator kt-separator--space-md kt-separator--border-dashed"></div>
+
+							<div class="kt-heading kt-heading--sm kt-heading--space-sm">Reportes</div>
+
+							<div class="form-group form-group-xs row">
+								<label class="col-8 col-form-label">Generar Reportes:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--sm kt-switch--danger">
+								<label>
+									<input type="checkbox" checked="checked" name="quick_panel_notifications_3">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+							<div class="form-group form-group-xs row">
+								<label class="col-8 col-form-label">Habilitar exportación de reportes:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--sm kt-switch--danger">
+								<label>
+									<input type="checkbox" name="quick_panel_notifications_3">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+							<div class="form-group form-group-last form-group-xs row">
+								<label class="col-8 col-form-label">
+									Permitir la recopilación de datos:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--sm kt-switch--danger">
+								<label>
+									<input type="checkbox" checked="checked" name="quick_panel_notifications_4">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+
+							<div class="kt-separator kt-separator--space-md kt-separator--border-dashed"></div>
+
+							<div class="kt-heading kt-heading--sm kt-heading--space-sm">Miembros</div>
+
+							<div class="form-group form-group-xs row">
+								<label class="col-8 col-form-label">
+									Habilitar la asociación de miembros:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--sm kt-switch--brand">
+								<label>
+									<input type="checkbox" checked="checked" name="quick_panel_notifications_5">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+							<div class="form-group form-group-xs row">
+								<label class="col-8 col-form-label">
+									Permitir comentarios de los usuarios:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--sm kt-switch--brand">
+								<label>
+									<input type="checkbox" name="quick_panel_notifications_5">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+							<div class="form-group form-group-last form-group-xs row">
+								<label class="col-8 col-form-label">Habilitar el Portal del Cliente:</label>
+								<div class="col-4 kt-align-right">
+                            <span class="kt-switch kt-switch--sm kt-switch--brand">
+								<label>
+									<input type="checkbox" checked="checked" name="quick_panel_notifications_6">
+									<span></span>
+                            </label>
+                            </span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</ng-template>
+			</ngb-tab>
+		</ngb-tabset>
+	</div>
+</div>
+<!-- end::Offcanvas Toolbar Quick Actions -->
