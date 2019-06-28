@@ -18,12 +18,12 @@
 						<div class="kt-form__control">
 							<mat-form-field>
 								<mat-select [(value)]="filterStatus" (selectionChange)="loadProductsList()" class="mat-form-field mat-form-field-fluid">
-									<mat-option value="">All</mat-option>
-									<mat-option value="0">Selling</mat-option>
-									<mat-option value="1">Sold</mat-option>
+									<mat-option value="">Todos</mat-option>
+									<mat-option value="0">Vendiéndose</mat-option>
+									<mat-option value="1">Vendidos</mat-option>
 								</mat-select>
 								<mat-hint align="start">
-									<strong>Filter by Status</strong>
+									<strong>Filtro por estado</strong>
 								</mat-hint>
 							</mat-form-field>
 						</div>
@@ -33,12 +33,12 @@
 						<div class="kt-form__control">
 							<mat-form-field>
 								<mat-select [(value)]="filterCondition" (selectionChange)="loadProductsList()" class="mat-form-field mat-form-field-fluid">
-									<mat-option value="">All</mat-option>
-									<mat-option value="0">New</mat-option>
-									<mat-option value="1">Used</mat-option>
+									<mat-option value="">Todos</mat-option>
+									<mat-option value="0">Nuevo</mat-option>
+									<mat-option value="1">Usado</mat-option>
 								</mat-select>
 								<mat-hint align="start">
-									<strong>Filter by Contidion</strong>
+									<strong>Filtro por condición</strong>
 								</mat-hint>
 							</mat-form-field>
 						</div>
@@ -46,9 +46,9 @@
 					</div>
 					<div class="col-md-4 kt-margin-bottom-10-mobile">
 						<mat-form-field>
-							<input matInput placeholder="Search product" #searchInput placeholder="Search" class="mat-form-field mat-form-field-fluid">
+							<input matInput placeholder="Buscar producto" #searchInput placeholder="Search" class="mat-form-field mat-form-field-fluid">
 							<mat-hint align="start">
-								<strong>Search in all fields</strong>
+								<strong>Buscar en todos los campos</strong>
 							</mat-hint>
 						</mat-form-field>
 					</div>

@@ -17,12 +17,12 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'Google Material',
+							title: 'XBRL',
 							bullet: 'dot',
 							icon: 'flaticon-interface-7',
 							submenu: [
 								{
-									title: 'Form Controls',
+									title: 'Autoliquidador',
 									bullet: 'dot',
 									submenu: [
 										{
@@ -65,7 +65,7 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Navigation',
+									title: 'Consulta de información financiera',
 									bullet: 'dot',
 									submenu: [
 										{
@@ -83,7 +83,7 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Layout',
+									title: 'Reporte de información financiera',
 									bullet: 'dot',
 									submenu: [
 										{
@@ -125,7 +125,7 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Buttons & Indicators',
+									title: 'Consulta rifin y regads',
 									bullet: 'dot',
 									submenu: [
 										{
@@ -159,7 +159,7 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Popups & Modals',
+									title: 'Contribución',
 									bullet: 'dot',
 									submenu: [
 										{
@@ -181,7 +181,7 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Data table',
+									title: 'Reporte xbrl',
 									bullet: 'dot',
 									submenu: [
 										{
@@ -280,13 +280,13 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'eCommerce',
+							title: 'Proveedores',
 							bullet: 'dot',
 							icon: 'flaticon-business',
 							permission: 'accessToECommerceModule',
 							submenu: [
 								{
-									title: 'Customers',
+									title: 'Clientes',
 									page: 'ecommerce/customers'
 								},
 								{
@@ -296,7 +296,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'User Management',
+							title: 'Gestión de Usuarios',
 							bullet: 'dot',
 							icon: 'flaticon-user',
 							submenu: [
@@ -319,7 +319,7 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'Error Pages',
+							title: 'Páginas de error',
 							root: true,
 							bullet: 'dot',
 							icon: 'flaticon2-attention',
@@ -366,26 +366,26 @@ export class MenuConfig {
 					bullet: 'dot',
 				},
 				{
-					title: 'Layout Builder',
+					title: 'Financiero',
 					root: true,
 					icon: 'flaticon2-expand',
 					page: 'builder'
 				},
 				{section: 'Components'},
 				{
-					title: 'Google Material',
+					title: 'XBRL',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-browser-2',
 					submenu: [
 						{
-							title: 'Form Controls',
+							title: 'Autoliquidador',
 							bullet: 'dot',
 							submenu: [
 								{
 									title: 'Auto Complete',
 									page: 'material/form-controls/autocomplete',
-									permissionId: 2
+									permission: 'accessToECommerceModule'
 								},
 								{
 									title: 'Checkbox',
@@ -422,7 +422,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Navigation',
+							title: 'Consulta de información financiera',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -440,7 +440,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Layout',
+							title: 'Reporte de información financiera',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -482,7 +482,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Buttons & Indicators',
+							title: 'Consulta rifin y regads',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -508,11 +508,15 @@ export class MenuConfig {
 								{
 									title: 'Progress spinner',
 									page: 'material/buttons-and-indicators/progress-spinner'
+								},
+								{
+									title: 'Ripples',
+									page: 'material/buttons-and-indicators/ripples'
 								}
 							]
 						},
 						{
-							title: 'Popups & Modals',
+							title: 'Contribución',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -534,7 +538,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Data table',
+							title: 'Reporte xbrl',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -633,7 +637,7 @@ export class MenuConfig {
 					root: true,
 					submenu: [
 						{
-							title: 'Customers',
+							title: 'Clientes',
 							page: 'ecommerce/customers'
 						},
 						{
@@ -643,7 +647,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'User Management',
+					title: 'Gestión de Usuarios',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-user-outline-symbol',
@@ -661,7 +665,7 @@ export class MenuConfig {
 				},
 				{section: 'Custom'},
 				{
-					title: 'Error Pages',
+					title: 'Páginas de error',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-attention',

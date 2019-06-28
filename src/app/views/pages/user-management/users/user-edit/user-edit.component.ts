@@ -110,7 +110,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
 		if (!this.user.id) {
 			this.subheaderService.setTitle('Create user');
 			this.subheaderService.setBreadcrumbs([
-				{ title: 'User Management', page: `user-management` },
+				{ title: 'Gestión de Usuarios', page: `user-management` },
 				{ title: 'Users',  page: `user-management/users` },
 				{ title: 'Create user', page: `user-management/users/add` }
 			]);
@@ -118,7 +118,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
 		}
 		this.subheaderService.setTitle('Edit user');
 		this.subheaderService.setBreadcrumbs([
-			{ title: 'User Management', page: `user-management` },
+			{ title: 'Gestión de Usuarios', page: `user-management` },
 			{ title: 'Users',  page: `user-management/users` },
 			{ title: 'Edit user', page: `user-management/users/edit`, queryParams: { id: this.user.id } }
 		]);

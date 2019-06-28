@@ -11,10 +11,10 @@ export class PageConfig {
 				page: {title: 'Accordion', desc: ''}
 			},
 			alert: {
-				page: {title: 'Alert', desc: ''}
+				page: {title: 'Alertas', desc: ''}
 			},
 			buttons: {
-				page: {title: 'Buttons', desc: ''}
+				page: {title: 'Botones', desc: ''}
 			},
 			carousel: {
 				page: {title: 'Carousel', desc: ''}
@@ -168,36 +168,36 @@ export class PageConfig {
 			// Data tables
 			'data-table': {
 				paginator: {
-					page: {title: 'Paginator', desc: ''}
+					page: {title: 'Paginador', desc: ''}
 				},
 				'sort-header': {
-					page: {title: 'Sort header', desc: ''}
+					page: {title: 'Ordenar encabezado', desc: ''}
 				},
 				table: {
-					page: {title: 'Table', desc: ''}
+					page: {title: 'Tabla', desc: ''}
 				}
 			}
 		},
 		forms: {
-			page: {title: 'Forms', desc: ''}
+			page: {title: 'Formularios', desc: ''}
 		},
 		mail: {
 			page: {title: 'Mail', desc: 'Mail'}
 		},
 		ecommerce: {
 			customers: {
-				page: {title: 'Customers', desc: ''}
+				page: {title: 'Clientes', desc: ''}
 			},
 			products: {
 				edit: {
-					page: {title: 'Edit product', desc: ''}
+					page: {title: 'Editar producto', desc: ''}
 				},
 				add: {
-					page: {title: 'Create product', desc: ''}
+					page: {title: 'Crear producto', desc: ''}
 				}
 			},
 			orders: {
-				page: {title: 'Orders', desc: ''}
+				page: {title: 'Ordenes', desc: ''}
 			}
 		},
 		'user-management': {
@@ -209,7 +209,7 @@ export class PageConfig {
 			}
 		},
 		builder: {
-			page: {title: 'Layout Builder', desc: ''}
+			page: {title: 'Editor de portal', desc: ''}
 		},
 		header: {
 			actions: {
@@ -217,11 +217,11 @@ export class PageConfig {
 			}
 		},
 		profile: {
-			page: {title: 'User Profile', desc: ''}
+			page: {title: 'Perfil de usuario', desc: ''}
 		},
 		error: {
 			404: {
-				page: {title: '404 Not Found', desc: '', subheader: false}
+				page: {title: '404 No encontrado', desc: '', subheader: false}
 			},
 			403: {
 				page: { title: '403 Access Forbidden', desc: '', subheader: false }

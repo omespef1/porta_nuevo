@@ -354,20 +354,20 @@ export class MenuConfig {
 					bullet: 'dot',
 				},
 				{
-					title: 'Layout Builder',
+					title: 'Financiero',
 					root: true,
 					icon: 'flaticon2-expand',
 					page: 'builder'
 				},
-				{section: 'Components'},
+				{section: 'Verticales'},
 				{
-					title: 'Google Material',
+					title: 'XBRL',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-browser-2',
 					submenu: [
 						{
-							title: 'Form Controls',
+							title: 'Autoliquidador',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -410,7 +410,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Navigation',
+							title: 'Consulta de información financiera',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -428,7 +428,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Layout',
+							title: 'Reporte de información financiera',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -470,7 +470,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Buttons & Indicators',
+							title: 'Consulta rifin y regads',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -504,7 +504,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Popups & Modals',
+							title: 'Contribución',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -526,7 +526,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Data table',
+							title: 'Reporte xbrl',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -617,9 +617,9 @@ export class MenuConfig {
 						}
 					]
 				},
-				{section: 'Applications'},
+				{section: 'Administración'},
 				{
-					title: 'eCommerce',
+					title: 'Clientes',
 					bullet: 'dot',
 					icon: 'flaticon2-list-2',
 					root: true,

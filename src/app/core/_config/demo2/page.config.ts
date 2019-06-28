@@ -168,13 +168,13 @@ export class PageConfig {
 			// Data tables
 			'data-table': {
 				paginator: {
-					page: {title: 'Paginator', desc: ''}
+					page: {title: 'Paginador', desc: ''}
 				},
 				'sort-header': {
-					page: {title: 'Sort header', desc: ''}
+					page: {title: 'Ordenar encabezado', desc: ''}
 				},
 				table: {
-					page: {title: 'Table', desc: ''}
+					page: {title: 'Tabla', desc: ''}
 				}
 			}
 		},
@@ -186,14 +186,14 @@ export class PageConfig {
 		},
 		ecommerce: {
 			customers: {
-				page: {title: 'Customers', desc: ''}
+				page: {title: 'Clientes', desc: ''}
 			},
 			products: {
 				edit: {
-					page: {title: 'Edit product', desc: ''}
+					page: {title: 'Editar producto', desc: ''}
 				},
 				add: {
-					page: {title: 'Create product', desc: ''}
+					page: {title: 'Crear producto', desc: ''}
 				}
 			},
 			orders: {
@@ -202,22 +202,22 @@ export class PageConfig {
 		},
 		'user-management': {
 			users: {
-				page: {title: 'Users', desc: ''}
+				page: {title: 'Usuarios', desc: ''}
 			},
 			roles: {
 				page: {title: 'Roles', desc: ''}
 			}
 		},
 		builder: {
-			page: {title: 'Layout Builder', desc: ''}
+			page: {title: 'Financiero', desc: ''}
 		},
 		header: {
 			actions: {
-				page: {title: 'Actions', desc: 'Actions example page'}
+				page: {title: 'Acciones', desc: 'Actions example page'}
 			}
 		},
 		profile: {
-			page: {title: 'User Profile', desc: ''}
+			page: {title: 'Perfil de usuario', desc: ''}
 		},
 		404: {
 			page: {title: '404 Not Found', desc: '', subheader: false}

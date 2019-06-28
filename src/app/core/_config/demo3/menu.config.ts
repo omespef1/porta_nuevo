@@ -17,13 +17,13 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'Google Material',
+							title: 'XBRL',
 							bullet: 'line',
 							icon: 'flaticon-interface-7',
 							submenu: [
 								{
-									title: 'Form Controls',
-									bullet: 'line',
+									title: 'Autoliquidador',
+									bullet: 'dot',
 									submenu: [
 										{
 											title: 'Auto Complete',
@@ -65,8 +65,8 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Navigation',
-									bullet: 'line',
+									title: 'Consulta de información financiera',
+									bullet: 'dot',
 									submenu: [
 										{
 											title: 'Menu',
@@ -83,8 +83,8 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Layout',
-									bullet: 'line',
+									title: 'Reporte de información financiera',
+									bullet: 'dot',
 									submenu: [
 										{
 											title: 'Card',
@@ -125,8 +125,8 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Buttons & Indicators',
-									bullet: 'line',
+									title: 'Consulta rifin y regads',
+									bullet: 'dot',
 									submenu: [
 										{
 											title: 'Button',
@@ -159,8 +159,8 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Popups & Modals',
-									bullet: 'line',
+									title: 'Contribución',
+									bullet: 'dot',
 									submenu: [
 										{
 											title: 'Bottom sheet',
@@ -181,8 +181,8 @@ export class MenuConfig {
 									]
 								},
 								{
-									title: 'Data table',
-									bullet: 'line',
+									title: 'Reporte xbrl',
+									bullet: 'dot',
 									submenu: [
 										{
 											title: 'Paginator',
@@ -209,13 +209,13 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'eCommerce',
+							title: 'Proveedoes',
 							bullet: 'line',
 							icon: 'flaticon-business',
 							permission: 'accessToECommerceModule',
 							submenu: [
 								{
-									title: 'Customers',
+									title: 'Clientes',
 									page: 'ecommerce/customers'
 								},
 								{
@@ -225,7 +225,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'User Management',
+							title: 'Gestión de Usuarios',
 							bullet: 'line',
 							icon: 'flaticon-user',
 							submenu: [
@@ -248,7 +248,7 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'Error Pages',
+							title: 'Páginas de error',
 							root: true,
 							bullet: 'line',
 							icon: 'flaticon2-attention',
@@ -295,25 +295,25 @@ export class MenuConfig {
 					bullet: 'line',
 				},
 				{
-					title: 'Layout Builder',
+					title: 'Financiero',
 					root: true,
 					icon: 'flaticon2-expand',
 					page: 'builder'
 				},
 				{
-					title: 'Google Material',
+					title: 'XBRL',
 					root: true,
 					bullet: 'line',
 					icon: 'flaticon2-browser-2',
 					submenu: [
 						{
-							title: 'Form Controls',
-							bullet: 'line',
+							title: 'Autoliquidador',
+							bullet: 'dot',
 							submenu: [
 								{
 									title: 'Auto Complete',
 									page: 'material/form-controls/autocomplete',
-									permissionId: 2
+									permission: 'accessToECommerceModule'
 								},
 								{
 									title: 'Checkbox',
@@ -350,8 +350,8 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Navigation',
-							bullet: 'line',
+							title: 'Consulta de información financiera',
+							bullet: 'dot',
 							submenu: [
 								{
 									title: 'Menu',
@@ -368,8 +368,8 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Layout',
-							bullet: 'line',
+							title: 'Reporte de información financiera',
+							bullet: 'dot',
 							submenu: [
 								{
 									title: 'Card',
@@ -410,8 +410,8 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Buttons & Indicators',
-							bullet: 'line',
+							title: 'Consulta rifin y regads',
+							bullet: 'dot',
 							submenu: [
 								{
 									title: 'Button',
@@ -436,12 +436,16 @@ export class MenuConfig {
 								{
 									title: 'Progress spinner',
 									page: 'material/buttons-and-indicators/progress-spinner'
+								},
+								{
+									title: 'Ripples',
+									page: 'material/buttons-and-indicators/ripples'
 								}
 							]
 						},
 						{
-							title: 'Popups & Modals',
-							bullet: 'line',
+							title: 'Contribución',
+							bullet: 'dot',
 							submenu: [
 								{
 									title: 'Bottom sheet',
@@ -462,8 +466,8 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Data table',
-							bullet: 'line',
+							title: 'Reporte xbrl',
+							bullet: 'dot',
 							submenu: [
 								{
 									title: 'Paginator',
@@ -554,13 +558,13 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'eCommerce',
+					title: 'Proveedores',
 					bullet: 'line',
 					icon: 'flaticon2-list-2',
 					root: true,
 					submenu: [
 						{
-							title: 'Customers',
+							title: 'Clientes',
 							page: 'ecommerce/customers'
 						},
 						{
@@ -570,7 +574,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'User Management',
+					title: 'Gestión de Usuarios',
 					root: true,
 					bullet: 'line',
 					icon: 'flaticon2-user-outline-symbol',
@@ -587,7 +591,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Error Pages',
+					title: 'Páginas de error',
 					root: true,
 					bullet: 'line',
 					icon: 'flaticon2-attention',

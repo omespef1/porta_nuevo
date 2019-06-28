@@ -7,7 +7,7 @@ export const locale = {
 		},
 		MENU: {
 			NEW: 'nuevo',
-			ACTIONS: 'Comportamiento',
+			ACTIONS: 'Acciones',
 			CREATE_POST: 'Crear nueva publicación',
 			PAGES: 'Páginas',
 			FEATURES: 'Caracteristicas',
@@ -52,38 +52,38 @@ export const locale = {
 				REQUIRED: '{{name}} es requerido',
 				MIN_LENGTH: '{{name}} Longitud mínima debe ser {{min}}',
 				AGREEMENT_REQUIRED: 'Debes aceptar los términos y condiciones',
-				NOT_FOUND: 'The requested {{name}} is not found',
+				NOT_FOUND: 'El nombre {{name}} no se encontró',
 				INVALID_LOGIN: 'Los datos para acceder son incorrectos',
 				REQUIRED_FIELD: 'Campo requerido',
-				MIN_LENGTH_FIELD: 'Minimum field length:',
-				MAX_LENGTH_FIELD: 'Maximum field length:',
-				INVALID_FIELD: 'Field is not valid',
+				MIN_LENGTH_FIELD: 'Tamaño mínimo del campo:',
+				MAX_LENGTH_FIELD: 'Tamaño máximo del campo:',
+				INVALID_FIELD: 'Campo no válido',
 			}
 		},
 		ECOMMERCE: {
 			COMMON: {
-				SELECTED_RECORDS_COUNT: 'Selected records count: ',
-				ALL: 'All',
-				SUSPENDED: 'Suspended',
-				ACTIVE: 'Active',
-				FILTER: 'Filter',
-				BY_STATUS: 'by Status',
-				BY_TYPE: 'by Type',
+				SELECTED_RECORDS_COUNT: 'Total registros seleccionados: ',
+				ALL: 'Todos',
+				SUSPENDED: 'Suspendido',
+				ACTIVE: 'Activo',
+				FILTER: 'Filtro',
+				BY_STATUS: 'Por estado',
+				BY_TYPE: 'Por tipo',
 				BUSINESS: 'Business',
 				INDIVIDUAL: 'Individual',
-				SEARCH: 'Search',
-				IN_ALL_FIELDS: 'in all fields'
+				SEARCH: 'Búsqueda',
+				IN_ALL_FIELDS: 'en todos los campos'
 			},
-			ECOMMERCE: 'eCommerce',
+			ECOMMERCE: 'Proveedores',
 			CUSTOMERS: {
-				CUSTOMERS: 'Customers',
-				CUSTOMERS_LIST: 'Customers list',
-				NEW_CUSTOMER: 'New Customer',
+				CUSTOMERS: 'Clientes',
+				CUSTOMERS_LIST: 'Lista de clientes',
+				NEW_CUSTOMER: 'Nuevo cliente',
 				DELETE_CUSTOMER_SIMPLE: {
-					TITLE: 'Customer Delete',
-					DESCRIPTION: 'Are you sure to permanently delete this customer?',
-					WAIT_DESCRIPTION: 'Customer is deleting...',
-					MESSAGE: 'Customer has been deleted'
+					TITLE: 'Borrar cliente',
+					DESCRIPTION: 'Estás seguro de borrar este cliente?',
+					WAIT_DESCRIPTION: 'Borrando cliente...',
+					MESSAGE: 'El cliente ha sido borrado'
 				},
 				DELETE_CUSTOMER_MULTY: {
 					TITLE: 'Customers Delete',
@@ -92,12 +92,12 @@ export const locale = {
 					MESSAGE: 'Selected customers have been deleted'
 				},
 				UPDATE_STATUS: {
-					TITLE: 'Status has been updated for selected customers',
-					MESSAGE: 'Selected customers status have successfully been updated'
+					TITLE: 'Se cambió el estado de los clientes seleccionados',
+					MESSAGE: 'Se actualizaron los clientes seleccionados'
 				},
 				EDIT: {
-					UPDATE_MESSAGE: 'Customer has been updated',
-					ADD_MESSAGE: 'Customer has been created'
+					UPDATE_MESSAGE: 'Cliente actualizado',
+					ADD_MESSAGE: 'Cliente creado'
 				}
 			}
 		}

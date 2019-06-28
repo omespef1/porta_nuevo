@@ -116,7 +116,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
 		this.subscriptions.push(searchSubscription);
 
 		// Set title to page breadCrumbs
-		this.subheaderService.setTitle('User management');
+		this.subheaderService.setTitle('Gestión de Usuarios');
 
 		// Init DataSource
 		this.dataSource = new UsersDataSource(this.store);
