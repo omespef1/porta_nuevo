@@ -201,7 +201,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Ng-Bootstrap',
+							title: 'Manufactura',
 							bullet: 'dot',
 							icon: 'flaticon-web',
 							submenu: [
@@ -558,7 +558,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Ng-Bootstrap',
+					title: 'Manufactura',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-digital-marketing',

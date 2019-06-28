@@ -546,7 +546,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Ng-Bootstrap',
+					title: 'Manufactura',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-digital-marketing',

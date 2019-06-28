@@ -201,7 +201,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Ng-Bootstrap',
+							title: 'Manufactura',
 							bullet: 'line',
 							icon: 'flaticon-web',
 							submenu: [
