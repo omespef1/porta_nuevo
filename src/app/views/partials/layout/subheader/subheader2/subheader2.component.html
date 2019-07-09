@@ -5,7 +5,7 @@
 		<span class="kt-subheader__separator kt-subheader__separator--v"></span>
 		<span *ngIf="desc" class="kt-subheader__desc">{{desc}}</span>
 		<a href="javascript:;" class="btn btn-label-primary btn-bold btn-icon-h">
-			Add New
+			Agregar nuevo
 		</a>
 	</div>
 	<div class="kt-subheader__toolbar">
@@ -14,13 +14,13 @@
 				<a ngbDropdownToggle href="javascript:;" class="btn kt-subheader__btn-daterange"
 					id="kt_dashboard_daterangepicker" data-placement="left" ngbTooltip="Select dashboard daterange">
 					<span class="kt-subheader__btn-daterange-title"
-						id="kt_dashboard_daterangepicker_title">Today</span>&nbsp;
+						id="kt_dashboard_daterangepicker_title">Hoy</span>&nbsp;
 					<span class="kt-subheader__btn-daterange-date"
-						id="kt_dashboard_daterangepicker_date">{{today | date:'MMM dd'}}</span>
+						id="kt_dashboard_daterangepicker_date">{{Hoy | date:'MMM dd'}}</span>
 					<i class="flaticon2-calendar-1"></i>
 				</a>
 				<div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
-					<a href="javascript:;" class="dropdown-item">Today</a>
+					<a href="javascript:;" class="dropdown-item">Hoy</a>
 					<a href="javascript:;" class="dropdown-item">Yesterday</a>
 					<a href="javascript:;" class="dropdown-item">Last 7 Days</a>
 					<a href="javascript:;" class="dropdown-item">Last 30 Days</a>

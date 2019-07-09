@@ -30,18 +30,18 @@ export class Widget1Component implements OnInit {
 		if (!this.data) {
 			this.data = shuffle([
 				{
-					title: 'Member Profit',
-					desc: 'Awerage Weekly Profit',
+					title: 'Test',
+					desc: ' Digitaware',
 					value: '+$17,800',
 					valueClass: 'kt-font-brand'
 				}, {
-					title: 'Orders',
-					desc: 'Weekly Customer Orders',
+					title: 'Ordenes',
+					desc: 'Digitaware',
 					value: '+$1,800',
 					valueClass: 'kt-font-danger'
 				}, {
-					title: 'Issue Reports',
-					desc: 'System bugs and issues',
+					title: 'Errores de reportes',
+					desc: 'Digitaware',
 					value: '-27,49%',
 					valueClass: 'kt-font-success'
 				}

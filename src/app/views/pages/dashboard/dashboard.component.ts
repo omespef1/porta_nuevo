@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
 		this.widget4_1 = shuffle([
 			{
 				pic: './assets/media/files/doc.svg',
-				title: 'Metronic Documentation',
+				title: 'Web services documentacion',
 				url: 'https://keenthemes.com.my/metronic',
 			}, {
 				pic: './assets/media/files/jpg.svg',
@@ -74,11 +74,11 @@ export class DashboardComponent implements OnInit {
 				url: 'https://keenthemes.com.my/metronic',
 			}, {
 				pic: './assets/media/files/zip.svg',
-				title: 'Download Ziped version OF 5.0',
+				title: 'Descargar psfs SAC CASO 53453',
 				url: 'https://keenthemes.com.my/metronic',
 			}, {
 				pic: './assets/media/files/pdf.svg',
-				title: 'Finance Report 2016/2017',
+				title: 'Reporte financiero 2018/2019',
 				url: 'https://keenthemes.com.my/metronic',
 			},
 		]);
