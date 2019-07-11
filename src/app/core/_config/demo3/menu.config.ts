@@ -301,6 +301,12 @@ export class MenuConfig {
 					page: 'builder'
 				},
 				{
+					title: 'Maestros dinámicos',
+					root: true,
+					icon: 'flaticon2-expand',
+					page: 'builder'
+				},
+				{
 					title: 'XBRL',
 					root: true,
 					bullet: 'line',
