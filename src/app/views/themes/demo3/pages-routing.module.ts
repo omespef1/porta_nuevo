@@ -8,6 +8,9 @@ import { ErrorPageComponent } from './content/error-page/error-page.component';
 import { AuthGuard } from '../../../core/auth';
 import { NgxPermissionsGuard } from 'ngx-permissions';
 
+//Seven paginas
+import {DynamicFormComponent} from '../../pages/seven/gn/gn_madin/dynamic-form/dynamic-form.component';
+
 const routes: Routes = [
 	{
 		path: '',
@@ -17,6 +20,10 @@ const routes: Routes = [
 			{
 				path: 'dashboard',
 				loadChildren: 'app/views/pages/dashboard/dashboard.module#DashboardModule'
+			},
+			{
+				path : 'DynamicFormComponent',
+				component : DynamicFormComponent
 			},
 			{
 				path: 'mail',

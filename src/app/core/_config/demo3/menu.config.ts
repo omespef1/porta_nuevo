@@ -299,13 +299,15 @@ export class MenuConfig {
 					root: true,
 					icon: 'flaticon2-expand',
 					page: 'builder'
-				},
+				},	
 				{
 					title: 'Maestros dinámicos',
 					root: true,
 					icon: 'flaticon2-expand',
-					page: 'builder'
-				},
+					page: 'DynamicFormComponent',
+					desc:'Lectura de maestros dinámicos'
+
+				}	,		
 				{
 					title: 'XBRL',
 					root: true,
