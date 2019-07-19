@@ -1,18 +1,18 @@
 export interface FormData {
-    controlName: string;
-    controlType: string;
-    valueType?: string;
-    currentValue?: string;
-    placeholder?: string;
+    controlName: string,
+    controlType: string,
+    valueType?: string,
+    currentValue?: string,
+    placeholder?: string,
     options?: Array<{
-      optionName: string;
-      value: string;
-     }>;
+      optionName: string,
+      value: string,
+     }>,
     validators?: {
-      required?: boolean;
-      minlength?: number;
-      maxlength?: number;
-    };
+      required?: boolean,
+      minlength?: number,
+      maxlength?: number,
+    },
   }
 
   export const MockForm: FormData[] = [
@@ -103,4 +103,74 @@ export interface FormData {
         required: true
       }
     }
-  ];
+  ]
+export interface Gn_Madi  {
+  aud_esta: string,
+  aud_usua: string,
+  aud_ufac: string,
+  emp_codi: number,
+  mad_cont: number,
+  pro_codi: string,
+  mad_tabl: string,
+  mad_camp: string,
+  mad_esta: string,
+  mad_deta: string,
+  mad_tabd: string,
+  mad_camd: string,
+  mad_tran: string,
+  con_codi: number,
+  mad_reun: string,
+  mad_cova: number,
+  mad_tadm: string,
+  mad_tada: string,
+  Gn_Dmadi : Gn_Dmadi[];
+
+}
+export interface Gn_Dmadi extends ColumnSchema   {
+  aud_esta:string,
+  aud_usua:string,
+  aud_ufac:Date,
+  emp_codi:number,
+  mad_cont:number,
+  dma_cont:number,
+  dma_desc:string,
+  dma_requ:string,
+  dma_tipo:string,
+  dma_orde:number,
+  dma_posx:number,
+  dma_posy:number,
+  dma_anch:number,
+  dma_list:string,
+  dma_lupa:string,
+  dma_titu:string,
+  dma_tica:string,
+  dma_camp:string,
+  dma_deca:string,
+  dma_orig:string,
+  dma_cons:string,
+  dma_line:number,
+  dma_calm:string,
+  dma_long:number,
+  dma_fila:number,
+  dma_colt:string,
+  dma_femp:string,
+  dma_cemp:string,
+  dma_care:string,
+  dma_cref:string,
+  dma_tipd:string,
+  dma_deta:string,
+}
+
+export interface ColumnSchema {
+  Table_Catalog: string,
+  Table_Name: string
+  Column_Name: string,
+  Data_Type: string,
+  Chracter_Max: number,
+  Numeric_Precision: number,
+  Is_Nullable: string
+}
+export interface ToTransaction {
+  Retorno:number,
+  TxtError:number
+}

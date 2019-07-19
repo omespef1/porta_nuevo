@@ -7,7 +7,7 @@ export class MenuConfig {
 					title: 'Dashboards',
 					root: true,
 					alignment: 'left',
-					page: 'dashboard',
+					page: '/dashboard',
 					translate: 'MENU.DASHBOARD',
 				},
 				{
@@ -27,40 +27,40 @@ export class MenuConfig {
 									submenu: [
 										{
 											title: 'Auto Complete',
-											page: 'material/form-controls/autocomplete',
+											page: '/material/form-controls/autocomplete',
 											permission: 'accessToECommerceModule'
 										},
 										{
 											title: 'Checkbox',
-											page: 'material/form-controls/checkbox'
+											page: '/material/form-controls/checkbox'
 										},
 										{
 											title: 'Radio Button',
-											page: 'material/form-controls/radiobutton'
+											page: '/material/form-controls/radiobutton'
 										},
 										{
 											title: 'Datepicker',
-											page: 'material/form-controls/datepicker'
+											page: '/material/form-controls/datepicker'
 										},
 										{
 											title: 'Form Field',
-											page: 'material/form-controls/formfield'
+											page: '/material/form-controls/formfield'
 										},
 										{
 											title: 'Input',
-											page: 'material/form-controls/input'
+											page: '/material/form-controls/input'
 										},
 										{
 											title: 'Select',
-											page: 'material/form-controls/select'
+											page: '/material/form-controls/select'
 										},
 										{
 											title: 'Slider',
-											page: 'material/form-controls/slider'
+											page: '/material/form-controls/slider'
 										},
 										{
 											title: 'Slider Toggle',
-											page: 'material/form-controls/slidertoggle'
+											page: '/material/form-controls/slidertoggle'
 										}
 									]
 								},
@@ -70,15 +70,15 @@ export class MenuConfig {
 									submenu: [
 										{
 											title: 'Menu',
-											page: 'material/navigation/menu'
+											page: '/material/navigation/menu'
 										},
 										{
 											title: 'Sidenav',
-											page: 'material/navigation/sidenav'
+											page: '/material/navigation/sidenav'
 										},
 										{
 											title: 'Toolbar',
-											page: 'material/navigation/toolbar'
+											page: '/material/navigation/toolbar'
 										}
 									]
 								},
@@ -88,39 +88,39 @@ export class MenuConfig {
 									submenu: [
 										{
 											title: 'Card',
-											page: 'material/layout/card'
+											page: '/material/layout/card'
 										},
 										{
 											title: 'Divider',
-											page: 'material/layout/divider'
+											page: '/material/layout/divider'
 										},
 										{
 											title: 'Expansion panel',
-											page: 'material/layout/expansion-panel'
+											page: '/material/layout/expansion-panel'
 										},
 										{
 											title: 'Grid list',
-											page: 'material/layout/grid-list'
+											page: '/material/layout/grid-list'
 										},
 										{
 											title: 'List',
-											page: 'material/layout/list'
+											page: '/material/layout/list'
 										},
 										{
 											title: 'Tabs',
-											page: 'material/layout/tabs'
+											page: '/material/layout/tabs'
 										},
 										{
 											title: 'Stepper',
-											page: 'material/layout/stepper'
+											page: '/material/layout/stepper'
 										},
 										{
 											title: 'Default Forms',
-											page: 'material/layout/default-forms'
+											page: '/material/layout/default-forms'
 										},
 										{
 											title: 'Tree',
-											page: 'material/layout/tree'
+											page: '/material/layout/tree'
 										}
 									]
 								},
@@ -130,31 +130,31 @@ export class MenuConfig {
 									submenu: [
 										{
 											title: 'Button',
-											page: 'material/buttons-and-indicators/button'
+											page: '/material/buttons-and-indicators/button'
 										},
 										{
 											title: 'Button toggle',
-											page: 'material/buttons-and-indicators/button-toggle'
+											page: '/material/buttons-and-indicators/button-toggle'
 										},
 										{
 											title: 'Chips',
-											page: 'material/buttons-and-indicators/chips'
+											page: '/material/buttons-and-indicators/chips'
 										},
 										{
 											title: 'Icon',
-											page: 'material/buttons-and-indicators/icon'
+											page: '/material/buttons-and-indicators/icon'
 										},
 										{
 											title: 'Progress bar',
-											page: 'material/buttons-and-indicators/progress-bar'
+											page: '/material/buttons-and-indicators/progress-bar'
 										},
 										{
 											title: 'Progress spinner',
-											page: 'material/buttons-and-indicators/progress-spinner'
+											page: '/material/buttons-and-indicators/progress-spinner'
 										},
 										{
 											title: 'Ripples',
-											page: 'material/buttons-and-indicators/ripples'
+											page: '/material/buttons-and-indicators/ripples'
 										}
 									]
 								},
@@ -164,19 +164,19 @@ export class MenuConfig {
 									submenu: [
 										{
 											title: 'Bottom sheet',
-											page: 'material/popups-and-modals/bottom-sheet'
+											page: '/material/popups-and-modals/bottom-sheet'
 										},
 										{
 											title: 'Dialog',
-											page: 'material/popups-and-modals/dialog'
+											page: '/material/popups-and-modals/dialog'
 										},
 										{
 											title: 'Snackbar',
-											page: 'material/popups-and-modals/snackbar'
+											page: '/material/popups-and-modals/snackbar'
 										},
 										{
 											title: 'Tooltip',
-											page: 'material/popups-and-modals/tooltip'
+											page: '/material/popups-and-modals/tooltip'
 										}
 									]
 								},
@@ -186,15 +186,15 @@ export class MenuConfig {
 									submenu: [
 										{
 											title: 'Paginator',
-											page: 'material/data-table/paginator'
+											page: '/material/data-table/paginator'
 										},
 										{
 											title: 'Sort header',
-											page: 'material/data-table/sort-header'
+											page: '/material/data-table/sort-header'
 										},
 										{
 											title: 'Table',
-											page: 'material/data-table/table'
+											page: '/material/data-table/table'
 										}
 									]
 								}
@@ -216,11 +216,11 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Clientes',
-									page: 'ecommerce/customers'
+									page: '/ecommerce/customers'
 								},
 								{
 									title: 'Products',
-									page: 'ecommerce/products'
+									page: '/ecommerce/products'
 								},
 							]
 						},
@@ -231,11 +231,11 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Users',
-									page: 'user-management/users'
+									page: '/user-management/users'
 								},
 								{
 									title: 'Roles',
-									page: 'user-management/roles'
+									page: '/user-management/roles'
 								}
 							]
 						},
@@ -255,27 +255,27 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Error Page - 1',
-									page: 'error/error-v1'
+									page: '/error/error-v1'
 								},
 								{
 									title: 'Error Page - 2',
-									page: 'error/error-v2'
+									page: '/error/error-v2'
 								},
 								{
 									title: 'Error Page - 3',
-									page: 'error/error-v3'
+									page: '/error/error-v3'
 								},
 								{
 									title: 'Error Page - 4',
-									page: 'error/error-v4'
+									page: '/error/error-v4'
 								},
 								{
 									title: 'Error Page - 5',
-									page: 'error/error-v5'
+									page: '/error/error-v5'
 								},
 								{
 									title: 'Error Page - 6',
-									page: 'error/error-v6'
+									page: '/error/error-v6'
 								},
 							]
 						},
@@ -290,7 +290,7 @@ export class MenuConfig {
 					title: 'Dashboard',
 					root: true,
 					icon: 'flaticon2-architecture-and-city',
-					page: 'dashboard',
+					page: '/dashboard',
 					translate: 'MENU.DASHBOARD',
 					bullet: 'line',
 				},
@@ -298,13 +298,13 @@ export class MenuConfig {
 					title: 'Financiero',
 					root: true,
 					icon: 'flaticon2-expand',
-					page: 'builder'
+					page: '/builder'
 				},	
 				{
 					title: 'Maestros dinámicos',
 					root: true,
 					icon: 'flaticon2-expand',
-					page: 'DynamicFormComponent',
+					page: '/DynamicFormComponent',
 					desc:'Lectura de maestros dinámicos'
 
 				}	,		
@@ -320,40 +320,40 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Auto Complete',
-									page: 'material/form-controls/autocomplete',
+									page: '/material/form-controls/autocomplete',
 									permission: 'accessToECommerceModule'
 								},
 								{
 									title: 'Checkbox',
-									page: 'material/form-controls/checkbox'
+									page: '/material/form-controls/checkbox'
 								},
 								{
 									title: 'Radio Button',
-									page: 'material/form-controls/radiobutton'
+									page: '/material/form-controls/radiobutton'
 								},
 								{
 									title: 'Datepicker',
-									page: 'material/form-controls/datepicker'
+									page: '/material/form-controls/datepicker'
 								},
 								{
 									title: 'Form Field',
-									page: 'material/form-controls/formfield'
+									page: '/material/form-controls/formfield'
 								},
 								{
 									title: 'Input',
-									page: 'material/form-controls/input'
+									page: '/material/form-controls/input'
 								},
 								{
 									title: 'Select',
-									page: 'material/form-controls/select'
+									page: '/material/form-controls/select'
 								},
 								{
 									title: 'Slider',
-									page: 'material/form-controls/slider'
+									page: '/material/form-controls/slider'
 								},
 								{
 									title: 'Slider Toggle',
-									page: 'material/form-controls/slidertoggle'
+									page: '/material/form-controls/slidertoggle'
 								}
 							]
 						},
@@ -363,15 +363,15 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Menu',
-									page: 'material/navigation/menu'
+									page: '/material/navigation/menu'
 								},
 								{
 									title: 'Sidenav',
-									page: 'material/navigation/sidenav'
+									page: '/material/navigation/sidenav'
 								},
 								{
 									title: 'Toolbar',
-									page: 'material/navigation/toolbar'
+									page: '/material/navigation/toolbar'
 								}
 							]
 						},
@@ -381,39 +381,39 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Card',
-									page: 'material/layout/card'
+									page: '/material/layout/card'
 								},
 								{
 									title: 'Divider',
-									page: 'material/layout/divider'
+									page: '/material/layout/divider'
 								},
 								{
 									title: 'Expansion panel',
-									page: 'material/layout/expansion-panel'
+									page: '/material/layout/expansion-panel'
 								},
 								{
 									title: 'Grid list',
-									page: 'material/layout/grid-list'
+									page: '/material/layout/grid-list'
 								},
 								{
 									title: 'List',
-									page: 'material/layout/list'
+									page: '/material/layout/list'
 								},
 								{
 									title: 'Tabs',
-									page: 'material/layout/tabs'
+									page: '/material/layout/tabs'
 								},
 								{
 									title: 'Stepper',
-									page: 'material/layout/stepper'
+									page: '/material/layout/stepper'
 								},
 								{
 									title: 'Default Forms',
-									page: 'material/layout/default-forms'
+									page: '/material/layout/default-forms'
 								},
 								{
 									title: 'Tree',
-									page: 'material/layout/tree'
+									page: '/material/layout/tree'
 								}
 							]
 						},
@@ -423,31 +423,31 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Button',
-									page: 'material/buttons-and-indicators/button'
+									page: '/material/buttons-and-indicators/button'
 								},
 								{
 									title: 'Button toggle',
-									page: 'material/buttons-and-indicators/button-toggle'
+									page: '/material/buttons-and-indicators/button-toggle'
 								},
 								{
 									title: 'Chips',
-									page: 'material/buttons-and-indicators/chips'
+									page: '/material/buttons-and-indicators/chips'
 								},
 								{
 									title: 'Icon',
-									page: 'material/buttons-and-indicators/icon'
+									page: '/material/buttons-and-indicators/icon'
 								},
 								{
 									title: 'Progress bar',
-									page: 'material/buttons-and-indicators/progress-bar'
+									page: '/material/buttons-and-indicators/progress-bar'
 								},
 								{
 									title: 'Progress spinner',
-									page: 'material/buttons-and-indicators/progress-spinner'
+									page: '/material/buttons-and-indicators/progress-spinner'
 								},
 								{
 									title: 'Ripples',
-									page: 'material/buttons-and-indicators/ripples'
+									page: '/material/buttons-and-indicators/ripples'
 								}
 							]
 						},
@@ -457,19 +457,19 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Bottom sheet',
-									page: 'material/popups-and-modals/bottom-sheet'
+									page: '/material/popups-and-modals/bottom-sheet'
 								},
 								{
 									title: 'Dialog',
-									page: 'material/popups-and-modals/dialog'
+									page: '/material/popups-and-modals/dialog'
 								},
 								{
 									title: 'Snackbar',
-									page: 'material/popups-and-modals/snackbar'
+									page: '/material/popups-and-modals/snackbar'
 								},
 								{
 									title: 'Tooltip',
-									page: 'material/popups-and-modals/tooltip'
+									page: '/material/popups-and-modals/tooltip'
 								}
 							]
 						},
@@ -479,15 +479,15 @@ export class MenuConfig {
 							submenu: [
 								{
 									title: 'Paginator',
-									page: 'material/data-table/paginator'
+									page: '/material/data-table/paginator'
 								},
 								{
 									title: 'Sort header',
-									page: 'material/data-table/sort-header'
+									page: '/material/data-table/sort-header'
 								},
 								{
 									title: 'Table',
-									page: 'material/data-table/table'
+									page: '/material/data-table/table'
 								}
 							]
 						}
@@ -501,67 +501,67 @@ export class MenuConfig {
 					submenu: [
 						{
 							title: 'Accordion',
-							page: 'ngbootstrap/accordion'
+							page: '/ngbootstrap/accordion'
 						},
 						{
 							title: 'Alert',
-							page: 'ngbootstrap/alert'
+							page: '/ngbootstrap/alert'
 						},
 						{
 							title: 'Buttons',
-							page: 'ngbootstrap/buttons'
+							page: '/ngbootstrap/buttons'
 						},
 						{
 							title: 'Carousel',
-							page: 'ngbootstrap/carousel'
+							page: '/ngbootstrap/carousel'
 						},
 						{
 							title: 'Collapse',
-							page: 'ngbootstrap/collapse'
+							page: '/ngbootstrap/collapse'
 						},
 						{
 							title: 'Datepicker',
-							page: 'ngbootstrap/datepicker'
+							page: '/ngbootstrap/datepicker'
 						},
 						{
 							title: 'Dropdown',
-							page: 'ngbootstrap/dropdown'
+							page: '/ngbootstrap/dropdown'
 						},
 						{
 							title: 'Modal',
-							page: 'ngbootstrap/modal'
+							page: '/ngbootstrap/modal'
 						},
 						{
 							title: 'Pagination',
-							page: 'ngbootstrap/pagination'
+							page: '/ngbootstrap/pagination'
 						},
 						{
 							title: 'Popover',
-							page: 'ngbootstrap/popover'
+							page: '/ngbootstrap/popover'
 						},
 						{
 							title: 'Progressbar',
-							page: 'ngbootstrap/progressbar'
+							page: '/ngbootstrap/progressbar'
 						},
 						{
 							title: 'Rating',
-							page: 'ngbootstrap/rating'
+							page: '/ngbootstrap/rating'
 						},
 						{
 							title: 'Tabs',
-							page: 'ngbootstrap/tabs'
+							page: '/ngbootstrap/tabs'
 						},
 						{
 							title: 'Timepicker',
-							page: 'ngbootstrap/timepicker'
+							page: '/ngbootstrap/timepicker'
 						},
 						{
 							title: 'Tooltips',
-							page: 'ngbootstrap/tooltip'
+							page: '/ngbootstrap/tooltip'
 						},
 						{
 							title: 'Typehead',
-							page: 'ngbootstrap/typehead'
+							page: '/ngbootstrap/typehead'
 						}
 					]
 				},
@@ -573,11 +573,11 @@ export class MenuConfig {
 					submenu: [
 						{
 							title: 'Clientes',
-							page: 'ecommerce/customers'
+							page: '/ecommerce/customers'
 						},
 						{
 							title: 'Products',
-							page: 'ecommerce/products'
+							page: '/ecommerce/products'
 						},
 					]
 				},
@@ -590,11 +590,11 @@ export class MenuConfig {
 					submenu: [
 						{
 							title: 'Users',
-							page: 'user-management/users'
+							page: '/user-management/users'
 						},
 						{
 							title: 'Roles',
-							page: 'user-management/roles'
+							page: '/user-management/roles'
 						}
 					]
 				},
@@ -606,27 +606,27 @@ export class MenuConfig {
 					submenu: [
 						{
 							title: 'Error Page - 1',
-							page: 'error/error-v1'
+							page: '/error/error-v1'
 						},
 						{
 							title: 'Error Page - 2',
-							page: 'error/error-v2'
+							page: '/error/error-v2'
 						},
 						{
 							title: 'Error Page - 3',
-							page: 'error/error-v3'
+							page: '/error/error-v3'
 						},
 						{
 							title: 'Error Page - 4',
-							page: 'error/error-v4'
+							page: '/error/error-v4'
 						},
 						{
 							title: 'Error Page - 5',
-							page: 'error/error-v5'
+							page: '/error/error-v5'
 						},
 						{
 							title: 'Error Page - 6',
-							page: 'error/error-v6'
+							page: '/error/error-v6'
 						},
 					]
 				},
