@@ -222,6 +222,8 @@ const routes: Routes = [
 		RemarksListComponent,
 		SpecificationsListComponent,
 		SpecificationEditDialogComponent
+	],exports:[
+		CustomersListComponent
 	]
 })
 export class ECommerceModule { }

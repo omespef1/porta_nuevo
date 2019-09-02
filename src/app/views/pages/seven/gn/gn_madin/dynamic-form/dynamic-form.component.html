@@ -13,24 +13,18 @@
                   <input [formControlName]="input.dma_calm" [type]="'text'" [name]="input.dma_calm"
                     [id]="input.dma_calm" [value]="input.currentValue ? input.currentValue  : ''" [required]="'true'"
                     [maxlength]="255" class="form-control" />
-                  <!-- [minlength]="input.validators.minlength" -->
                   <div class="text-danger"
                     *ngIf="form.get(input.dma_calm).invalid && (form.get(input.dma_calm).dirty || form.get(input.dma_calm).touched)">
                     <div *ngIf="form.get(input.dma_calm).errors.required"> {{input.dma_desc}} requerido</div>
-                    <!-- <div *ngIf="form.get(input.dma_calm).errors.minlength">Tamaño minimo debe ser
-                      {{input.validators.minlength}}</div> -->
                   </div>
                 </div>
               </ng-template>
-
               <ng-template [ngSwitchCase]="'N'">
                 <div class="col-sm-6 col-md-4 col-lg-3">
                   <label [for]="input.dma_calm"> {{input.dma_desc}}</label>
-
                   <input [formControlName]="input.dma_calm" [type]="'number'" [name]="input.dma_calm"
                     [id]="input.dma_calm" [value]="input.currentValue ? input.currentValue  : ''" [required]="'true'"
                     [maxlength]="input.Numeric_Precision" class="form-control" />
-                  <!-- [minlength]="input.validators.minlength" -->
                   <div class="text-danger"
                     *ngIf="form.get(input.dma_calm).invalid && (form.get(input.dma_calm).dirty || form.get(input.dma_calm).touched)">
                     <div *ngIf="form.get(input.dma_calm).errors.required"> {{input.dma_desc}} requerido</div>
@@ -39,47 +33,26 @@
                   </div>
                 </div>
               </ng-template>
-
-
               <ng-template [ngSwitchCase]="'H'">
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <label > {{input.dma_desc}}</label>
+                  <label> {{input.dma_desc}}</label>
                   <ngb-timepicker [formControlName]="input.dma_calm" [seconds]="true" [hourStep]="1" [minuteStep]="15"
                     [secondStep]="30"></ngb-timepicker>
-                  <!-- <label [for]="input.dma_calm"> {{input.dma_desc}}</label>
-  
-                    <input [formControlName]="input.dma_calm" [type]="'H'" [name]="input.dma_calm"
-                      [id]="input.dma_calm" [value]="input.currentValue ? input.currentValue  : ''"
-                      [required]="'true'"
-                     
-                      [maxlength]="255" class="form-control" />
-                      <!-- [minlength]="input.validators.minlength" -->
                   <div class="text-danger"
                     *ngIf="form.get(input.dma_calm).invalid && (form.get(input.dma_calm).dirty || form.get(input.dma_calm).touched)">
                     <div *ngIf="form.get(input.dma_calm).errors.required"> {{input.dma_desc}} requerido</div>
-                    <!-- <div *ngIf="form.get(input.dma_calm).errors.minlength">Tamaño minimo debe ser
-                        {{input.validators.minlength}}</div> -->
                   </div>
                 </div>
               </ng-template>
-
               <ng-template [ngSwitchCase]="'F'">
                 <div class="col-sm-6 col-md-4 col-lg-3">
-
                   <label [for]="input.dma_calm"> {{input.dma_desc}}</label>
-                  <input type="text" class="form-control" [placeholder]="input.dma_desc" [name]="input.dma_calm" (click)="d.toggle()" disabled="true"
-                    [formControlName]="input.dma_calm" ngbDatepicker #d="ngbDatepicker"  [id]="input.dma_calm" [required]="'true'">
-                  <!-- <div class="input-group-append">
-                    <button class="btn btn-primary"  type="button">
-                      <i class="la la-calendar"></i>
-                    </button>
-                  </div> -->
-
+                  <input type="text" class="form-control" [placeholder]="input.dma_desc" [name]="input.dma_calm"
+                    (click)="d.toggle()" disabled="true" [formControlName]="input.dma_calm" ngbDatepicker
+                    #d="ngbDatepicker" [id]="input.dma_calm" [required]="'true'">
                 </div>
               </ng-template>
-
               <ng-template [ngSwitchCase]="'L'">
-
                 <div class="col-sm-6 col-md-4 col-lg-3">
                   <div class="form-group">
                     <label [for]="input.dma_calm"> {{input.dma_desc}}</label>
@@ -89,141 +62,87 @@
                       <option *ngFor="let option of input.dma_list.split(',')" [value]="option.split('=')[1]">
                         {{option.split('=')[0]}}</option>
                     </select>
-                    <!-- <div class="text-danger"
-                      *ngIf="form.get(input.dma_calm).invalid && (form.get(input.dma_calm).dirty || form.get(input.dma_calm).touched)">
-                      <div *ngIf="form.get(input.dma_calm).errors.required"> {{input.dma_desc}} requerido</div>
-                      {{input.validators.minlength}}
-                    </div> -->
                   </div>
                 </div>
-
               </ng-template>
-              <!-- <ng-template [ngSwitchCase]="'radio'">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <fieldset>
-
-                    <legend>{{input.controlName}}</legend>
-
-                    <div *ngFor="let option of input.options">
-                      <input [formControlName]="input.controlName" [type]="input.controlType" [name]="input.controlName"
-                        [value]="option.value" [required]="input.validators.required">
-                      <label [for]="input.controlName"> {{option.optionName}}</label>
-                    </div>
-                  </fieldset>
-                </div>
-
-              </ng-template> -->
-
             </ng-container>
           </ng-template>
         </div>
-       
         <div class="row">
-           
-            <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="col-sm-6 col-md-4 col-lg-3">
             <div class="form-group">
               <br>
-                <button type="submit" [disabled]="submitted" class="btn btn-primary" [disabled]="form.invalid" >
-                    <i style='text-align: center;' [ngClass]="{'fa-save': !submitted, 'fa-cog fa-spin' : submitted}" class="fas"></i>
-                    {{submitted ? 'Espere...' : 'Guardar' }}
-                  </button>
+              <button type="submit" [disabled]="submitted" class="btn btn-primary" [disabled]="form.invalid">
+                <i style='text-align: center;' [ngClass]="{'fa-save': !submitted, 'fa-cog fa-spin' : submitted}"
+                  class="fas"></i>
+                {{submitted ? 'Espere...' : 'Guardar' }}
+              </button>
             </div>
-           
-            </div>
-          
-
+          </div>
         </div>
-       
-
       </div>
     </kt-portlet-body>
   </kt-portlet>
-
+  <kt-customers-list></kt-customers-list>
   <kt-portlet>
     <kt-portlet-header [title]="'Detalle'">
     </kt-portlet-header>
     <kt-portlet-body>
       <div class="container-fluid">
-          <div class="row">
-              <ng-template ngFor let-input [ngForOf]="detailFileds">
-                <ng-container [ngSwitch]="input.dma_tipo">
-                    <ng-template [ngSwitchCase]="'A'">
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                          <label [for]="input.dma_calm"> {{input.dma_desc}}  </label>
-                          <input  [type]="'text'" class="form-control" />
-                        
-                          <!-- <div class="text-danger"
-                            *ngIf="form.get(input.dma_calm).invalid && (form.get(input.dma_calm).dirty || form.get(input.dma_calm).touched)">
-                            <div *ngIf="form.get(input.dma_calm).errors.required"> {{input.dma_desc}} requerido</div>
-                           
-                          </div> -->
-                        </div>
-                      </ng-template>
-        
-                      <ng-template [ngSwitchCase]="'N'">
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                          <label>  {{input.dma_desc}}</label>        
-                          <input  [type]="'number'"                            
-                            class="form-control" />                                                   
-                        </div>
-                      </ng-template>
-        
-        
-                      <ng-template [ngSwitchCase]="'H'">
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-        
-                          <ngb-timepicker  [seconds]="true" [hourStep]="1" [minuteStep]="15"
-                            [secondStep]="30"></ngb-timepicker>
-                         
-                        </div>
-                      </ng-template>
-        
-                      <ng-template [ngSwitchCase]="'F'">
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-        
-                            <label [for]="input.dma_calm"> {{input.dma_desc}}</label>
-                            <input type="text" class="form-control" [placeholder]="input.dma_desc"  (click)="d.toggle()"
-                              ngbDatepicker #d="ngbDatepicker"  [required]="'true'">
-        
-                        </div>
-                      </ng-template>
-        
-                      <ng-template [ngSwitchCase]="'L'">
-        
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                          <div class="form-group">
-                            <label [for]="input.dma_calm"> {{input.dma_desc}}</label>
-                            <select  [name]="input.dma_calm" [id]="input.dma_calm"
-                             class="form-control">
-                              <option value="">{{input.dma_desc}}</option>
-                              <option *ngFor="let option of input.dma_list.split(',')" [value]="option.split('=')[1]">
-                                {{option.split('=')[0]}}</option>
-                            </select>
-                            <!-- <div class="text-danger"
-                              *ngIf="form.get(input.dma_calm).invalid && (form.get(input.dma_calm).dirty || form.get(input.dma_calm).touched)">
-                              <div *ngIf="form.get(input.dma_calm).errors.required"> {{input.dma_desc}} requerido</div>
-                              {{input.validators.minlength}}
-                            </div> -->
-                          </div>
-                        </div>
-        
-
-                        <!-- <kt-customers-list></kt-customers-list> -->
-                      </ng-template>
-    
-                </ng-container>
-    
-              </ng-template>
+        <div class="row">
+          	<div class="mat-table__wrapper">
+                <mat-table class="lmat-elevation-z8"
+                #table
+                [dataSource]="dataSource">
+                <ng-container  *ngFor="let detail of detailFileds"  [matColumnDef]="detail.dma_desc">
+                    <!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>detail.dma_desc</mat-header-cell>
+                    <mat-cell *matCellDef="let customer">{{customer.id}}</mat-cell>
+                  </ng-container>
+                </mat-table>
             </div>
+          <!-- <ng-template ngFor let-input [ngForOf]="detailFileds">
+            <ng-container [ngSwitch]="input.dma_tipo">
+              <ng-template [ngSwitchCase]="'A'">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <label [for]="input.dma_calm"> {{input.dma_desc}} </label>
+                  <input [type]="'text'" class="form-control" />
+                </div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="'N'">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <label> {{input.dma_desc}}</label>
+                  <input [type]="'number'" class="form-control" />
+                </div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="'H'">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <ngb-timepicker [seconds]="true" [hourStep]="1" [minuteStep]="15" [secondStep]="30"></ngb-timepicker>
+                </div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="'F'">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <label [for]="input.dma_calm"> {{input.dma_desc}}</label>
+                  <input type="text" class="form-control" [placeholder]="input.dma_desc" (click)="d.toggle()"
+                    ngbDatepicker #d="ngbDatepicker" [required]="'true'">
+                </div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="'L'">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                  <div class="form-group">
+                    <label [for]="input.dma_calm"> {{input.dma_desc}}</label>
+                    <select [name]="input.dma_calm" [id]="input.dma_calm" class="form-control">
+                      <option value="">{{input.dma_desc}}</option>
+                      <option *ngFor="let option of input.dma_list.split(',')" [value]="option.split('=')[1]">
+                        {{option.split('=')[0]}}</option>
+                    </select>
+                  </div>
+                </div>
+              </ng-template> -->
+            </ng-container>
+          </ng-template>
+        </div>
       </div>
     </kt-portlet-body>
   </kt-portlet>
-
-
-  
-
-
-
-
-
 </form>
