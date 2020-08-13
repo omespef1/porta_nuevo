@@ -17,7 +17,7 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'XBRL',
+							title: 'Google Material',
 							bullet: 'line',
 							icon: 'flaticon-interface-7',
 							submenu: [
@@ -201,7 +201,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Manufactura',
+							title: 'Ng-Bootstrap',
 							bullet: 'line',
 							icon: 'flaticon-web',
 							submenu: [
@@ -280,13 +280,13 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'Proveedores',
+							title: 'eCommerce',
 							bullet: 'line',
 							icon: 'flaticon-business',
 							permission: 'accessToECommerceModule',
 							submenu: [
 								{
-									title: 'Clientes',
+									title: 'Customers',
 									page: 'ecommerce/customers'
 								},
 								{
@@ -296,7 +296,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Gestión de Usuarios',
+							title: 'User Management',
 							bullet: 'line',
 							icon: 'flaticon-user',
 							submenu: [
@@ -319,7 +319,7 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'Páginas de error',
+							title: 'Error Pages',
 							root: true,
 							bullet: 'line',
 							icon: 'flaticon2-attention',
@@ -366,25 +366,25 @@ export class MenuConfig {
 					bullet: 'line',
 				},
 				{
-					title: 'Financiero',
+					title: 'Layout Builder',
 					root: true,
 					icon: 'flaticon2-expand',
 					page: 'builder'
 				},
 				{
-					title: 'XBRL',
+					title: 'Google Material',
 					root: true,
 					bullet: 'line',
 					icon: 'flaticon2-browser-2',
 					submenu: [
 						{
-							title: 'Autoliquidador',
-							bullet: 'dot',
+							title: 'Form Controls',
+							bullet: 'line',
 							submenu: [
 								{
 									title: 'Auto Complete',
 									page: 'material/form-controls/autocomplete',
-									permission: 'accessToECommerceModule'
+									permissionId: 2
 								},
 								{
 									title: 'Checkbox',
@@ -421,8 +421,8 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Consulta de información financiera',
-							bullet: 'dot',
+							title: 'Navigation',
+							bullet: 'line',
 							submenu: [
 								{
 									title: 'Menu',
@@ -439,8 +439,8 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Reporte de información financiera',
-							bullet: 'dot',
+							title: 'Layout',
+							bullet: 'line',
 							submenu: [
 								{
 									title: 'Card',
@@ -481,8 +481,8 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Consulta rifin y regads',
-							bullet: 'dot',
+							title: 'Buttons & Indicators',
+							bullet: 'line',
 							submenu: [
 								{
 									title: 'Button',
@@ -507,16 +507,12 @@ export class MenuConfig {
 								{
 									title: 'Progress spinner',
 									page: 'material/buttons-and-indicators/progress-spinner'
-								},
-								{
-									title: 'Ripples',
-									page: 'material/buttons-and-indicators/ripples'
 								}
 							]
 						},
 						{
-							title: 'Contribución',
-							bullet: 'dot',
+							title: 'Popups & Modals',
+							bullet: 'line',
 							submenu: [
 								{
 									title: 'Bottom sheet',
@@ -537,8 +533,8 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Reporte xbrl',
-							bullet: 'dot',
+							title: 'Data table',
+							bullet: 'line',
 							submenu: [
 								{
 									title: 'Paginator',
@@ -629,13 +625,13 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Proveedores',
+					title: 'eCommerce',
 					bullet: 'line',
 					icon: 'flaticon2-list-2',
 					root: true,
 					submenu: [
 						{
-							title: 'Clientes',
+							title: 'Customers',
 							page: 'ecommerce/customers'
 						},
 						{
@@ -645,7 +641,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Gestión de Usuarios',
+					title: 'User Management',
 					root: true,
 					bullet: 'line',
 					icon: 'flaticon2-user-outline-symbol',
@@ -662,7 +658,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Páginas de error',
+					title: 'Error Pages',
 					root: true,
 					bullet: 'line',
 					icon: 'flaticon2-attention',

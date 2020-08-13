@@ -3,7 +3,7 @@ export class PageConfig {
 		'dashboard': {
 			page: {
 				'title': 'Dashboard',
-				'desc': 'Últimas actualizaciones de estadísticas and statistic charts'
+				'desc': 'Latest updates and statistic charts'
 			}
 		},
 		ngbootstrap: {
@@ -11,10 +11,10 @@ export class PageConfig {
 				page: {title: 'Accordion', desc: ''}
 			},
 			alert: {
-				page: {title: 'Alertas', desc: ''}
+				page: {title: 'Alert', desc: ''}
 			},
 			buttons: {
-				page: {title: 'Botones', desc: ''}
+				page: {title: 'Buttons', desc: ''}
 			},
 			carousel: {
 				page: {title: 'Carousel', desc: ''}
@@ -168,36 +168,36 @@ export class PageConfig {
 			// Data tables
 			'data-table': {
 				paginator: {
-					page: {title: 'Paginador', desc: ''}
+					page: {title: 'Paginator', desc: ''}
 				},
 				'sort-header': {
-					page: {title: 'Ordenar encabezado', desc: ''}
+					page: {title: 'Sort header', desc: ''}
 				},
 				table: {
-					page: {title: 'Tabla', desc: ''}
+					page: {title: 'Table', desc: ''}
 				}
 			}
 		},
 		forms: {
-			page: {title: 'Formularios', desc: ''}
+			page: {title: 'Forms', desc: ''}
 		},
 		mail: {
 			page: {title: 'Mail', desc: 'Mail'}
 		},
 		ecommerce: {
 			customers: {
-				page: {title: 'Clientes', desc: ''}
+				page: {title: 'Customers', desc: ''}
 			},
 			products: {
 				edit: {
-					page: {title: 'Editar producto', desc: ''}
+					page: {title: 'Edit product', desc: ''}
 				},
 				add: {
-					page: {title: 'Crear producto', desc: ''}
+					page: {title: 'Create product', desc: ''}
 				}
 			},
 			orders: {
-				page: {title: 'Ordenes', desc: ''}
+				page: {title: 'Orders', desc: ''}
 			}
 		},
 		'user-management': {
@@ -209,7 +209,7 @@ export class PageConfig {
 			}
 		},
 		builder: {
-			page: {title: 'Editor de portal', desc: ''}
+			page: {title: 'Layout Builder', desc: ''}
 		},
 		header: {
 			actions: {
@@ -217,11 +217,11 @@ export class PageConfig {
 			}
 		},
 		profile: {
-			page: {title: 'Perfil de usuario', desc: ''}
+			page: {title: 'User Profile', desc: ''}
 		},
 		error: {
 			404: {
-				page: {title: '404 No encontrado', desc: '', subheader: false}
+				page: {title: '404 Not Found', desc: '', subheader: false}
 			},
 			403: {
 				page: { title: '403 Access Forbidden', desc: '', subheader: false }

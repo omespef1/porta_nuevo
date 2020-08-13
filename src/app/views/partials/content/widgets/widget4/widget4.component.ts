@@ -54,7 +54,7 @@ export class Widget4Component implements OnInit {
 					url: 'https://keenthemes.com.my/metronic',
 				}, {
 					pic: './assets/media/files/pdf.svg',
-					title: 'Manual Seven',
+					title: 'Manual',
 					url: 'https://keenthemes.com.my/metronic',
 				}, {
 					pic: './assets/media/files/javascript.svg',

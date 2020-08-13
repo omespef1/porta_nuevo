@@ -17,7 +17,7 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'XBRL',
+							title: 'Google Material',
 							bullet: 'dot',
 							icon: 'flaticon-interface-7',
 							submenu: [
@@ -201,7 +201,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Manufactura',
+							title: 'Ng-Bootstrap',
 							bullet: 'dot',
 							icon: 'flaticon-web',
 							submenu: [
@@ -280,13 +280,13 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'Proveedores',
+							title: 'eCommerce',
 							bullet: 'dot',
 							icon: 'flaticon-business',
 							permission: 'accessToECommerceModule',
 							submenu: [
 								{
-									title: 'Clientes',
+									title: 'Customers',
 									page: 'ecommerce/customers'
 								},
 								{
@@ -319,7 +319,7 @@ export class MenuConfig {
 					toggle: 'click',
 					submenu: [
 						{
-							title: 'Páginas de error',
+							title: 'Error Pages',
 							root: true,
 							bullet: 'dot',
 							icon: 'flaticon2-attention',
@@ -366,26 +366,26 @@ export class MenuConfig {
 					bullet: 'dot',
 				},
 				{
-					title: 'Financiero',
+					title: 'Layout Builder',
 					root: true,
 					icon: 'flaticon2-expand',
 					page: 'builder'
 				},
 				{section: 'Components'},
 				{
-					title: 'XBRL',
+					title: 'Google Material',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-browser-2',
 					submenu: [
 						{
-							title: 'Autoliquidador',
+							title: 'Form Controls',
 							bullet: 'dot',
 							submenu: [
 								{
 									title: 'Auto Complete',
 									page: 'material/form-controls/autocomplete',
-									permission: 'accessToECommerceModule'
+									permissionId: 2
 								},
 								{
 									title: 'Checkbox',
@@ -422,7 +422,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Consulta de información financiera',
+							title: 'Navigation',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -440,7 +440,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Reporte de información financiera',
+							title: 'Layout',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -482,7 +482,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Consulta rifin y regads',
+							title: 'Buttons & Indicators',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -508,15 +508,11 @@ export class MenuConfig {
 								{
 									title: 'Progress spinner',
 									page: 'material/buttons-and-indicators/progress-spinner'
-								},
-								{
-									title: 'Ripples',
-									page: 'material/buttons-and-indicators/ripples'
 								}
 							]
 						},
 						{
-							title: 'Contribución',
+							title: 'Popups & Modals',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -538,7 +534,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Reporte xbrl',
+							title: 'Data table',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -558,7 +554,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Manufactura',
+					title: 'Ng-Bootstrap',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-digital-marketing',
@@ -647,7 +643,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Gestión de Usuarios',
+					title: 'User Management',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-user-outline-symbol',
@@ -665,7 +661,7 @@ export class MenuConfig {
 				},
 				{section: 'Custom'},
 				{
-					title: 'Páginas de error',
+					title: 'Error Pages',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-attention',

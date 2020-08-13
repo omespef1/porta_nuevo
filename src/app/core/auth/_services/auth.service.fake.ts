@@ -32,6 +32,7 @@ export class AuthService {
 
         return  this.getAllUsers().pipe(
             map((result: User[]) => {
+                console.log(result);
                 if (result.length <= 0) {
                     return null;
                 }

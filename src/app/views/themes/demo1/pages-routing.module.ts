@@ -7,6 +7,7 @@ import { ErrorPageComponent } from './content/error-page/error-page.component';
 // Auth
 import { AuthGuard } from '../../../core/auth';
 import { NgxPermissionsGuard } from 'ngx-permissions';
+import { MovimientoContableComponent } from '../../pages/movimiento-contable/movimiento-contable.component';
 
 const routes: Routes = [
 	{
@@ -33,6 +34,10 @@ const routes: Routes = [
 				// 	}
 				// }
 			},
+			{
+				path: 'movimiento-contable', // <= Page URL
+				component: MovimientoContableComponent
+			  },
 			{
 				path: 'ngbootstrap',
 				loadChildren: 'app/views/pages/ngbootstrap/ngbootstrap.module#NgbootstrapModule'

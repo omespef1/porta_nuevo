@@ -2,16 +2,16 @@ export class UsersTable {
 	public static users: any = [
 		{
 			id: 1,
-			username: 'omarp',
+			username: 'humbertoe',
 			password: '9505',
-			email: 'omarp@digitalware.com.co',
+			email: 'mhebeto@gmail.com',
 			accessToken: 'access-token-8f3ae836da744329a6f93bf20594b5cc',
 			refreshToken: 'access-token-f8c137a2c98743f48b643e71161d90aa',
 			roles: [1], // Administrator
 			pic: './assets/media/users/300_25.png',
-			fullname: 'Omar Pérez',
+			fullname: 'Humberto Espinosa',
 			occupation: 'Desarrollador',
-			companyName: 'Digitalware',
+			companyName: 'aplicación',
 			phone: '3192972505',
 			address: {
 				addressLine: 'Calle 72 # 12-65',
@@ -30,14 +30,14 @@ export class UsersTable {
 			id: 2,
 			username: 'humbertoe',
 			password: '9505',
-			email: 'humbertoe@digitalware.com.co',
+			email: 'humbertoe@aplicación.com.co',
 			accessToken: 'access-token-6829bba69dd3421d8762-991e9e806dbf',
 			refreshToken: 'access-token-f8e4c61a318e4d618b6c199ef96b9e55',
 			roles: [2], // Manager
 			pic: './assets/media/users/100_2.jpg',
 			fullname: 'Humberto Espinosa',
 			occupation: 'CPO',
-			companyName: 'Digitalware',
+			companyName: 'aplicación',
 			phone: '31929834534',
 			address: {
 				addressLine: 'Calle 72 # 12-65',
@@ -51,33 +51,7 @@ export class UsersTable {
 				twitter: 'https://twitter.com/user',
 				instagram: 'https://instagram.com/user'
 			}
-        },
-        {
-			id: 3,
-			username: 'leonardot',
-			password: '9505',
-			email: 'leonardot@digitalware.com.co',
-			accessToken: 'access-token-d2dff7b82f784de584b60964abbe45b9',
-			refreshToken: 'access-token-c999ccfe74aa40d0aa1a64c5e620c1a5',
-			roles: [3], // Guest
-			pic: './assets/media/users/default.jpg',
-			fullname: 'Leonardo Tobon',
-			occupation: 'Desarrollador',
-			companyName: 'Digitalware',
-			phone: '456669067892',
-			address: {
-				addressLine: 'Calle 76 # 53-67',
-				city: 'Cali',
-				state: 'Valle del cauca',
-				postCode: '85012'
-			},
-			socialNetworks: {
-				linkedIn: 'https://linkedin.com/guest',
-				facebook: 'https://facebook.com/guest',
-				twitter: 'https://twitter.com/guest',
-				instagram: 'https://instagram.com/guest'
-			}
-		}
+        }
 	];
 
 	public static tokens: any = [

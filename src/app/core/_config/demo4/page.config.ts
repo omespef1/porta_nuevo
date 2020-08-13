@@ -3,7 +3,7 @@ export class PageConfig {
 		dashboard: {
 			page: {
 				'title': 'Dashboard',
-				'desc': 'Últimas actualizaciones de estadísticas and statistic charts'
+				'desc': 'Latest updates and statistic charts'
 			},
 		},
 		ngbootstrap: {
@@ -168,13 +168,13 @@ export class PageConfig {
 			// Data tables
 			'data-table': {
 				paginator: {
-					page: {title: 'Paginador', desc: ''}
+					page: {title: 'Paginator', desc: ''}
 				},
 				'sort-header': {
-					page: {title: 'Ordenar encabezado', desc: ''}
+					page: {title: 'Sort header', desc: ''}
 				},
 				table: {
-					page: {title: 'Tabla', desc: ''}
+					page: {title: 'Table', desc: ''}
 				}
 			}
 		},
@@ -186,14 +186,14 @@ export class PageConfig {
 		},
 		ecommerce: {
 			customers: {
-				page: {title: 'Clientes', desc: ''}
+				page: {title: 'Customers', desc: ''}
 			},
 			products: {
 				edit: {
-					page: {title: 'Editar producto', desc: ''}
+					page: {title: 'Edit product', desc: ''}
 				},
 				add: {
-					page: {title: 'Crear producto', desc: ''}
+					page: {title: 'Create product', desc: ''}
 				}
 			},
 			orders: {
@@ -202,22 +202,22 @@ export class PageConfig {
 		},
 		'user-management': {
 			users: {
-				page: {title: 'Usuarios', desc: ''}
+				page: {title: 'Users', desc: ''}
 			},
 			roles: {
 				page: {title: 'Roles', desc: ''}
 			}
 		},
 		builder: {
-			page: {title: 'Financiero', desc: ''}
+			page: {title: 'Layout Builder', desc: ''}
 		},
 		header: {
 			actions: {
-				page: {title: 'Acciones', desc: 'Actions example page'}
+				page: {title: 'Actions', desc: 'Actions example page'}
 			}
 		},
 		profile: {
-			page: {title: 'Perfil de usuario', desc: ''}
+			page: {title: 'User Profile', desc: ''}
 		},
 		404: {
 			page: {title: '404 Not Found', desc: '', subheader: false}

@@ -354,20 +354,20 @@ export class MenuConfig {
 					bullet: 'dot',
 				},
 				{
-					title: 'Financiero',
+					title: 'Layout Builder',
 					root: true,
 					icon: 'flaticon2-expand',
 					page: 'builder'
 				},
-				{section: 'Verticales'},
+				{section: 'Components'},
 				{
-					title: 'XBRL',
+					title: 'Google Material',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-browser-2',
 					submenu: [
 						{
-							title: 'Autoliquidador',
+							title: 'Form Controls',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -410,7 +410,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Consulta de información financiera',
+							title: 'Navigation',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -428,7 +428,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Reporte de información financiera',
+							title: 'Layout',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -470,7 +470,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Consulta rifin y regads',
+							title: 'Buttons & Indicators',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -504,7 +504,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Contribución',
+							title: 'Popups & Modals',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -526,7 +526,7 @@ export class MenuConfig {
 							]
 						},
 						{
-							title: 'Reporte xbrl',
+							title: 'Data table',
 							bullet: 'dot',
 							submenu: [
 								{
@@ -546,7 +546,7 @@ export class MenuConfig {
 					]
 				},
 				{
-					title: 'Manufactura',
+					title: 'Ng-Bootstrap',
 					root: true,
 					bullet: 'dot',
 					icon: 'flaticon2-digital-marketing',
@@ -617,9 +617,9 @@ export class MenuConfig {
 						}
 					]
 				},
-				{section: 'Administración'},
+				{section: 'Applications'},
 				{
-					title: 'Clientes',
+					title: 'eCommerce',
 					bullet: 'dot',
 					icon: 'flaticon2-list-2',
 					root: true,
@@ -634,6 +634,12 @@ export class MenuConfig {
 							page: 'ecommerce/products'
 						},
 					]
+				},
+				{
+					title: 'Movimiento contable',
+					page: 'movimiento-contable',
+					icon: 'flaticon2-browser-2',
+					root: true,
 				},
 				{
 					title: 'Administración de usuarios',

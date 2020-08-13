@@ -7,10 +7,6 @@ import { LayoutConfigService } from '../../../core/_base/layout';
 // Widgets model
 import { SparklineChartOptions } from '../../../core/_base/layout';
 import { Widget4Data } from '../../partials/content/widgets/widget4/widget4.component';
-// NGRX
-import { select, Store } from '@ngrx/store';
-import { currentUser, Logout, User } from '../../../core/auth';
-import { AppState } from  '../../../core/reducers';
 
 @Component({
 	selector: 'kt-dashboard',
@@ -27,11 +23,9 @@ export class DashboardComponent implements OnInit {
 	widget4_3: Widget4Data;
 	widget4_4: Widget4Data;
 
-	constructor(private layoutConfigService: LayoutConfigService,private store: Store<AppState>) {
+	constructor(private layoutConfigService: LayoutConfigService) {
 	}
-	logout(){
-		this.store.dispatch(new Logout());
-	}
+
 	ngOnInit(): void {
 		this.chartOptions1 = {
 			data: [10, 14, 18, 11, 9, 12, 14, 17, 18, 14],
@@ -58,7 +52,7 @@ export class DashboardComponent implements OnInit {
 		this.widget4_1 = shuffle([
 			{
 				pic: './assets/media/files/doc.svg',
-				title: 'Web services documentacion',
+				title: 'Metronic Documentation',
 				url: 'https://keenthemes.com.my/metronic',
 			}, {
 				pic: './assets/media/files/jpg.svg',
@@ -74,11 +68,11 @@ export class DashboardComponent implements OnInit {
 				url: 'https://keenthemes.com.my/metronic',
 			}, {
 				pic: './assets/media/files/zip.svg',
-				title: 'Descargar psfs SAC CASO 53453',
+				title: 'Download Ziped version OF 5.0',
 				url: 'https://keenthemes.com.my/metronic',
 			}, {
 				pic: './assets/media/files/pdf.svg',
-				title: 'Reporte financiero 2018/2019',
+				title: 'Finance Report 2016/2017',
 				url: 'https://keenthemes.com.my/metronic',
 			},
 		]);
@@ -120,43 +114,43 @@ export class DashboardComponent implements OnInit {
 		this.widget4_3 = shuffle([
 			{
 				icon: 'flaticon-pie-chart-1 kt-font-info',
-				title: 'Nueva versión de Seven liberada!',
+				title: 'Metronic v6 has been arrived!',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '+$500',
 				valueColor: 'kt-font-info'
 			}, {
 				icon: 'flaticon-safe-shield-protection kt-font-success',
-				title: 'Nuevo evento de tecnología en Bogotá.',
+				title: 'Metronic community meet-up 2019 in Rome.',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '+$1260',
 				valueColor: 'kt-font-success'
 			}, {
 				icon: 'flaticon2-line-chart kt-font-danger',
-				title: 'Seven versión 2019 muy pronto..',
+				title: 'Metronic Angular 7 version will be landing soon..',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '+$1080',
 				valueColor: 'kt-font-danger'
 			}, {
 				icon: 'flaticon2-pie-chart-1 kt-font-primary',
-				title: 'ale! Compra seven ahora con un 20% de descuento',
+				title: 'ale! Purchase Metronic at 70% off for limited time',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '70% Off!',
 				valueColor: 'kt-font-primary'
 			}, {
 				icon: 'flaticon2-rocket kt-font-brand',
-				title: 'Nuevo portal de seven web en progreso!',
+				title: 'Metronic VueJS version is in progress. Stay tuned!',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '+134',
 				valueColor: 'kt-font-brand'
 			}, {
 				icon: 'flaticon2-notification kt-font-warning',
-				title: 'uevo portal de seven web en progreso!',
+				title: 'Black Friday! Purchase Metronic at ever lowest 90% off for limited time',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '70% Off!',
 				valueColor: 'kt-font-warning'
 			}, {
 				icon: 'flaticon2-file kt-font-focus',
-				title: 'uevo portal de seven web en progreso!',
+				title: 'Metronic React version is in progress.',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '+13%',
 				valueColor: 'kt-font-focus'
@@ -167,7 +161,7 @@ export class DashboardComponent implements OnInit {
 			{
 				pic: './assets/media/client-logos/logo5.png',
 				title: 'Trump Themes',
-				desc: 'Motronic',
+				desc: 'Make Metronic Great Again',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '+$2500',
 				valueColor: 'kt-font-brand'
@@ -181,21 +175,21 @@ export class DashboardComponent implements OnInit {
 			}, {
 				pic: './assets/media/client-logos/logo3.png',
 				title: 'Phyton',
-				desc: 'Un lenguaje de programaciòn',
+				desc: 'A Programming Language',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '+$17',
 				valueColor: 'kt-font-brand'
 			}, {
 				pic: './assets/media/client-logos/logo2.png',
 				title: 'GreenMakers',
-				desc: 'Test',
+				desc: 'Make Green Great Again',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '-$2.50',
 				valueColor: 'kt-font-brand'
 			}, {
 				pic: './assets/media/client-logos/logo1.png',
 				title: 'FlyThemes',
-				desc: 'Test',
+				desc: 'A Let\'s Fly Fast Again Language',
 				url: 'https://keenthemes.com.my/metronic',
 				value: '+200',
 				valueColor: 'kt-font-brand'
