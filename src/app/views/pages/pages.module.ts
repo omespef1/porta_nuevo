@@ -15,6 +15,7 @@ import { UserManagementModule } from './user-management/user-management.module';
 import { MyPageComponent } from './my-page/my-page.component';
 import { MovimientoContableComponent } from './movimiento-contable/movimiento-contable.component';
 
+import {DxDataGridModule, DxFormModule} from  'devextreme-angular';
 @NgModule({
 	declarations: [MyPageComponent, MovimientoContableComponent],
 	exports: [],
@@ -28,6 +29,8 @@ import { MovimientoContableComponent } from './movimiento-contable/movimiento-co
 		MailModule,
 		ECommerceModule,
 		UserManagementModule,
+		DxDataGridModule,
+		DxFormModule
 	],
 	providers: []
 })

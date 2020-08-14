@@ -97,7 +97,6 @@ import { PaginatorComponent } from './data-table/paginator/paginator.component';
 import { SortHeaderComponent } from './data-table/sort-header/sort-header.component';
 import { MaterialTableComponent } from './data-table/material-table/material-table.component';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
-import { MovimientoContableComponent } from '../movimiento-contable/movimiento-contable.component';
 
 const routes: Routes = [
 	{
@@ -327,7 +326,6 @@ const routes: Routes = [
 		RadiobuttonComponent,
 		SelectComponent,
 		SliderComponent,
-		MovimientoContableComponent,
 		SlidertoggleComponent,
 		MenuComponent,
 		SidenavComponent,
