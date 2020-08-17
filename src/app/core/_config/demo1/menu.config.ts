@@ -617,13 +617,25 @@ export class MenuConfig {
 				// 		}
 				// 	]
 				// },
-				{section: 'Programas'},
+				{section: 'Contabilidad'},
 				{
-					title: 'Movimiento contable',
-					page: 'movimiento-contable',
+					title: 'Movimiento contable',				
 					icon: 'flaticon2-browser-2',
 					root: true,
+					page: 'accounting-movement',
+					translate: 'CONTABILITY.ACCOUNTING_MOVEMENT',
 				},
+				{
+					section: 'General'
+				},
+				{
+					title: 'Sucursales',
+					icon: 'flaticon2-browser-2',
+					root: true,
+					page: 'branch-office',
+					translate: 'GENERAL.BRANCH_OFFICE',
+				},
+				{section: 'Sistema'},
 				{
 					title: 'Administración de usuarios',
 					root: true,

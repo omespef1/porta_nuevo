@@ -56,6 +56,7 @@ export class AuthService {
 
 
     getAllUsers(): Observable<User[]> {
+        console.log('obteniendo usuarios');
 		return this.http.get<User[]>(API_USERS_URL);
     }
 

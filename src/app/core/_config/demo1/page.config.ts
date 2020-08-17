@@ -1,3 +1,4 @@
+
 export class PageConfig {
 	public defaults: any = {
 		'dashboard': {
@@ -5,6 +6,19 @@ export class PageConfig {
 				'title': 'Dashboard',
 				'desc': 'Latest updates and statistic charts'
 			}
+		},
+
+		'accounting-movement': {
+			page: {
+				'title': 'Movimiento contable',
+				'desc': 'Movimiento contable'
+			}
+		},
+		'branch-office': {
+			page: {
+				'title': 'Sucursales',
+				'desc': 'Gestión de sucursales'
+		}
 		},
 		ngbootstrap: {
 			accordion: {
@@ -86,7 +100,7 @@ export class PageConfig {
 				slidertoggle: {
 					page: {title: 'Slider Toggle', desc: ''}
 				}
-			},
+			},			
 			// navigation
 			navigation: {
 				menu: {

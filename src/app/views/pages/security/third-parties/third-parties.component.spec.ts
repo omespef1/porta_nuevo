@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MovimientoContableComponent } from './movimiento-contable.component';
+import { ThirdPartiesComponent } from './third-parties.component';
 
-describe('MovimientoContableComponent', () => {
-  let component: MovimientoContableComponent;
-  let fixture: ComponentFixture<MovimientoContableComponent>;
+describe('ThirdPartiesComponent', () => {
+  let component: ThirdPartiesComponent;
+  let fixture: ComponentFixture<ThirdPartiesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovimientoContableComponent ]
+      declarations: [ ThirdPartiesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MovimientoContableComponent);
+    fixture = TestBed.createComponent(ThirdPartiesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

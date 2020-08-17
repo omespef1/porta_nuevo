@@ -14,6 +14,13 @@ export const locale = {
 			APPS: 'Aplicaciones',
 			DASHBOARD: 'Tablero'
 		},
+
+		CONTABILITY: {
+			ACCOUNTING_MOVEMENT: 'Movimiento Contable'
+		},
+		GENERAL: {
+			BRANCH_OFFICE: 'Sucursales'
+		},
 		AUTH: {
 			GENERAL: {
 				OR: 'O',

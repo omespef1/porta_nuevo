@@ -14,6 +14,12 @@ export const locale = {
 			APPS: 'Apps',
 			DASHBOARD: 'Dashboard',
 		},
+		CONTABILITY: {
+			ACCOUNTING_MOVEMENT: 'Accounting Movement'
+		},
+		GENERAL: {
+			BRANCH_OFFICE: 'Branch Office'
+		},
 		AUTH: {
 			GENERAL: {
 				OR: 'Or',
