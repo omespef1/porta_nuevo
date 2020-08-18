@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AccountingMovementComponent } from './accounting-movement.component';
 import { Routes, RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
-import { DxDataGridModule, DxFormModule, DxSelectBoxModule, DxLookupModule } from 'devextreme-angular';
+import { DxDataGridModule, DxFormModule, DxSelectBoxModule, DxLookupModule, DxToolbarModule, DxButtonModule, DxLoadIndicatorModule } from 'devextreme-angular';
 
 const routes: Routes = [
   {
@@ -20,7 +20,8 @@ const routes: Routes = [
     DxDataGridModule,
     DxFormModule,
     DxSelectBoxModule,
-    DxLookupModule
+    DxLookupModule,
+    DxToolbarModule,DxButtonModule,DxLoadIndicatorModule
   ],
   declarations: [AccountingMovementComponent]
 })

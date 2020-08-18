@@ -1,5 +1,9 @@
+
+
+
+
 <div class="card">
-  <div class="card-header bg-primary text-light">
+  <div class="card-header bg-secondary text-dark">
    Movimiento contable
   </div>
   <div class="card-body">
@@ -62,14 +66,17 @@
     <div id="form-demo">
 
 
-      <div class="long-title">
-        <h3>Nuevo Movimiento Contable</h3>
-    </div>
-    <div id="form-container">
+      
+
+    <div id="form-container" >
+      <div>
+        {{movement | json}}
+      </div>
         <dx-form id="form"
             [colCount]="4"
             [formData]="movement">
             <dxi-item dataField="Empr_Codigo">
+              <dxi-validation-rule type="required" message="Empresa es requerida"></dxi-validation-rule>
               <dxo-label text="Empresa"> </dxo-label>
               <dx-lookup (onValueChanged)="onValueChanged($event)"
               [dataSource]="businessList" valueExpr="Empr_Codigo" displayExpr="Empr_Nombre"  cancelButtonText="Cancelar" noDataText="No hay datos" searchPlaceholder="Buscar"
@@ -81,6 +88,7 @@
               <dxi-validation-rule type="required" message="Número es requerido"></dxi-validation-rule>
             </dxi-item>
              <dxi-item dataField="Docu_Consec">
+              <dxi-validation-rule type="required" message="Documento es requerido"></dxi-validation-rule>
               <dxo-label text="Documento"> </dxo-label>
               <dx-lookup
               [dataSource]="documentsAccountingsList" valueExpr="Docu_Consec" displayExpr="Docu_Nombre"  cancelButtonText="Cancelar" noDataText="No hay datos" searchPlaceholder="Buscar"
@@ -96,6 +104,7 @@
              
             </dxi-item> -->
             <dxi-item dataField="Movc_Sucu">
+              <dxi-validation-rule type="required" message="Sucursal es requerida"></dxi-validation-rule>
               <dxo-label text="Sucursal"> </dxo-label>
               <!-- <dx-select-box  [dataSource]="branchOfficeList" valueExpr="Sucu_Codigo" displayExpr="Sucu_Nombre" placeholder="Seleccione Sucursal">
               </dx-select-box> -->
@@ -110,12 +119,15 @@
             </dxi-item>     
             <dxi-item dataField="Movc_Descri" [label]="{text: 'Descripción'}" text="Descripción" editorType="dxTextArea"  [colSpan]="4"></dxi-item>     
             
-            <dxi-item 
-            itemType="button"
+             <dxi-item 
+            itemType="button"            
             horizontalAlignment="left"
-            [buttonOptions]="{ text:'Guardar', type:'success', useSubmitBehavior: true}">
-        </dxi-item>
+            [buttonOptions]="{ text:'Guardar', icon:'check', type:'success', useSubmitBehavior: true}">
+           
+        </dxi-item> 
         </dx-form>
+
+     
     </div>
  
   </div>
@@ -123,21 +135,22 @@
 
     
   </div>
-
+</div>
+<div class="card">
+ 
   <div class="card-header bg-primary text-light">
    Detalle
    </div>
    <div class="card-body">
-     <dx-data-grid [editing]="editing" [dataSource]="movement.Movements" [showBorders]="true"    [repaintChangesOnly]="true" 
+     <dx-data-grid [editing]="editing" [dataSource]="movement.Movements" [showBorders]="true" 
          [showRowLines]="true"      
          [showBorders]="true"
          [rowAlternationEnabled]="true">
      [highlightChanges]="true">      
-       <dxo-paging [pageSize]="10"></dxo-paging>
+       <dxo-paging [pageSize]="10" [enabled]="true"></dxo-paging>
        <dxo-search-panel
-       [visible]="true"
-       [highlightCaseSensitive]="true"></dxo-search-panel>
-      <dxo-paging [enabled]="true"></dxo-paging>
+       [visible]="true" [placeholder]="'Buscar'"
+       [highlightCaseSensitive]="true"></dxo-search-panel>     
       <dxo-editing 
            mode="popup"
              [useIcons]="true"
@@ -150,7 +163,8 @@
             cancelAllChanges="Cancelar cambios"
             editRow="Editar"
             saveRowChanges="Guardar"
-            cancelRowChanges="Cancelar">
+            cancelRowChanges="Cancelar"
+            onfirmDeleteMessage="Está seguro de eliminar este registro?">
         </dxo-texts>
       </dxo-editing>   
       <dxi-column
@@ -162,12 +176,51 @@
           valueExpr="Cuen_Codigo">
       </dxo-lookup>
   </dxi-column>
-      <dxi-column dataField="Dmco_Descri" caption="Descripción" dataType="string"></dxi-column>
-      <dxi-column dataField="Dmco_Refere" caption="Referencia" dataType="string"> </dxi-column>
-      <dxi-column dataField="Dmco_Valdeb" caption="Valor Débito" dataType="number"></dxi-column>
-      <dxi-column dataField="Dmco_Valcre" format="currency" caption="Valor Crédito" dataType="number"></dxi-column>
-      <dxi-column dataField="Dmco_Valbas" caption="Valor Base" dataType="number"></dxi-column>
-      <dxi-column dataField="Dmco_Porbas" caption="Porcentaje Base" dataType="number"></dxi-column>
+      <dxi-column dataField="Dmco_Descri"  caption="Descripción" dataType="string">
+        <dxi-validation-rule 
+        type="required"
+        message="Descripción requerida">
+    </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column dataField="Dmco_Refere" caption="Referencia" dataType="string">
+        <dxi-validation-rule 
+                    type="required"
+                    message="Referencia requerida">
+                </dxi-validation-rule>  
+      </dxi-column>
+      <dxi-column dataField="Dmco_Valdeb" format="currency" caption="Valor Débito" dataType="number">
+        <dxi-validation-rule 
+        type="required"
+        message="Valor débito  requerido">
+    </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column dataField="Dmco_Valcre" format="currency" caption="Valor Crédito" dataType="number">
+        <dxi-validation-rule 
+        type="required"
+        message="Valor crédito requerido">
+    </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column dataField="Dmco_Valbas" format="currency" caption="Valor Base" dataType="number">
+        <dxi-validation-rule 
+        type="required"
+        message="Valor base requerido">
+    </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column dataField="Dmco_Porbas"  caption="Porcentaje Base" dataType="number">
+        <dxi-validation-rule 
+        type="required"
+        message="Porcentaje requerido">
+    </dxi-validation-rule>
+      </dxi-column>
+      <dxi-column
+      dataField="Cenc_Consec"
+      caption="Centro de costos"   >         
+      <dxo-lookup
+          [dataSource]="costCenterList"
+          displayExpr="Cenc_Nombre" 
+          valueExpr="Cenc_Consec">
+      </dxo-lookup>
+  </dxi-column>
      </dx-data-grid>
    </div>
 </div>

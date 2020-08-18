@@ -10,7 +10,11 @@ import { Business } from "../../../../core/security/models/business.model";
 import { BranchOffice } from "../../../../core/general/_models/branch-office.model";
 import { ContabilityAccouintingService } from "../../../../core/contability/_services/contability-accouinting.service";
 import { DocumentService } from "../../../../core/general/_services/document.service";
-import { DocumentAccounting } from '../../../../core/general/_models/document.model';
+import { DocumentAccounting } from "../../../../core/general/_models/document.model";
+import { CostCenterService } from "../../../../core/general/_services/cost-center.service";
+import { CostCenter } from "../../../../core/general/_models/cost-center.model";
+import { AccountingMovementService } from '../../../../core/contability/_services/accounting-movement.service';
+import notify from 'devextreme/ui/notify';
 
 
 @Component({
@@ -24,6 +28,9 @@ export class AccountingMovementComponent implements OnInit {
 	branchOfficeList: BranchOffice[] = [];
 	contabilityAccountingsList: ContabilityAccounting[] = [];
 	documentsAccountingsList: DocumentAccounting[] = [];
+	loadIndicatorVisible=false;
+
+	costCenterList: CostCenter[] = [];
 	editing: {
 		allowUpdating: true; // Enables editing
 		allowAdding: true; // Enables insertion
@@ -33,7 +40,9 @@ export class AccountingMovementComponent implements OnInit {
 		private _business: BusinessService,
 		private _branch: BranchOfficeService,
 		private _accounting: ContabilityAccouintingService,
-		private _documents: DocumentService
+		private _movement: AccountingMovementService,
+		private _documents: DocumentService,
+		private _costcenter: CostCenterService
 	) {
 		this.loadBranchOffice();
 	}
@@ -74,6 +83,7 @@ export class AccountingMovementComponent implements OnInit {
 		console.log(event);
 		this.loadDocumentsAccountings(event.value);
 		this.loadAccountings(event.value);
+		this.loadCostCenter(event.value);
 	}
 
 	loadDocumentsAccountings(code: any) {
@@ -82,5 +92,30 @@ export class AccountingMovementComponent implements OnInit {
 				this.documentsAccountingsList = data.ObjTransaction;
 			}
 		});
+	}
+
+	loadCostCenter(code: any) {
+		this._costcenter.GetAllCostCenter(code).subscribe((data) => {
+			if (data.ObjTransaction) {
+				this.costCenterList = data.ObjTransaction;
+			}
+		});
+	}
+
+	save() {
+		this.loadIndicatorVisible=true;
+		console.log('guardando...');
+		this._movement.Save(this.movement).subscribe(data=>{
+			setTimeout(() => {
+				this.loadIndicatorVisible=false;
+			}, 1000);
+			console.log(data);
+			if(data.Retorno==0){
+				notify('Movimiento contable realizado','success',3000);
+			}
+			else {
+				notify('Error generando documento contable. Verifique.','warning',3000);
+			}
+		})
 	}
 }

@@ -4,7 +4,7 @@ import { BranchOfficeService } from "../../../../core/general/_services/branch-o
 import { BusinessService } from "../../../../core/security/_services/business.service";
 import { Business } from "../../../../core/security/models/business.model";
 import { Transaction } from "../../../../core/auth/_models/transaction.model";
-
+import notify from 'devextreme/ui/notify';
 @Component({
 	selector: "kt-branch-office",
 	templateUrl: "./branch-office.component.html",
@@ -14,6 +14,7 @@ export class BranchOfficeComponent implements OnInit {
 	data: BranchOffice[] = [];
 	businessData: Business[] = [];
 	successMessage: string=null;
+	loading=false;
 	editing: {
 		allowUpdating: true; // Enables editing
 		allowAdding: true; // Enables insertion
@@ -31,12 +32,14 @@ export class BranchOfficeComponent implements OnInit {
   }
 
 	ngOnInit() {
-		
+	
 		this.GetAllBranchOffice();
 	}
 
 	GetAllBranchOffice() {
+		this.loading=true;
 		this._branchOffice.GetAllBranchOffice().subscribe((data) => {
+			this.loading=false;
 			console.log(data);
 			if (data.ObjTransaction) {
 				console.log(data);
@@ -59,18 +62,17 @@ export class BranchOfficeComponent implements OnInit {
 		this._branchOffice.updateBranchOffice(log.key).subscribe((resp) => {
 			if (resp.Retorno == 1) {
         console.log('respuesta obtenida');
-        this.successMessage = "Datos actualizados";		
-        setTimeout(() => {
-          this.successMessage=null;
-        }, 3000);	
+	   notify('Actualizado!','success',3000);
 			}
 		});
 	}
 
 	addBranchOffice(log: any) {
 		this._branchOffice.addBranchOffice(log.key).subscribe((resp) => {
-			if (resp.Retorno == 0) {
+			console.log(resp);
+			if (resp.Retorno == -1) {
 				console.log("actualizado");
+				notify('Sucursal creada!','success',3000);
 			}
 		});
 	}
