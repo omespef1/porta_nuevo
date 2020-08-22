@@ -1,13 +1,13 @@
 
 <div class="card">
-  <div class="card-header bg-secondary text-dark">
+  <div class="card-header bg-primary text-light darkdiv">
     Movimiento contable
   </div>
   <div class="card-body">
    
     <div id="form-demo">
       <div id="form-container">     
-        <form #formMov (submit)="save($event)">
+        <form #formMov (submit)="save($event)"  labelLocation="top">
         <dx-form id="form" [colCount]="3" [formData]="movement">      
           <dxi-item dataField="Empr_Codigo" >
             <dxi-validation-rule type="required" message="Empresa es requerida"></dxi-validation-rule>
@@ -75,6 +75,7 @@
 </form>
         <dx-button
         [disabled] = "!isPossibleApply"
+        icon="save"
             text="Aplicar"
             type="success"
             (onClick)="aplicar()">
@@ -97,7 +98,7 @@
 </div>
 <div class="card">
 
-  <div class="card-header bg-primary text-light">
+  <div class="card-header bg-primary text-light darkdiv">
     Detalle
   </div>
 
