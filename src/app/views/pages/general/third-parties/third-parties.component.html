@@ -1,12 +1,12 @@
 <div  class="card">
   <div class="card-header bg-primary text-light">
-    Gestiòn de sucursales
+    Gestión de terceros
     </div>
 
     <dx-load-panel
     #loadPanel
     shadingColor="rgba(0,0,0,0.4)"
-    [position]="{ of: '#branchOffice' }"
+    [position]="{ of: '#thirdParties' }"
     [(visible)]="loading"
     [showIndicator]="true"
     [showPane]="true"
@@ -14,12 +14,12 @@
     [closeOnOutsideClick]="false"
     >
 </dx-load-panel>
-  <div id="branchOffice" class="card-body">
-    <dx-data-grid [editing]="editing" [dataSource]="data"   [showBorders]="true"    [repaintChangesOnly]="true"
+  <div id="thirdParties" class="card-body">
+    <dx-data-grid [editing]="editing" [dataSource]="thirdPartieData"   [showBorders]="true"    [repaintChangesOnly]="true"
     [showColumnLines]="true"
         [showRowLines]="true"
-        (onRowUpdated)="updateBranchOffice($event)"
-        (onRowInserted)="addBranchOffice($event)"
+        (onRowUpdated)="updateThirdPartie($event)"
+        (onRowInserted)="addThirdPartie($event)"
         [showBorders]="true"
         [rowAlternationEnabled]="true">
     [highlightChanges]="true">      
@@ -53,44 +53,56 @@
          valueExpr="Empr_Codigo">
      </dxo-lookup>
  </dxi-column>
-     <dxi-column  dataField="Sucu_Codigo" caption="Código" dataType="string" >
+     <dxi-column  dataField="Terc_Codigo" caption="Código" dataType="string" >
       <dxi-validation-rule 
         type="required"
         message="Código requerido">
     </dxi-validation-rule>
      </dxi-column>
-     <dxi-column dataField="Sucu_Nombre" caption="Nombre" dataType="string">
+     <dxi-column dataField="Terc_Nombre" caption="Nombre" dataType="string">
       <dxi-validation-rule 
       type="required"
       message="Nombre requerido">
   </dxi-validation-rule>
     </dxi-column>
-     <dxi-column dataField="Sucu_Nivele" caption="Niveles" dataType="number">
+     <dxi-column dataField="Terc_Tipdoc" caption="Tipo de documento" dataType="string">
       <dxi-validation-rule 
         type="required"
-        message="Nivel requerido">
+        message="Tipo de documento">
     </dxi-validation-rule>
+    <dxo-lookup
+    [dataSource]="typeDocuments"
+    displayExpr="text" 
+    valueExpr="code">
+</dxo-lookup>
      </dxi-column>
-     <dxi-column dataField="Sucu_Padres" caption="Nivel Padre" dataType="number">
+     <dxi-column dataField="Terc_Nomcom" caption="Nombre Completo" dataType="string">
       <dxi-validation-rule 
         type="required"
-        message="Padre requerido">
+        message="Nombre completo requerido">
     </dxi-validation-rule>
-     </dxi-column>
-     <dxi-column dataField="Sucu_Permov" caption="Permite movimiento" dataType="string">
+     </dxi-column> 
+     <dxi-column dataField="Terc_Direci" caption="Dirección" dataType="string">
       <dxi-validation-rule 
-      type="required"
-      message="Permite movimuiento requerido">
-  </dxi-validation-rule>
-      <dxo-lookup
-      [dataSource]="allowMovement"
-      displayExpr="text"
-      valueExpr="value">
-  </dxo-lookup>
-     </dxi-column>
+        type="required"
+        message="Dirección requerido">
+    </dxi-validation-rule>
+     </dxi-column>   
+     <dxi-column dataField="Terc_Telefo" caption="Teléfono" dataType="number">
+      <dxi-validation-rule 
+        type="required"
+        message="Teléfono requerido">
+    </dxi-validation-rule>
+     </dxi-column>  
+     <dxi-column dataField="Terc_Emails" caption="Email" dataType="string">
+      <dxi-validation-rule 
+        type="required"
+        message="Email requerido">
+    </dxi-validation-rule>
+     </dxi-column> 
      <dxi-column
-     dataField="Sucu_Estado"
-     caption="Estado"  >   
+     dataField="Terc_Estado"
+     caption="Estado"   >   
      <dxi-validation-rule 
      type="required"
      message="Estado requerido">

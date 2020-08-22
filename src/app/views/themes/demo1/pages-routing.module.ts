@@ -41,6 +41,10 @@ const routes: Routes = [
 				path: 'branch-office', // <= Page URL
 				loadChildren: 'app/views/pages/general/branch-office/branch-office.module#BranchOfficeModule'
 			  },
+			  {
+				path: 'third-parties', // <= Page URL
+				loadChildren: 'app/views/pages/general/third-parties/third-parties.module#ThirdPartiesModule'
+			  },
 			{
 				path: 'ngbootstrap',
 				loadChildren: 'app/views/pages/ngbootstrap/ngbootstrap.module#NgbootstrapModule'

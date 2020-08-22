@@ -1,227 +1,156 @@
 
-
-
-
 <div class="card">
   <div class="card-header bg-secondary text-dark">
-   Movimiento contable
+    Movimiento contable
   </div>
   <div class="card-body">
-
-    <!-- <div class="col-xl-8">
-
-      
-      <form>
-        <div class="form-row">
-          <div class="form-group col-md-3">
-            <label for="EMPR_CODIGO">Empresa</label>          
-            <select name="EMPR_CODIGO" id="EMPR_CODIGO" class="form-control" [(ngModel)]="movimiento.EMPR_CODIGO">
-              <option selected>Elegir empresa...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="form-group col-md-3">
-            <label for="DOCU_CONSEC">Consecutivo</label>
-            <input disabled type="number" class="form-control" id="DOCU_CONSEC" [(ngModel)]="movimiento.DOCU_CONSEC">
-          </div>         
-          <div class="form-group col-md-3">
-            <label for="MOVC_NUMERO">Número</label>
-            <input type="number" class="form-control" id="MOVC_NUMERO" placeholder="Número" [(ngModel)]="movimiento.MOVC_NUMERO">
-          </div>
-          <div class="form-group col-md-3">
-            <label for="MOVC_FECHAS">Fecha</label>
-            <input disabled type="date" class="form-control" id="MOVC_FECHAS" [(ngModel)]="movimiento.MOVC_FECHAS">
-          </div>   
-         
-        </div>
-      
-        <div class="form-row">
-          <div class="form-group col-md-3">           
-            <label for="SUCU_CONSEC">Sucursal</label>          
-            <select id="SUCU_CONSEC" class="form-control" [(ngModel)]="movimiento.SUCU_CONSEC">
-              <option selected>Elegir sucursal...</option>
-              <option>...</option>
-            </select>            
-        </div>    
-          <div class="form-group col-md-3">
-            <label for="MOVC_REFERE">Referencia</label>
-            <input type="number" class="form-control" id="MOVC_REFERE" placeholder="Referencia" [(ngModel)]="movimiento.MOVC_REFERE">
-          </div>
-          <div class="form-group col-md-3">
-            <label for="MOVC_ESTADO">Estado</label>
-            <input disabled type="number" class="form-control" id="MOVC_ESTADO" placeholder="Referencia" [(ngModel)]="movimiento.MOVC_ESTADO">
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group col-md-12">
-            <label for="MOVC_DESCRI">Descripción</label>
-            <textarea type="text" class="form-control" id="MOVC_DESCRI" [(ngModel)]="movimiento.MOVC_DESCRI"></textarea>
-          </div>
-              
-        </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-      </form>
-    </div> -->
+   
     <div id="form-demo">
-
-
-      
-
-    <div id="form-container" >
-      <div>
-        {{movement | json}}
-      </div>
-        <dx-form id="form"
-            [colCount]="4"
-            [formData]="movement">
-            <dxi-item dataField="Empr_Codigo">
-              <dxi-validation-rule type="required" message="Empresa es requerida"></dxi-validation-rule>
-              <dxo-label text="Empresa"> </dxo-label>
-              <dx-lookup (onValueChanged)="onValueChanged($event)"
-              [dataSource]="businessList" valueExpr="Empr_Codigo" displayExpr="Empr_Nombre"  cancelButtonText="Cancelar" noDataText="No hay datos" searchPlaceholder="Buscar"
+      <div id="form-container">       
+        <dx-form id="form" [colCount]="3" [formData]="movement"  (submit)="save($event)">      
+          <dxi-item dataField="Empr_Codigo">
+            <dxi-validation-rule type="required" message="Empresa es requerida"></dxi-validation-rule>
+            <dxo-label text="Empresa"> </dxo-label>
+            <dx-lookup (onValueChanged)="onValueChanged($event)" [dataSource]="businessList" valueExpr="Empr_Codigo"
+              displayExpr="Empr_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos" searchPlaceholder="Buscar"
               placeholder="Seleccione empresa...">
-          </dx-lookup>
+            </dx-lookup>
 
-            </dxi-item>
-            <dxi-item dataField="Movc_Numero" dataType="number" [label]="{text: 'Número'}" >
-              <dxi-validation-rule type="required" message="Número es requerido"></dxi-validation-rule>
-            </dxi-item>
-             <dxi-item dataField="Docu_Consec">
-              <dxi-validation-rule type="required" message="Documento es requerido"></dxi-validation-rule>
-              <dxo-label text="Documento"> </dxo-label>
-              <dx-lookup
-              [dataSource]="documentsAccountingsList" valueExpr="Docu_Consec" displayExpr="Docu_Nombre"  cancelButtonText="Cancelar" noDataText="No hay datos" searchPlaceholder="Buscar"
+          </dxi-item>
+          <dxi-item dataField="Movc_Numero" dataType="number" [label]="{text: 'Número'}">
+            <dxi-validation-rule type="required" message="Número es requerido"></dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="Docu_Consec">
+            <dxi-validation-rule type="required" message="Documento es requerido"></dxi-validation-rule>
+            <dxo-label text="Documento"> </dxo-label>
+            <dx-lookup (onValueChanged)="setDocument($event)" [dataSource]="documentsAccountingsList" valueExpr="Docu_Consec" displayExpr="Docu_Nombre"
+              cancelButtonText="Cancelar" noDataText="No hay datos" searchPlaceholder="Buscar"
               placeholder="Seleccione documento...">
-          </dx-lookup>
+            </dx-lookup>
 
-            </dxi-item>
-            <dxi-item dataField="Movc_Fechas" [label]="{text: 'Fecha'}"  editorType="dxDateBox"  [editorOptions]="{ disabled: true }" >
-                <dxi-validation-rule type="required" message="Fecha is requireda"></dxi-validation-rule>
-            </dxi-item>    
-             
-            <!-- <dxi-item dataField="Sucu_Consec"   [label]="{text: 'Sucursal'}"  editorType="dxSelectBox"  [editorOptions]="{ items: branchOfficeList }">
+          </dxi-item>
+          <dxi-item dataField="Movc_Fechas" [label]="{text: 'Fecha'}" editorType="dxDateBox"
+            [editorOptions]="{ disabled: true }">
+            <dxi-validation-rule type="required" message="Fecha is requireda"></dxi-validation-rule>
+          </dxi-item>
+
+          <!-- <dxi-item dataField="Sucu_Consec"   [label]="{text: 'Sucursal'}"  editorType="dxSelectBox"  [editorOptions]="{ items: branchOfficeList }">
              
             </dxi-item> -->
-            <dxi-item dataField="Movc_Sucu">
-              <dxi-validation-rule type="required" message="Sucursal es requerida"></dxi-validation-rule>
-              <dxo-label text="Sucursal"> </dxo-label>
-              <!-- <dx-select-box  [dataSource]="branchOfficeList" valueExpr="Sucu_Codigo" displayExpr="Sucu_Nombre" placeholder="Seleccione Sucursal">
+          <dxi-item dataField="Movc_Sucu">
+            <dxi-validation-rule type="required" message="Sucursal es requerida"></dxi-validation-rule>
+            <dxo-label text="Sucursal"> </dxo-label>
+            <!-- <dx-select-box  [dataSource]="branchOfficeList" valueExpr="Sucu_Codigo" displayExpr="Sucu_Nombre" placeholder="Seleccione Sucursal">
               </dx-select-box> -->
-              <dx-lookup
-    [dataSource]="branchOfficeList" valueExpr="Sucu_Codigo" displayExpr="Sucu_Nombre"  cancelButtonText="Cancelar" noDataText="No hay datos" searchPlaceholder="Buscar"
-    placeholder="Seleccione sucursal...">
-</dx-lookup>
+            <dx-lookup (onValueChanged)="setBranchOffice($event)" [dataSource]="branchOfficeList" valueExpr="Sucu_Consec" displayExpr="Sucu_Nombre"
+              cancelButtonText="Cancelar" noDataText="No hay datos" searchPlaceholder="Buscar"
+              placeholder="Seleccione sucursal...">
+            </dx-lookup>
           </dxi-item>
-                     
-            <dxi-item dataField="Movc_Refere" text="Referencia" [label]="{text: 'Referencia'}" >
-              <dxi-validation-rule type="required" message="Referencia es requerida"></dxi-validation-rule>
-            </dxi-item>     
-            <dxi-item dataField="Movc_Descri" [label]="{text: 'Descripción'}" text="Descripción" editorType="dxTextArea"  [colSpan]="4"></dxi-item>     
-            
-             <dxi-item 
-            itemType="button"            
-            horizontalAlignment="left"
+
+          <dxi-item dataField="Movc_Refere" text="Referencia" [label]="{text: 'Referencia'}">
+            <dxi-validation-rule type="required" message="Referencia es requerida"></dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="Movc_Descri" [label]="{text: 'Descripción'}" text="Descripción" editorType="dxTextArea"
+            [colSpan]="4"></dxi-item>
+
+          <dxi-item colSpan="2"  itemType="button" horizontalAlignment="center" 
             [buttonOptions]="{ text:'Guardar', icon:'check', type:'success', useSubmitBehavior: true}">
-           
-        </dxi-item> 
+          </dxi-item>
+          <!-- <dxi-item>
+            <dx-button
+            text="Guardar"
+            type="success"
+            [useSubmitBehavior]="true">
+        </dx-button>
+          </dxi-item> -->
+          
         </dx-form>
 
-     
+        <!-- <dx-button
+        [disabled] = "!isPossibleApply"
+            text="Aplicar"
+            type="success"
+            (onClick)="aplicar()">
+        </dx-button> -->
+        <!-- <dx-button
+        stylingMode="contained"
+        text="Contained"
+        type="submit"
+        [width]="120"
+        (onClick)="save()">
+    </dx-button> -->
+
+      </div>
+
     </div>
- 
-  </div>
 
 
-    
+
   </div>
 </div>
 <div class="card">
- 
+
   <div class="card-header bg-primary text-light">
-   Detalle
-   </div>
-   <div class="card-body">
-     <dx-data-grid [editing]="editing" [dataSource]="movement.Movements" [showBorders]="true" 
-         [showRowLines]="true"      
-         [showBorders]="true"
-         [rowAlternationEnabled]="true">
-     [highlightChanges]="true">      
-       <dxo-paging [pageSize]="10" [enabled]="true"></dxo-paging>
-       <dxo-search-panel
-       [visible]="true" [placeholder]="'Buscar'"
-       [highlightCaseSensitive]="true"></dxo-search-panel>     
-      <dxo-editing 
-           mode="popup"
-             [useIcons]="true"
-           [allowUpdating]="true"
-           [allowDeleting]="true"
-           [allowAdding]="true">
-           <dxo-texts
-            deleteRow="Borrar fila"
-            addRow="Añadir"
-            cancelAllChanges="Cancelar cambios"
-            editRow="Editar"
-            saveRowChanges="Guardar"
-            cancelRowChanges="Cancelar"
-            onfirmDeleteMessage="Está seguro de eliminar este registro?">
+    Detalle
+  </div>
+
+
+  <div class="card-body">
+
+   
+    
+    <dx-data-grid [editing]="editing" [dataSource]="movement.Movements" [showBorders]="true" [showRowLines]="true"
+      [showBorders]="true" [rowAlternationEnabled]="true">
+      [highlightChanges]="true">
+      <dxo-paging [pageSize]="10" [enabled]="true"></dxo-paging>
+      <dxo-search-panel [visible]="true" [placeholder]="'Buscar'" [highlightCaseSensitive]="true"></dxo-search-panel>
+      <dxo-editing mode="popup" [useIcons]="true" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true">
+        <dxo-texts deleteRow="Borrar fila" addRow="Añadir" cancelAllChanges="Cancelar cambios" editRow="Editar"
+          saveRowChanges="Guardar" cancelRowChanges="Cancelar"
+          onfirmDeleteMessage="Está seguro de eliminar este registro?">
         </dxo-texts>
-      </dxo-editing>   
-      <dxi-column
-      dataField="Cuen_Consec"
-      caption="Cuenta"   >         
-      <dxo-lookup
-          [dataSource]="contabilityAccountingsList"
-          displayExpr="Cuen_Nombre" 
-          valueExpr="Cuen_Codigo">
-      </dxo-lookup>
-  </dxi-column>
-      <dxi-column dataField="Dmco_Descri"  caption="Descripción" dataType="string">
-        <dxi-validation-rule 
-        type="required"
-        message="Descripción requerida">
-    </dxi-validation-rule>
+      </dxo-editing>
+      <dxi-column dataField="Cuen_Consec" caption="Cuenta" >
+        <dxo-lookup [dataSource]="contabilityAccountingsList" displayExpr="Cuen_Nombre" valueExpr="Cuen_Codigo">
+        </dxo-lookup>
+      </dxi-column>
+      <dxi-column dataField="Dmco_Descri" caption="Descripción" dataType="string">
+        <dxi-validation-rule type="required" message="Descripción requerida">
+        </dxi-validation-rule>
       </dxi-column>
       <dxi-column dataField="Dmco_Refere" caption="Referencia" dataType="string">
-        <dxi-validation-rule 
-                    type="required"
-                    message="Referencia requerida">
-                </dxi-validation-rule>  
+        <dxi-validation-rule type="required" message="Referencia requerida">
+        </dxi-validation-rule>
       </dxi-column>
-      <dxi-column dataField="Dmco_Valdeb" format="currency" caption="Valor Débito" dataType="number">
-        <dxi-validation-rule 
-        type="required"
-        message="Valor débito  requerido">
-    </dxi-validation-rule>
+      <dxi-column dataField="Dmco_Valdeb" format="currency" caption="Valor Débito" dataType="number"  [editorOptions]="{ format: '$ #,##0.##' }">
+        <dxi-validation-rule type="required" message="Valor débito  requerido">
+        </dxi-validation-rule>
       </dxi-column>
-      <dxi-column dataField="Dmco_Valcre" format="currency" caption="Valor Crédito" dataType="number">
-        <dxi-validation-rule 
-        type="required"
-        message="Valor crédito requerido">
-    </dxi-validation-rule>
+      <dxi-column dataField="Dmco_Valcre" format="currency" caption="Valor Crédito" dataType="number" [editorOptions]="{ format: '$ #,##0.##' }">
+        <dxi-validation-rule type="required" message="Valor crédito requerido">
+        </dxi-validation-rule>
       </dxi-column>
-      <dxi-column dataField="Dmco_Valbas" format="currency" caption="Valor Base" dataType="number">
-        <dxi-validation-rule 
-        type="required"
-        message="Valor base requerido">
-    </dxi-validation-rule>
+      <dxi-column dataField="Dmco_Valbas" format="currency" caption="Valor Base" dataType="number" [editorOptions]="{ format: '$ #,##0.##' }">
+        <dxi-validation-rule type="required" message="Valor base requerido">
+        </dxi-validation-rule>
       </dxi-column>
-      <dxi-column dataField="Dmco_Porbas"  caption="Porcentaje Base" dataType="number">
-        <dxi-validation-rule 
-        type="required"
-        message="Porcentaje requerido">
-    </dxi-validation-rule>
+      <dxi-column dataField="Dmco_Porbas" caption="Porcentaje Base" dataType="number">
+        <dxi-validation-rule type="required" message="Porcentaje requerido">
+        </dxi-validation-rule>
       </dxi-column>
-      <dxi-column
-      dataField="Cenc_Consec"
-      caption="Centro de costos"   >         
-      <dxo-lookup
-          [dataSource]="costCenterList"
-          displayExpr="Cenc_Nombre" 
-          valueExpr="Cenc_Consec">
-      </dxo-lookup>
-  </dxi-column>
-     </dx-data-grid>
-   </div>
+      <dxi-column dataField="Ter_Consec" caption="Tercero">
+        <dxo-lookup [dataSource]="thirdpartiesList" displayExpr="Terc_Nombre" valueExpr="Terc_Consec">
+        </dxo-lookup>
+      </dxi-column>
+      <dxi-column dataField="Unin_Consec" caption="Unidad de negocio">
+        <dxo-lookup [dataSource]="unitBusiness" displayExpr="Unin_Nombre" valueExpr="Unin_Consec">
+        </dxo-lookup>
+      </dxi-column>
+      <dxi-column dataField="Cenc_Consec" caption="Centro de costos">
+        <dxo-lookup [dataSource]="costCenterList" displayExpr="Cenc_Nombre" valueExpr="Cenc_Consec">
+        </dxo-lookup>
+      </dxi-column>
+    </dx-data-grid>
+  </div>
 </div>
-

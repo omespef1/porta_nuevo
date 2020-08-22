@@ -635,6 +635,13 @@ export class MenuConfig {
 					page: 'branch-office',
 					translate: 'GENERAL.BRANCH_OFFICE',
 				},
+				{
+					title: 'Terceros',
+					icon: 'flaticon2-browser-2',
+					root: true,
+					page: 'third-parties',
+					translate: 'GENERAL.THIRD_PARTIES',
+				},
 				{section: 'Sistema'},
 				{
 					title: 'Administración de usuarios',

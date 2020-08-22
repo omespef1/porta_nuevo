@@ -19,7 +19,8 @@ export const locale = {
 			ACCOUNTING_MOVEMENT: 'Movimiento Contable'
 		},
 		GENERAL: {
-			BRANCH_OFFICE: 'Sucursales'
+			BRANCH_OFFICE: 'Sucursales',
+			THIRD_PARTIES: 'Terceros'
 		},
 		AUTH: {
 			GENERAL: {

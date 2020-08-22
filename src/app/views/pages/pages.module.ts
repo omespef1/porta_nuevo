@@ -29,6 +29,7 @@ import { UserManagementModule } from './user-management/user-management.module';
 		UserManagementModule
 	],
 	providers: [],
+	declarations: [],
 })
 export class PagesModule {
 }

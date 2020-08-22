@@ -18,7 +18,8 @@ export const locale = {
 			ACCOUNTING_MOVEMENT: 'Accounting Movement'
 		},
 		GENERAL: {
-			BRANCH_OFFICE: 'Branch Office'
+			BRANCH_OFFICE: 'Branch Office',
+			THIRD_PARTIES: 'Third Parties'
 		},
 		AUTH: {
 			GENERAL: {

@@ -13,8 +13,13 @@ export class AccountingMovementService {
 
 
 
-  Save(obj:any): Observable<TransactionSimple> {
-    return this.http.post<TransactionSimple>(`${apiUrl}${API_MOVEMENT_ACCOUNTING_URL}`,obj);
+  Save(obj:any): Observable<Transaction<any>> {
+    return this.http.post<Transaction<any>>(`${apiUrl}${API_MOVEMENT_ACCOUNTING_URL}`,obj);
 }
+
+apply(obj:any): Observable<TransactionSimple> {
+  return this.http.post<TransactionSimple>(`${apiUrl}${API_MOVEMENT_ACCOUNTING_URL}/apply`,obj);
+}
+
 
 }
