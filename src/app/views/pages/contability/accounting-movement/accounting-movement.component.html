@@ -6,9 +6,10 @@
   <div class="card-body">
    
     <div id="form-demo">
-      <div id="form-container">       
-        <dx-form id="form" [colCount]="3" [formData]="movement"  (submit)="save($event)">      
-          <dxi-item dataField="Empr_Codigo">
+      <div id="form-container">     
+        <form #formMov (submit)="save($event)">
+        <dx-form id="form" [colCount]="3" [formData]="movement">      
+          <dxi-item dataField="Empr_Codigo" >
             <dxi-validation-rule type="required" message="Empresa es requerida"></dxi-validation-rule>
             <dxo-label text="Empresa"> </dxo-label>
             <dx-lookup (onValueChanged)="onValueChanged($event)" [dataSource]="businessList" valueExpr="Empr_Codigo"
@@ -52,11 +53,12 @@
             <dxi-validation-rule type="required" message="Referencia es requerida"></dxi-validation-rule>
           </dxi-item>
           <dxi-item dataField="Movc_Descri" [label]="{text: 'Descripción'}" text="Descripción" editorType="dxTextArea"
-            [colSpan]="4"></dxi-item>
-
-          <dxi-item colSpan="2"  itemType="button" horizontalAlignment="center" 
-            [buttonOptions]="{ text:'Guardar', icon:'check', type:'success', useSubmitBehavior: true}">
+            [colSpan]="4">
+            <dxi-validation-rule type="required" message="Descripción requerida">
+            </dxi-validation-rule>
           </dxi-item>
+
+         
           <!-- <dxi-item>
             <dx-button
             text="Guardar"
@@ -64,15 +66,19 @@
             [useSubmitBehavior]="true">
         </dx-button>
           </dxi-item> -->
-          
+          <dxi-item 
+          itemType="button"
+          horizontalAlignment="left"
+          [buttonOptions]="{ text:'Guardar', icon:'check', type:'success', useSubmitBehavior: true}">
+      </dxi-item>
         </dx-form>
-
-        <!-- <dx-button
+</form>
+        <dx-button
         [disabled] = "!isPossibleApply"
             text="Aplicar"
             type="success"
             (onClick)="aplicar()">
-        </dx-button> -->
+        </dx-button>
         <!-- <dx-button
         stylingMode="contained"
         text="Contained"
@@ -112,14 +118,14 @@
         </dxo-texts>
       </dxo-editing>
       <dxi-column dataField="Cuen_Consec" caption="Cuenta" >
-        <dxo-lookup [dataSource]="contabilityAccountingsList" displayExpr="Cuen_Nombre" valueExpr="Cuen_Codigo">
+        <dxo-lookup [dataSource]="contabilityAccountingsList" displayExpr="Cuen_Nombre" valueExpr="Cuen_Consec">
         </dxo-lookup>
       </dxi-column>
       <dxi-column dataField="Dmco_Descri" caption="Descripción" dataType="string">
         <dxi-validation-rule type="required" message="Descripción requerida">
         </dxi-validation-rule>
       </dxi-column>
-      <dxi-column dataField="Dmco_Refere" caption="Referencia" dataType="string">
+      <dxi-column dataField="Mmco_Refere" caption="Referencia" dataType="string">
         <dxi-validation-rule type="required" message="Referencia requerida">
         </dxi-validation-rule>
       </dxi-column>
@@ -139,7 +145,7 @@
         <dxi-validation-rule type="required" message="Porcentaje requerido">
         </dxi-validation-rule>
       </dxi-column>
-      <dxi-column dataField="Ter_Consec" caption="Tercero">
+      <dxi-column dataField="Terc_Consec" caption="Tercero">
         <dxo-lookup [dataSource]="thirdpartiesList" displayExpr="Terc_Nombre" valueExpr="Terc_Consec">
         </dxo-lookup>
       </dxi-column>

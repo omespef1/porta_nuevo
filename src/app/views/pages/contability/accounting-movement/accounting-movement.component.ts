@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 
 import { BusinessService } from "../../../../core/security/_services/business.service";
 
@@ -52,7 +52,8 @@ export class AccountingMovementComponent implements OnInit {
 		private _documents: DocumentService,
 		private _costcenter: CostCenterService,
 		private _thirdparties: ThirdPartiesService,
-		private _businessUnit: BusinessUnitService
+		private _businessUnit: BusinessUnitService,
+		private cd: ChangeDetectorRef
 	) {
 		this.loadBranchOffice();
 	}
@@ -101,11 +102,14 @@ export class AccountingMovementComponent implements OnInit {
 		this.movement.Sucu_Consec = event.value;
 	}
 	onValueChanged(event: any) {
-		this.movement.Empr_Codigo = event.value;
-		console.log(event);
-		this.loadDocumentsAccountings(event.value);
-		this.loadAccountings(event.value);
-		this.loadCostCenter(event.value);
+		if(event !=null){
+			this.movement.Empr_Codigo = event.value;
+			console.log(event);
+			this.loadDocumentsAccountings(event.value);
+			this.loadAccountings(event.value);
+			this.loadCostCenter(event.value);
+		}
+		
 	}
 
 	loadDocumentsAccountings(code: any) {
@@ -127,6 +131,7 @@ export class AccountingMovementComponent implements OnInit {
 	loadThirdParties() {
 		this._thirdparties.GetAllThirdPartie().subscribe((data) => {
 			if (data.ObjTransaction) {
+				console.log(data);
 				this.thirdpartiesList = data.ObjTransaction;
 			}
 		});
@@ -141,8 +146,7 @@ export class AccountingMovementComponent implements OnInit {
 		});
 	}
 
-	save(event) {
-		debugger;
+	save($event) {
 		if (
 			this.movement.Movements == undefined ||
 			this.movement.Movements.length == 0
@@ -157,6 +161,7 @@ export class AccountingMovementComponent implements OnInit {
 				if (data.Retorno == 0) {
 					this.token = data.ObjTransaction;
 					this.isPossibleApply = true;
+					this.cd.detectChanges();
 					notify("Registro guardado!", "success", 3000);
 				} else {
 					notify(
