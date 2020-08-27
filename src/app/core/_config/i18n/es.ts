@@ -16,7 +16,8 @@ export const locale = {
 		},
 
 		CONTABILITY: {
-			ACCOUNTING_MOVEMENT: 'Movimiento Contable'
+			ACCOUNTING_MOVEMENT: 'Movimiento Contable',
+			ACCOUNTING_MOVEMENT_QUERY: 'Consulta Movimiento Contable'
 		},
 		GENERAL: {
 			BRANCH_OFFICE: 'Sucursales',

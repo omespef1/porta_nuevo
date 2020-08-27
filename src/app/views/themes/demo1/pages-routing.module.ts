@@ -38,6 +38,10 @@ const routes: Routes = [
 				loadChildren: 'app/views/pages/contability/accounting-movement/accounting-movement.module#AccountingMovementModule'
 			  },
 			  {
+				path: 'accounting-movement-query', // <= Page URL
+				loadChildren: 'app/views/pages/contability/accounting-movement-query/accouinting-movemnt-query/accouinting-movemnt-query.module#AccouintingMovemntQueryModule'
+			  },
+			  {
 				path: 'branch-office', // <= Page URL
 				loadChildren: 'app/views/pages/general/branch-office/branch-office.module#BranchOfficeModule'
 			  },

@@ -5,6 +5,7 @@ import { ThirdPartiesService } from "../../../../core/general/_services/third-pa
 import { BusinessService } from "../../../../core/security/_services/business.service";
 import { ThirdPartie } from "../../../../core/general/_models/third-partie.model";
 import { Business } from "../../../../core/security/models/business.model";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
 	selector: "kt-third-parties",
@@ -21,6 +22,7 @@ export class ThirdPartiesComponent implements OnInit {
 		{ code: "PA", text: "Pasaporte" },
 		{ code: "RC", text: "Registro Civil" },
 		{ code: "TI", text: "Tarjeta de Identidad" },
+		{ code: "NT", text: "Nit" }
 	];
 	loading = false;
 	editing: {
@@ -31,7 +33,8 @@ export class ThirdPartiesComponent implements OnInit {
 
 	constructor(
 		private _thirdPartie: ThirdPartiesService,
-		private _business: BusinessService
+		private _business: BusinessService,
+		private httpClient: HttpClient
 	) {
 		this.GetAllBusiness();
 	}
@@ -51,7 +54,14 @@ export class ThirdPartiesComponent implements OnInit {
 			}
 		});
 	}
-
+    asyncValidation(params) {
+        return this.httpClient.post("https://js.devexpress.com/Demos/Mvc/RemoteValidation/CheckUniqueEmailAddress", {            
+                id: params.data.ID,
+                email: params.value                       
+            }, {
+                responseType: "json"
+            }).toPromise();
+    }
 	async GetAllBusiness() {
 		this._business.GetAllBusiness().subscribe((data) => {
 			if (data.ObjTransaction) {

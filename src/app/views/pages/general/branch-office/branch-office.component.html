@@ -16,7 +16,7 @@
     >
 </dx-load-panel>
   <div id="branchOffice" class="card-body">
-    <dx-data-grid [editing]="editing" [dataSource]="data"   [showBorders]="true"    [repaintChangesOnly]="true"
+    <dx-data-grid  [editing]="editing" [dataSource]="data"   [showBorders]="true"    [repaintChangesOnly]="true"
     [showColumnLines]="true"
         [showRowLines]="true"
         (onRowUpdated)="updateBranchOffice($event)"
@@ -25,12 +25,14 @@
         [rowAlternationEnabled]="true">
     [highlightChanges]="true">      
       <dxo-paging [pageSize]="10"></dxo-paging>
+      ​<dxo-filter-row [visible]="true"></dxo-filter-row>
+<dxo-header-filter [visible]="true"></dxo-header-filter>
       <dxo-search-panel
       [visible]="true"
       [highlightCaseSensitive]="true" [placeholder]="'Buscar'">
   </dxo-search-panel>
      <dxo-editing  
-          mode="popup"
+          mode="form"
           [useIcons]="true"
           [allowUpdating]="true"
           [allowDeleting]="true"

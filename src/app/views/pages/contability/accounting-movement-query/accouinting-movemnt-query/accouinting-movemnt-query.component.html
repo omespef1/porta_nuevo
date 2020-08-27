@@ -1,0 +1,57 @@
+
+<div class="card">
+  <div class="card-header bg-primary text-light darkdiv">
+   Consulta Movimiento Contable
+  </div>
+  <div class="card-body">
+   
+    <div id="form-demo">
+      <div id="form-container" class="dx-viewport">  
+        <dx-data-grid id="gridContainer"
+    [dataSource]="data"
+    [masterDetail]="{ enabled: true, template: 'detail' }"
+    keyExpr="movc_consec"
+    [showBorders]="true" 
+    [columnAutoWidth]="true" [showColumnLines]="true"
+    [showRowLines]="true"  [rowAlternationEnabled]="true">
+​<dxo-filter-row [visible]="true"></dxo-filter-row>
+<dxo-header-filter [visible]="true"></dxo-header-filter>
+
+    <dxi-column dataField="movc_numero" dataType="text"  caption="Numero"></dxi-column>
+    <dxi-column dataField="movc_fechas"  dataType="date"  caption="Fecha"></dxi-column>
+    <dxi-column dataField="movc_descri" dataType="text"  caption="Descripción"></dxi-column>
+    <dxi-column dataField="movc_refere" dataType="text" caption="Referencia"></dxi-column>
+    <dxi-column
+        caption="Estado"
+        [calculateCellValue]="getState">
+    </dxi-column>
+    <dxi-column dataField="empr_nombre" dataType="text" caption="Empresa" ></dxi-column>
+​
+    <div *dxTemplate="let movement of 'detail'">
+        
+        <dx-data-grid 
+        
+            [dataSource]="movement.data.details"
+            [showBorders]="true"
+            [columnAutoWidth]="true" [showColumnLines]="true"
+            >
+            <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-header-filter [visible]="true"></dxo-header-filter>
+                <dxi-column dataField="docu_nombre"   caption="Documento" dataType="text"></dxi-column>
+                <dxi-column dataField="sucu_nombre" caption="Sucursal" dataType="text"></dxi-column>
+                <dxi-column dataField="dmco_descri" caption="Descripción" dataType="text"></dxi-column>
+                <dxi-column dataField="mmco_refere" caption="Referencia" dataType="text"></dxi-column>
+                <dxi-column dataField="dmco_valdeb" format="currency" caption="Débito" dataType="number"></dxi-column>
+                <dxi-column dataField="dmco_valcre" format="currency" caption="Crédito" dataType="number"></dxi-column>
+                <dxi-column dataField="dmco_valbas" format="currency" caption="Valor base" dataType="number"></dxi-column>
+                <dxi-column dataField="dmco_porbas" caption="Porcentaje base" dataType="number"></dxi-column>
+                <dxi-column dataField="cuen_nombre" caption="Cuenta" dataType="text"></dxi-column>
+                <dxi-column dataField="terc_nombre" caption="Tercero" dataType="text"></dxi-column>
+                <dxi-column dataField="cenc_nombre" caption="C. Costos" dataType="text"></dxi-column>
+                <dxi-column dataField="unin_nombre" caption="U. Negocio" dataType="text"></dxi-column>               
+        </dx-data-grid>       
+    </div>
+</dx-data-grid>
+      </div>
+    </div>
+  </div>

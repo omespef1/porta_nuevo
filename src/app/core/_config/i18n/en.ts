@@ -15,7 +15,8 @@ export const locale = {
 			DASHBOARD: 'Dashboard',
 		},
 		CONTABILITY: {
-			ACCOUNTING_MOVEMENT: 'Accounting Movement'
+			ACCOUNTING_MOVEMENT: 'Accounting Movement',
+			ACCOUNTING_MOVEMENT_QUERY: 'Accounting Movement Query'
 		},
 		GENERAL: {
 			BRANCH_OFFICE: 'Branch Office',

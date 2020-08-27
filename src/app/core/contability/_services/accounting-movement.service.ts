@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { Transaction, TransactionSimple } from '../../auth/_models/transaction.model';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from '../../../../assets/config/appplication';
+import { AccountingMovementGet } from "../_models/accounting-movement.model";
 const API_MOVEMENT_ACCOUNTING_URL = "api/Cont_Mvon";
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ apply(obj:any): Observable<TransactionSimple> {
   return this.http.post<TransactionSimple>(`${apiUrl}${API_MOVEMENT_ACCOUNTING_URL}/apply`,obj);
 }
 
+
+GetAllAcoountingMovements(): Observable<Transaction<AccountingMovementGet[]>> {
+  return this.http.get<Transaction<AccountingMovementGet[]>>(`${apiUrl}${API_MOVEMENT_ACCOUNTING_URL}`);
+}
 
 }

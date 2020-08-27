@@ -626,6 +626,13 @@ export class MenuConfig {
 					translate: 'CONTABILITY.ACCOUNTING_MOVEMENT',
 				},
 				{
+					title: 'Consulta Movimiento contable',				
+					icon: 'flaticon2-browser-2',
+					root: true,
+					page: 'accounting-movement-query',
+					translate: 'CONTABILITY.ACCOUNTING_MOVEMENT_QUERY',
+				},
+				{
 					section: 'General'
 				},
 				{

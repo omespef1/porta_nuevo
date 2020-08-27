@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 // NgBootstrap
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Partials
 import { PartialsModule } from '../partials/partials.module';
 // Pages
 import { CoreModule } from '../../core/core.module';
-import { MailModule } from './apps/mail/mail.module';
-import { ECommerceModule } from './apps/e-commerce/e-commerce.module';
+// import { MailModule } from './apps/mail/mail.module';
+// import { ECommerceModule } from './apps/e-commerce/e-commerce.module';
 import { UserManagementModule } from './user-management/user-management.module';
 
 
@@ -21,11 +21,11 @@ import { UserManagementModule } from './user-management/user-management.module';
 		CommonModule,
 		HttpClientModule,
 		FormsModule,
-		NgbModule,
+		// NgbModule,
 		CoreModule,
 		PartialsModule,
-		MailModule,
-		ECommerceModule,
+		// MailModule,
+		// ECommerceModule,
 		UserManagementModule
 	],
 	providers: [],

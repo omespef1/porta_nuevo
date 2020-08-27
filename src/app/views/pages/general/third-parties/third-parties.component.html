@@ -24,12 +24,14 @@
         [rowAlternationEnabled]="true">
     [highlightChanges]="true">      
       <dxo-paging [pageSize]="10"></dxo-paging>
+      ​<dxo-filter-row [visible]="true"></dxo-filter-row>
+<dxo-header-filter [visible]="true"></dxo-header-filter>
       <dxo-search-panel
       [visible]="true"
       [highlightCaseSensitive]="true" [placeholder]="'Buscar'">
   </dxo-search-panel>
      <dxo-editing  
-          mode="popup"
+     mode="form"
           [useIcons]="true"
           [allowUpdating]="true"
           [allowDeleting]="true"
@@ -76,17 +78,27 @@
     valueExpr="code">
 </dxo-lookup>
      </dxi-column>
-     <dxi-column dataField="Terc_Nomcom" caption="Nombre Completo" dataType="string">
+     <dxi-column dataField="Terc_Nomcom" caption="Nombre comercial" dataType="string">
       <dxi-validation-rule 
         type="required"
-        message="Nombre completo requerido">
+        message="Nombre comercial requerido">
     </dxi-validation-rule>
      </dxi-column> 
-     <dxi-column dataField="Terc_Direci" caption="Dirección" dataType="string">
+     <dxi-column dataField="Terc_Direci" caption="Dirección" dataType="string" >
       <dxi-validation-rule 
         type="required"
         message="Dirección requerido">
     </dxi-validation-rule>
+     </dxi-column> 
+     <dxi-column dataField="Terc_Digver" caption="Dígito Verificación" dataType="number">
+      <dxi-validation-rule 
+        type="required"
+        message="Dígito Verificación requerido">
+    </dxi-validation-rule>
+    <dxi-validation-rule 
+    type="stringLength"  max="1" 
+    message="Dígito de Verificación no puede contener más de 1 dígito">
+</dxi-validation-rule>
      </dxi-column>   
      <dxi-column dataField="Terc_Telefo" caption="Teléfono" dataType="number">
       <dxi-validation-rule 
@@ -95,10 +107,8 @@
     </dxi-validation-rule>
      </dxi-column>  
      <dxi-column dataField="Terc_Emails" caption="Email" dataType="string">
-      <dxi-validation-rule 
-        type="required"
-        message="Email requerido">
-    </dxi-validation-rule>
+      <dxi-validation-rule type="required" message="Email requerido"></dxi-validation-rule>
+      <dxi-validation-rule type="email" message="Email no válido"></dxi-validation-rule>
      </dxi-column> 
      <dxi-column
      dataField="Terc_Estado"

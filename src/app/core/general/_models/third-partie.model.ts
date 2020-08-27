@@ -6,10 +6,11 @@ export class ThirdPartie {
 	Terc_Tipdoc: string;
 	Terc_Nomcom: string;
 	Terc_Direci: string;
+	Terc_Digver: number;
 	Terc_Telefo: string;
 	Terc_Emails: string;
 	Terc_Estado: string;
 	Audi_Estadi: string;
 	Audi_Usuari: string;
-	Audi_Afecha: string;
+	Audi_Afecha: Date;
 }

@@ -6,7 +6,14 @@
   <div class="card-body">
    
     <div id="form-demo">
-      <div id="form-container">     
+      <div id="form-container">  
+        <dx-button
+        [disabled] = "!isPossibleApply"
+        icon="save"
+            text="Aplicar"
+            type="success"
+            (onClick)="aplicar()">
+        </dx-button>   
         <form #formMov (submit)="save($event)"  labelLocation="top">
         <dx-form id="form" [colCount]="3" [formData]="movement">      
           <dxi-item dataField="Empr_Codigo" >
@@ -31,7 +38,7 @@
 
           </dxi-item>
           <dxi-item dataField="Movc_Fechas" [label]="{text: 'Fecha'}" editorType="dxDateBox"
-            [editorOptions]="{ disabled: true }">
+            >
             <dxi-validation-rule type="required" message="Fecha is requireda"></dxi-validation-rule>
           </dxi-item>
 
@@ -52,8 +59,8 @@
           <dxi-item dataField="Movc_Refere" text="Referencia" [label]="{text: 'Referencia'}">
             <dxi-validation-rule type="required" message="Referencia es requerida"></dxi-validation-rule>
           </dxi-item>
-          <dxi-item dataField="Movc_Descri" [label]="{text: 'Descripción'}" text="Descripción" editorType="dxTextArea"
-            [colSpan]="4">
+          <dxi-item dataField="Movc_Descri" [label]="{text: 'Descripcion'}"  editorType="dxTextArea"
+            [colSpan]="3"  [editorOptions]="{ height: 100 }">
             <dxi-validation-rule type="required" message="Descripción requerida">
             </dxi-validation-rule>
           </dxi-item>
@@ -66,20 +73,14 @@
             [useSubmitBehavior]="true">
         </dx-button>
           </dxi-item> -->
-          <dxi-item 
+          <dxi-item [colSpan]="3"
           itemType="button"
-          horizontalAlignment="left"
+          horizontalAlignment="right"
           [buttonOptions]="{ text:'Guardar', icon:'check', type:'success', useSubmitBehavior: true}">
       </dxi-item>
         </dx-form>
 </form>
-        <dx-button
-        [disabled] = "!isPossibleApply"
-        icon="save"
-            text="Aplicar"
-            type="success"
-            (onClick)="aplicar()">
-        </dx-button>
+       
         <!-- <dx-button
         stylingMode="contained"
         text="Contained"
@@ -112,7 +113,7 @@
       [highlightChanges]="true">
       <dxo-paging [pageSize]="10" [enabled]="true"></dxo-paging>
       <dxo-search-panel [visible]="true" [placeholder]="'Buscar'" [highlightCaseSensitive]="true"></dxo-search-panel>
-      <dxo-editing mode="popup" [useIcons]="true" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true">
+      <dxo-editing mode="form" [useIcons]="true" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true">
         <dxo-texts deleteRow="Borrar fila" addRow="Añadir" cancelAllChanges="Cancelar cambios" editRow="Editar"
           saveRowChanges="Guardar" cancelRowChanges="Cancelar"
           onfirmDeleteMessage="Está seguro de eliminar este registro?">
