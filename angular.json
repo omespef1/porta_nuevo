@@ -31,9 +31,8 @@
             ],
             "styles": [
               "node_modules/devextreme/dist/css/dx.common.css",
-              "node_modules/devextreme/dist/css/dx.light.css",      
+              "node_modules/devextreme/dist/css/dx.light.css",
               "src/styles.scss"
-                 
             ],
             "scripts": [
               "src/assets/vendors/global/vendors.bundle.js",
@@ -64,7 +63,7 @@
                   "maximumWarning": "5mb",
                   "maximumError": "5mb"
                 }
-              ]             
+              ]
             }
           }
         },
@@ -92,8 +91,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "./karma.conf.js",
-            "scripts": [
-            ],
+            "scripts": [],
             "styles": [
               "src/styles.scss"
             ],
@@ -142,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "metronic"
+  "defaultProject": "metronic",
+  "cli": {
+    "analytics": false
+  }
 }
