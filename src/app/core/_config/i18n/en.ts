@@ -22,6 +22,9 @@ export const locale = {
 			BRANCH_OFFICE: 'Branch Office',
 			THIRD_PARTIES: 'Third Parties'
 		},
+		INVETARY: {
+			INVETARY_MOVEMENT:'Inventary Movement'
+		},
 		AUTH: {
 			GENERAL: {
 				OR: 'Or',

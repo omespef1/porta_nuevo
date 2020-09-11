@@ -633,6 +633,13 @@ export class MenuConfig {
 					translate: 'CONTABILITY.ACCOUNTING_MOVEMENT_QUERY',
 				},
 				{
+					title:'Movimiento de inventario',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'inventary-movement',
+					translate: 'INVETARY.INVETARY_MOVEMENT'
+				},
+				{
 					section: 'General'
 				},
 				{

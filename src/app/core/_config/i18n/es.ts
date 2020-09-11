@@ -23,6 +23,9 @@ export const locale = {
 			BRANCH_OFFICE: 'Sucursales',
 			THIRD_PARTIES: 'Terceros'
 		},
+		INVETARY: {
+			INVETARY_MOVEMENT:'Movimiento de inventario'
+		},
 		AUTH: {
 			GENERAL: {
 				OR: 'O',

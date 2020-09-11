@@ -46,6 +46,10 @@ const routes: Routes = [
 				loadChildren: 'app/views/pages/general/branch-office/branch-office.module#BranchOfficeModule'
 			  },
 			  {
+				  path: 'inventary-movement',
+				  loadChildren:'app/views/pages/inventary/inventary-movement/inventary-movement.module#InventaryMovementModule'
+			  },
+			  {
 				path: 'third-parties', // <= Page URL
 				loadChildren: 'app/views/pages/general/third-parties/third-parties.module#ThirdPartiesModule'
 			  },

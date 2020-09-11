@@ -9,7 +9,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 // Angular in memory
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // NgBootstrap
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Perfect Scroll bar
 import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 // SVG inline
@@ -99,7 +99,7 @@ export function hljsLanguages(): HighlightLanguage[] {
 		StoreRouterConnectingModule.forRoot({stateKey: 'router'}),
 		StoreDevtoolsModule.instrument(),
 		AuthModule.forRoot(),
-		// NgbModule,
+		NgbModule,
 		TranslateModule.forRoot(),
 		MatProgressSpinnerModule,
 		InlineSVGModule.forRoot()
