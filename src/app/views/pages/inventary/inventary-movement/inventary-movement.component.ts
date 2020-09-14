@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { InvetaryMovement } from "../../../../core/inventary/models/inventary-movement.model";
 import { DocumentService } from "../../../../core/general/_services/document.service";
 import { DocumentAccounting } from "../../../../core/general/_models/document.model";
@@ -16,6 +16,9 @@ import { Product } from '../../../../core/inventary/models/product.model';
 import { ProductService } from '../../../../core/inventary/_services/product.service';
 import { CellarService } from '../../../../core/inventary/_services/cellar.service';
 import { Cellar } from "../../../../core/inventary/models/cellar.model";
+import { InventaryMovementService } from '../../../../core/inventary/_services/inventary-movement.service';
+import notify from 'devextreme/ui/notify';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'kt-inventary-movement',
@@ -24,6 +27,8 @@ import { Cellar } from "../../../../core/inventary/models/cellar.model";
 })
 export class InventaryMovementComponent implements OnInit {
   isPossibleApply=false;
+  loadIndicatorVisible = false;
+  token: any;
   businessList: Business[] = [];
   unitBusiness: BusinessUnit[] = [];
   branchOfficeList:BranchOffice[]=[];
@@ -50,7 +55,9 @@ export class InventaryMovementComponent implements OnInit {
     private _branch: BranchOfficeService,
     private _businessUnit: BusinessUnitService,
     private _products:ProductService,
-    private _cellar:CellarService) { }
+    private _cellar:CellarService,
+    private _movement:InventaryMovementService,
+    private cd: ChangeDetectorRef) { }
    
    
    
@@ -60,12 +67,49 @@ export class InventaryMovementComponent implements OnInit {
     
     }
   
-  aplicar(){
-
-  }
-  save(){
-
-  }
+    aplicar(form:NgForm) {
+      console.log("aplicando");    
+      this._movement.apply(this.movement).subscribe((data) => {
+        if (data.Retorno == 0) {
+          notify("Registro aplicado", "success", 3000);
+          this.movement = new InvetaryMovement();
+         form.reset();
+        } else {
+          notify(data.TxtError, "danger", 3000);
+        }
+      });
+    }
+    saveAction(){
+      document.getElementById("dxGuardar").click();
+    }
+	save($event) {
+		if (
+			this.movement.movements == undefined ||
+			this.movement.movements.length == 0
+		) {
+			notify("Debe ingresar al menos un detalle", "warning", 3000);
+		} else {
+			this.loadIndicatorVisible = true;
+			console.log("guardando...");
+			this._movement.Save(this.movement).subscribe((data) => {
+				this.loadIndicatorVisible = false;
+				console.log(data);
+				if (data.Retorno == 0) {
+          this.token = data.ObjTransaction;
+          this.movement.movi_consec = this.token.headerToken;
+					this.isPossibleApply = true;
+					this.cd.detectChanges();
+					notify("Registro guardado!", "success", 3000);
+				} else {
+					notify(
+						"Error generando documento contable. Verifique.",
+						"warning",
+						3000
+					);
+				}
+			});
+		}
+	}
 
   onValueChanged(event: any) {
 		if(event !=null){
@@ -81,7 +125,15 @@ export class InventaryMovementComponent implements OnInit {
 		}
 		
   }
+
+  setTypeMovement(event:any){
+    this.movement.movi_clamov = event.value;
+  }
   
+  calculateCellValue(newData){
+    newData.dmin_valtot = newData.dmin_valimp + newData.dmin_valmov;
+  
+  }
   loadDocumentsAccountings(code: any) {
 		this._documents.GetDocumentAccounting(code).subscribe((data) => {
 			if (data.ObjTransaction) {
@@ -141,7 +193,7 @@ export class InventaryMovementComponent implements OnInit {
 		});
   }
   loadProducts(){
-    this._products.GetAllProduct(this.movement.empr_codigo).subscribe(resp=>{
+    this._products.GetAllProduct().subscribe(resp=>{
       if(resp.ObjTransaction){
         this.productsList = resp.ObjTransaction;
       }
@@ -157,7 +209,7 @@ export class InventaryMovementComponent implements OnInit {
   }
 
   loadCellarList(){
-this._cellar.GetAllCellar(this.movement.empr_codigo).subscribe(data=>{
+this._cellar.GetAllCellar().subscribe(data=>{
   if(data.ObjTransaction){
     this.cellarList = data.ObjTransaction;
   }

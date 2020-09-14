@@ -50,6 +50,22 @@ const routes: Routes = [
 				  loadChildren:'app/views/pages/inventary/inventary-movement/inventary-movement.module#InventaryMovementModule'
 			  },
 			  {
+				path: 'inventary-cellar',
+				loadChildren:'app/views/pages/inventary/inventary-cellar/inventary-cellar.module#InventaryCellarModule'
+			},
+			{
+				path: 'inventary-products',
+				loadChildren:'app/views/pages/inventary/inventary-products/inventary-products.module#InventaryProductsModule'
+			},
+			{
+				path: 'inventary-type-products',
+				loadChildren:'app/views/pages/inventary/inventary-type-product/inventary-type-product.module#InventaryTypeProductModule'
+			},
+			{
+				path: 'inventary-measurent-unity',
+				loadChildren:'app/views/pages/inventary/inventary-meaasurent-unity/inventary-meaasurent-unity.module#InventaryMeaasurentUnityModule'
+			},
+			  {
 				path: 'third-parties', // <= Page URL
 				loadChildren: 'app/views/pages/general/third-parties/third-parties.module#ThirdPartiesModule'
 			  },

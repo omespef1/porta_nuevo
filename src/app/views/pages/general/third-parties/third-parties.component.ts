@@ -54,14 +54,7 @@ export class ThirdPartiesComponent implements OnInit {
 			}
 		});
 	}
-    asyncValidation(params) {
-        return this.httpClient.post("https://js.devexpress.com/Demos/Mvc/RemoteValidation/CheckUniqueEmailAddress", {            
-                id: params.data.ID,
-                email: params.value                       
-            }, {
-                responseType: "json"
-            }).toPromise();
-    }
+  
 	async GetAllBusiness() {
 		this._business.GetAllBusiness().subscribe((data) => {
 			if (data.ObjTransaction) {

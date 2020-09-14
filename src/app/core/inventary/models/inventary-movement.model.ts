@@ -1,4 +1,7 @@
 export class InvetaryMovement {
+	constructor(){
+		this.movements =[];
+	}
 	movi_consec: any;
 	empr_codigo: any;
 	docu_consec: any;

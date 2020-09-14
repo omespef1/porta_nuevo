@@ -20,6 +20,36 @@ export class PageConfig {
 				'desc': 'Gestión de sucursales'
 		}
 		},
+		'inventary-movement': {
+			page: {
+				'title': 'Movimiento de inventario',
+				'desc': 'Movimiento de inventario'
+		}
+		},
+		'inventary-products': {
+			page: {
+				'title': 'Productos',
+				'desc': 'Gestión de productos'
+		}
+		},
+		'inventary-measurent-unity': {
+			page: {
+				'title': 'Unidades de medida',
+				'desc': 'Gestión de unidades de medida'
+		}
+		},
+		'inventary-cellar': {
+			page: {
+				'title': 'Bodegas',
+				'desc': 'Gestión de bodegas'
+		}
+		},
+		'invetary-type-products': {
+			page: {
+				'title': 'Tipos de producto',
+				'desc': 'Gestión de tipos de producto'
+		}
+		},
 		ngbootstrap: {
 			accordion: {
 				page: {title: 'Accordion', desc: ''}

@@ -12,7 +12,7 @@ import { CoreModule } from '../../core/core.module';
 import { MailModule } from './apps/mail/mail.module';
 import { ECommerceModule } from './apps/e-commerce/e-commerce.module';
 import { UserManagementModule } from './user-management/user-management.module';
-import { InventaryMovementComponent } from './inventary/inventary-movement/inventary-movement.component';
+
 
 
 
@@ -30,7 +30,7 @@ import { InventaryMovementComponent } from './inventary/inventary-movement/inven
 		UserManagementModule
 	],
 	providers: [],
-	declarations: [InventaryMovementComponent],
+	declarations: [],
 })
 export class PagesModule {
 }

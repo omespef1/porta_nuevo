@@ -23,8 +23,12 @@ export const locale = {
 			BRANCH_OFFICE: 'Sucursales',
 			THIRD_PARTIES: 'Terceros'
 		},
-		INVETARY: {
-			INVETARY_MOVEMENT:'Movimiento de inventario'
+		INVENTARY: {
+			INVENTARY_MOVEMENT:'Movimiento de inventario',
+			PRODUCTS:'Productos',
+			MEASURENT_UNITY:'Unidades de medida',
+			CELLAR:'Bodegas',
+			TYPE_PRODUCTS:'Tipos de producto'
 		},
 		AUTH: {
 			GENERAL: {

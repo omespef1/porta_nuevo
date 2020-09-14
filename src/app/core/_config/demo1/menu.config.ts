@@ -345,21 +345,21 @@ export class MenuConfig {
 		aside: {
 			self: {},
 			items: [
-				{
-					title: 'Dashboard',
-					root: true,
-					icon: 'flaticon2-architecture-and-city',
-					page: 'dashboard',
-					translate: 'MENU.DASHBOARD',
-					bullet: 'dot',
-				},
-				{
-					title: 'Layout Builder',
-					root: true,
-					icon: 'flaticon2-expand',
-					page: 'builder'
-				},
-				{section: 'Components'},
+				// {
+				// 	title: 'Dashboard',
+				// 	root: true,
+				// 	icon: 'flaticon2-architecture-and-city',
+				// 	page: 'dashboard',
+				// 	translate: 'MENU.DASHBOARD',
+				// 	bullet: 'dot',
+				// },
+				// {
+				// 	title: 'Layout Builder',
+				// 	root: true,
+				// 	icon: 'flaticon2-expand',
+				// 	page: 'builder'
+				// },
+				// {section: 'Components'},
 				// {
 				// 	title: 'Google Material',
 				// 	root: true,
@@ -633,13 +633,6 @@ export class MenuConfig {
 					translate: 'CONTABILITY.ACCOUNTING_MOVEMENT_QUERY',
 				},
 				{
-					title:'Movimiento de inventario',
-					icon:'flaticon2-browser-2',
-					root:true,
-					page: 'inventary-movement',
-					translate: 'INVETARY.INVETARY_MOVEMENT'
-				},
-				{
 					section: 'General'
 				},
 				{
@@ -655,6 +648,42 @@ export class MenuConfig {
 					root: true,
 					page: 'third-parties',
 					translate: 'GENERAL.THIRD_PARTIES',
+				},
+				{section:'Inventario'},
+				{
+					title:'Movimiento de inventario',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'inventary-movement',
+					translate: 'INVENTARY.INVENTARY_MOVEMENT'
+				},
+				{
+					title:'Bodegas',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'inventary-cellar',
+					translate: 'INVENTARY.CELLAR'
+				},
+				{
+					title:'Productos',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'inventary-products',
+					translate: 'INVENTARY.PRODUCTS'
+				},
+				{
+					title:'Tipos de producto',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'inventary-type-products',
+					translate: 'INVENTARY.TYPE_PRODUCTS'
+				},
+				{
+					title:'Unidades de medida',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'inventary-measurent-unity',
+					translate: 'INVENTARY.MEASURENT_UNITY'
 				},
 				{section: 'Sistema'},
 				{

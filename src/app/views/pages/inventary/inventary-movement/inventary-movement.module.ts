@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InventaryMovementComponent } from './inventary-movement.component';
 import { Routes, RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
-import { DxDataGridModule, DxFormModule, DxSelectBoxModule, DxLookupModule, DxToolbarModule, DxButtonModule, DxLoadIndicatorModule } from "devextreme-angular";
-
+import { DxDataGridModule, DxFormModule, DxSelectBoxModule, DxLookupModule, DxToolbarModule, DxButtonModule, DxLoadIndicatorModule } from 'devextreme-angular';
+import { InventaryMovementComponent } from "./inventary-movement.component";
 
 const routes: Routes = [
   {
@@ -14,9 +13,7 @@ const routes: Routes = [
 ];
 
 
-
 @NgModule({
-  declarations: [InventaryMovementComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -26,6 +23,7 @@ const routes: Routes = [
     DxSelectBoxModule,
     DxLookupModule,
     DxToolbarModule,DxButtonModule,DxLoadIndicatorModule
-  ]
+  ],
+  declarations: [InventaryMovementComponent]
 })
 export class InventaryMovementModule { }
