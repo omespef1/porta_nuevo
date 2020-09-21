@@ -24,6 +24,7 @@ export const locale = {
 		},
 		INVENTARY: {
 			INVENTARY_MOVEMENT:'Inventary Movement',
+			INVENTARY_MOVEMENT_QUERY:'Inventary Movement query',
 			PRODUCTS:'Products',
 			MEASURENT_UNITY:'Measurent_Unity',
 			CELLAR:'Cellar',

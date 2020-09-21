@@ -50,6 +50,10 @@ const routes: Routes = [
 				  loadChildren:'app/views/pages/inventary/inventary-movement/inventary-movement.module#InventaryMovementModule'
 			  },
 			  {
+				  path:'inventary-movement-query',
+				  loadChildren:'app/views/pages/inventary/inventary-movement-query/inventary-movement-query.module#InventaryMovementQueryModule'
+			  },
+			  {
 				path: 'inventary-cellar',
 				loadChildren:'app/views/pages/inventary/inventary-cellar/inventary-cellar.module#InventaryCellarModule'
 			},

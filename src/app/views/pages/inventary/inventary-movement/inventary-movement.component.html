@@ -1,6 +1,10 @@
 <div class="card">
   <div class="card-header bg-primary text-light darkdiv">
-    Movimiento contable
+    Movimiento de inventario
+    <div class="btn-aplicar">
+      <dx-button  icon="plus" text="Nuevo" type="success" (onClick)="refresh()">
+      </dx-button>       
+    </div>
   </div>
   <div class="card-body">
 
@@ -45,8 +49,8 @@
             </dxi-item>
 
 
-            <dxi-item dataField="movi_descri" [label]="{text: 'Descripcion'}" editorType="dxTextArea" [colSpan]="3"
-              [editorOptions]="{ height: 100 }">
+            <dxi-item dataField="movi_descri" [label]="{text: 'Descripcion'}" editorType="dxTextArea" [colSpan]="2"
+              >
               <dxi-validation-rule type="required" message="Descripción requerida">
               </dxi-validation-rule>
             </dxi-item>
@@ -98,24 +102,18 @@
             </dxi-item>          
             <div>
               <dxi-item  id="dxGuardar" [colSpan]="3" itemType="button" horizontalAlignment="right"
-              [buttonOptions]="{ text:'Guardar', icon:'check', type:'success', useSubmitBehavior: true}">
+              [buttonOptions]="{ text:'Guardar', icon:'save', type:'success', useSubmitBehavior: true}">
             </dxi-item>
-            
+            <!-- <dx-button [disabled]="!isPossibleApply" icon="save" text="Aplicar" type="success" (onClick)="aplicar(formMov)">
+            </dx-button>        -->
+            <dxi-item   id="dxAplicar" [colSpan]="3" itemType="button" horizontalAlignment="left"
+            [buttonOptions]="buttonOptionsApply">
+          </dxi-item>
             </div>
           </dx-form>
-        </form>
-      <div class="divBar">
-        <dx-button [disabled]="!isPossibleApply" icon="save" text="Aplicar" type="success" (onClick)="aplicar(formMov)">
-        </dx-button>        
+        </form>            
       </div>
-
-      
-      </div>
-
     </div>
-
-
-
   </div>
 </div>
 <div class="card">

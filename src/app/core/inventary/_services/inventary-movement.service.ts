@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
 import { Transaction, TransactionSimple } from "../../auth/_models/transaction.model";
 
-import { AccountingMovementGet } from "../../contability/_models/accounting-movement.model";
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from '../../../../assets/config/appplication';
+import { InventaryMovementGet } from "../models/inventary-movement.model";
 const API_MOVEMENT_INVENTARY_URL = "api/Inve_Movinv";
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ apply(obj:any): Observable<TransactionSimple> {
 }
 
 
-GetAllInventaryMovements(): Observable<Transaction<AccountingMovementGet[]>> {
-  return this.http.get<Transaction<AccountingMovementGet[]>>(`${apiUrl}${API_MOVEMENT_INVENTARY_URL}`);
+GetAllInventaryMovements(): Observable<Transaction<InventaryMovementGet[]>> {
+  return this.http.get<Transaction<InventaryMovementGet[]>>(`${apiUrl}${API_MOVEMENT_INVENTARY_URL}`);
 }
 }

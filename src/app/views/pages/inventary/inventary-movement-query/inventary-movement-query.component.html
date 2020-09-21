@@ -1,0 +1,60 @@
+
+<div class="card">
+  <div class="card-header bg-primary text-light darkdiv">
+   Consulta Movimiento inventario
+  </div>
+  <div class="card-body">   
+    <div id="form-demo">
+      <div id="form-container" class="dx-viewport">  
+        <dx-data-grid id="gridContainer"
+    [dataSource]="data"
+    [masterDetail]="{ enabled: true, template: 'detail' }"
+    keyExpr="movi_consec"
+    [showBorders]="true" 
+    [columnAutoWidth]="true" [showColumnLines]="true"
+    [showRowLines]="true"  [rowAlternationEnabled]="true">
+​<dxo-filter-row [visible]="true"></dxo-filter-row>
+<dxo-header-filter [visible]="true"></dxo-header-filter>
+    <dxi-column dataField="empr_nombre" dataType="text"  caption="Empresa"></dxi-column>
+    <dxi-column dataField="movi_numero" dataType="text"  caption="Numero"></dxi-column>
+    <dxi-column dataField="movi_fechas"  dataType="date"  caption="Fecha"></dxi-column>
+    <dxi-column dataField="movi_fechas" dataType="text"  caption="Descripción"></dxi-column>
+    <dxi-column dataField="movi_refere" dataType="text" caption="Referencia"></dxi-column>
+    <dxi-column
+    caption="Estado"
+    [calculateCellValue]="getMoviClamov">
+</dxi-column>
+    <dxi-column
+    caption="Estado"
+    [calculateCellValue]="getState">
+</dxi-column>
+    <dxi-column dataField="bode_nombre" dataType="text" caption="Bodega"></dxi-column>
+    <dxi-column dataField="unin_nombre" dataType="text" caption="Unidad de negocio"></dxi-column>
+    <dxi-column dataField="terc_nombre" dataType="text" caption="Tercero"></dxi-column>
+    <dxi-column dataField="sucu_nombre" dataType="text" caption="Sucursal"></dxi-column>
+    <dxi-column dataField="docu_nombre" dataType="text" caption="Documento"></dxi-column>
+    <dxi-column dataField="cenc_nombre" dataType="text" caption="Centro de costos"></dxi-column>   ​
+    <div *dxTemplate="let movement of 'detail'">
+        
+        <dx-data-grid 
+        
+            [dataSource]="movement.data.details"
+            [showBorders]="true"
+            [columnAutoWidth]="true" [showColumnLines]="true"
+            >
+            <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-header-filter [visible]="true"></dxo-header-filter>
+                <dxi-column dataField="prod_nombre"   caption="Producto" dataType="text"></dxi-column>
+                <dxi-column dataField="dmin_descri" caption="Descripción" dataType="text"></dxi-column>
+                <dxi-column dataField="dmin_cantid" caption="Cantidad" dataType="number"></dxi-column>
+                <dxi-column dataField="dmin_valmov" format="currency" caption="Valor movimiento" dataType="number"></dxi-column>
+                <dxi-column dataField="dmin_valimp" format="currency" caption="Valor impuestos" dataType="number"></dxi-column>
+                <dxi-column dataField="dmin_valtot" format="currency" caption="Valor total" dataType="number"></dxi-column>
+                <dxi-column dataField="dmin_nolote" caption="No. lote" dataType="number"></dxi-column>
+                <dxi-column dataField="dmin_feclot" caption="Fecha lote" dataType="date"></dxi-column>                      
+        </dx-data-grid>       
+    </div>
+</dx-data-grid>
+      </div>
+    </div>
+  </div>

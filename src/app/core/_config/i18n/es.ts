@@ -25,6 +25,7 @@ export const locale = {
 		},
 		INVENTARY: {
 			INVENTARY_MOVEMENT:'Movimiento de inventario',
+			INVENTARY_MOVEMENT_QUERY:'Consulta movimiento de inventario',
 			PRODUCTS:'Productos',
 			MEASURENT_UNITY:'Unidades de medida',
 			CELLAR:'Bodegas',

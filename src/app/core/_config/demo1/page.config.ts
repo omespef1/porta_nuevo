@@ -26,6 +26,12 @@ export class PageConfig {
 				'desc': 'Movimiento de inventario'
 		}
 		},
+		'inventary-movement-query': {
+			page: {
+				'title': 'Consulta movimiento de inventario',
+				'desc': 'Consulta movimiento de invetario'
+		}
+		},
 		'inventary-products': {
 			page: {
 				'title': 'Productos',

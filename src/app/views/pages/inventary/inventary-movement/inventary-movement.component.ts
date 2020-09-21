@@ -47,6 +47,15 @@ export class InventaryMovementComponent implements OnInit {
 		allowAdding: true; // Enables insertion
 		allowDeleting: true; // Enables removing
   };
+  buttonOptionsApply = {
+    text: "Aplicar",
+    icon:'check',
+    type: "success",   
+    onClick: ()=>{
+      this.aplicar();
+    }
+};
+form:NgForm;
   movement:InvetaryMovement= new InvetaryMovement();
   constructor(private _documents: DocumentService,
     private _thirdparties: ThirdPartiesService,
@@ -63,25 +72,38 @@ export class InventaryMovementComponent implements OnInit {
    
     ngOnInit() {
       this.loadCompanes();
-    
+    this.movement.movi_fechas = new Date();
     
     }
   
-    aplicar(form:NgForm) {
-      console.log("aplicando");    
-      this._movement.apply(this.movement).subscribe((data) => {
-        if (data.Retorno == 0) {
-          notify("Registro aplicado", "success", 3000);
-          this.movement = new InvetaryMovement();
-         form.reset();
-        } else {
-          notify(data.TxtError, "danger", 3000);
-        }
-      });
+    aplicar() {
+     
+      if(this.isPossibleApply){
+        this._movement.apply(this.movement).subscribe((data) => {
+          if (data.Retorno == 0) {
+            notify("Registro aplicado", "success", 3000);
+            this.movement = new InvetaryMovement();
+          //  form.reset();
+          this.refresh();
+          } else {
+            notify(data.TxtError, "danger", 3000);
+          }
+        });
+      }
+      else {
+        notify('Primero debe guardar el documento','warning',3000);
+      }
+   
     }
     saveAction(){
       document.getElementById("dxGuardar").click();
     }
+    refresh(): void {
+   
+   
+    window.location.reload();
+   
+  }
 	save($event) {
 		if (
 			this.movement.movements == undefined ||

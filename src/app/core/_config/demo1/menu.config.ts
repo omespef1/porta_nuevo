@@ -658,6 +658,13 @@ export class MenuConfig {
 					translate: 'INVENTARY.INVENTARY_MOVEMENT'
 				},
 				{
+					title:'Consulta Movimiento de inventario',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'inventary-movement-query',
+					translate: 'INVENTARY.INVENTARY_MOVEMENT_QUERY'
+				},
+				{
 					title:'Bodegas',
 					icon:'flaticon2-browser-2',
 					root:true,
