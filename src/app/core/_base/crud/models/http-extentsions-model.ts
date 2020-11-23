@@ -23,12 +23,12 @@ export class HttpExtenstionsModel {
 		}
 		// end
 
-		// Paginator
-		// start
+		// Paginador
+		// inicio
 		const totalCount = entitiesResult.length;
 		const initialPos = _queryParams.pageNumber * _queryParams.pageSize;
 		entitiesResult = entitiesResult.slice(initialPos, initialPos + _queryParams.pageSize);
-		// end
+		// final
 
 		const queryResults = new QueryResultsModel();
 		queryResults.items = entitiesResult;
@@ -37,7 +37,7 @@ export class HttpExtenstionsModel {
 	}
 
 	/**
-	 * Sort array by field name and order-type
+	 * ordenamiento de arrays
 	 * @param _incomingArray: any[]
 	 * @param _sortField: string
 	 * @param _sortOrder: string
