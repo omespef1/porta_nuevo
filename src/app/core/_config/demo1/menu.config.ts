@@ -709,6 +709,14 @@ export class MenuConfig {
 						}
 					]
 				},
+				{section: 'Facturación'},
+				{
+					title:'Lista de precios',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'billing-price-list',
+					translate: 'BILLLING.PRICE_LIST'
+				},
 				{section: 'Personalizado'},
 				{
 					title: 'Páginas de error',

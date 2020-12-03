@@ -56,6 +56,12 @@ export class PageConfig {
 				'desc': 'Gestión de tipos de producto'
 		}
 		},
+		'billing-pric-list': {
+			page: {
+				'title': 'Lista de precios',
+				'desc': 'Gestión de lista de precios'
+		}
+		},
 		ngbootstrap: {
 			accordion: {
 				page: {title: 'Accordion', desc: ''}

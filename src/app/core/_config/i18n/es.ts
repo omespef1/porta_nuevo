@@ -23,6 +23,9 @@ export const locale = {
 			BRANCH_OFFICE: 'Sucursales',
 			THIRD_PARTIES: 'Terceros'
 		},
+		BILLING: {
+			PRICE_LIST: 'Lista de precios',
+		},
 		INVENTARY: {
 			INVENTARY_MOVEMENT:'Movimiento de inventario',
 			INVENTARY_MOVEMENT_QUERY:'Consulta movimiento de inventario',
