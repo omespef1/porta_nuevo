@@ -13,10 +13,6 @@ const routes: Routes = [
 	{path: '', redirectTo: 'demo1', pathMatch: 'full'},
 	// list of routers specified by demos, for demo purpose only!
 	{path: 'demo1', loadChildren: 'app/views/themes/demo1/theme.module#ThemeModule'},
-	{path: 'demo2', loadChildren: 'app/views/themes/demo2/theme.module#ThemeModule'},
-	{path: 'demo3', loadChildren: 'app/views/themes/demo3/theme.module#ThemeModule'},
-	{path: 'demo4', loadChildren: 'app/views/themes/demo4/theme.module#ThemeModule'},
-	{path: 'demo5', loadChildren: 'app/views/themes/demo5/theme.module#ThemeModule'},
 
 	/** END: themes list end */
 

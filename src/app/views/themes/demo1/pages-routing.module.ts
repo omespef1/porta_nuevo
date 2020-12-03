@@ -21,18 +21,7 @@ const routes: Routes = [
 			{
 				path: 'mail',
 				loadChildren: 'app/views/pages/apps/mail/mail.module#MailModule'
-			},
-			{
-				path: 'ecommerce',
-				loadChildren: 'app/views/pages/apps/e-commerce/e-commerce.module#ECommerceModule',
-				// canActivate: [NgxPermissionsGuard],
-				// data: {
-				// 	permissions: {
-				// 		only: ['accessToECommerceModule'],
-				// 		redirectTo: 'error/403'
-				// 	}
-				// }
-			},
+			},		
 			{
 				path: 'accounting-movement', // <= Page URL
 				loadChildren: 'app/views/pages/contability/accounting-movement/accounting-movement.module#AccountingMovementModule'
@@ -73,14 +62,10 @@ const routes: Routes = [
 				path: 'third-parties', // <= Page URL
 				loadChildren: 'app/views/pages/general/third-parties/third-parties.module#ThirdPartiesModule'
 			  },
-			{
-				path: 'ngbootstrap',
-				loadChildren: 'app/views/pages/ngbootstrap/ngbootstrap.module#NgbootstrapModule'
-			},
-			{
-				path: 'material',
-				loadChildren: 'app/views/pages/material/material.module#MaterialModule'
-			},
+			  {
+				path: 'billing-price-list', // <= Page URL
+				loadChildren :'app/views/pages/billing/billing-price.list/billing-price-list.module#BillingPriceModule',
+			},					
 			{
 				path: 'user-management',
 				loadChildren: 'app/views/pages/user-management/user-management.module#UserManagementModule'

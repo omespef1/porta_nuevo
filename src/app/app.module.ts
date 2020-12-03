@@ -45,7 +45,7 @@ import { AuthService, PermissionEffects, permissionsReducer, RoleEffects, rolesR
 // CRUD
 import { HttpUtilsService, LayoutUtilsService, TypesUtilsService } from './core/_base/crud';
 // Config
-import { LayoutConfig } from './core/_config/demo3/layout.config';
+import { LayoutConfig } from './core/_config/demo1/layout.config';
 // Highlight JS
 import { HIGHLIGHT_OPTIONS, HighlightLanguage } from 'ngx-highlightjs';
 import * as typescript from 'highlight.js/lib/languages/typescript';
