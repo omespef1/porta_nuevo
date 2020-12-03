@@ -64,7 +64,7 @@ const routes: Routes = [
 			  },
 			  {
 				path: 'billing-price-list', // <= Page URL
-				loadChildren :'app/views/pages/billing/billing-price.list/billing-price-list.module#BillingPriceModule',
+				loadChildren :'app/views/pages/billing/billing-price-list/billing-price-list.module#BillingPriceModule',
 			},					
 			{
 				path: 'user-management',

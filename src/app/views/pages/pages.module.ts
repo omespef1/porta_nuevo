@@ -11,7 +11,6 @@ import { PartialsModule } from '../partials/partials.module';
 import { CoreModule } from '../../core/core.module';
 import { MailModule } from './apps/mail/mail.module';
 import { UserManagementModule } from './user-management/user-management.module';
-import { BillingPriceListComponent } from './billing/billing-price.list/billing-price-list.component';
 
 
 
@@ -31,7 +30,6 @@ import { BillingPriceListComponent } from './billing/billing-price.list/billing-
 		UserManagementModule
 	],
 	providers: [],
-	declarations: [BillingPriceListComponent],
 })
 export class PagesModule {
 }

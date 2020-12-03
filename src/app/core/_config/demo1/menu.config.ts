@@ -109,7 +109,7 @@ export class MenuConfig {
 					icon:'flaticon2-browser-2',
 					root:true,
 					page: 'billing-price-list',
-					translate: 'BILLLING.PRICE_LIST'
+					translate: 'BILLING.PRICE_LIST'
 				},
 				{section: 'Personalizado'},
 				{
