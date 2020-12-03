@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Business } from "src/app/core/security/models/business.model";
+import { Business } from "../../../../core/security/models/business.model";
 import { PriceList } from '../../../../core/billing/_models/price-list';
-import { BillingPriceListService } from "src/app/core/billing/_services/billing-price-list";
-import { BusinessService } from "src/app/core/security/_services/business.service";
+import { BillingPriceListService } from "../../../../core/billing/_services/billing-price-list";
+import { BusinessService } from "../../../../core/security/_services/business.service";
 import notify from "devextreme/ui/notify";
 import { BranchOffice } from '../../../../core/general/_models/branch-office.model';
 import { BranchOfficeService } from '../../../../core/general/_services/branch-office.service';
