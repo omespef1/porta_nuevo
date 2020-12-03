@@ -48,7 +48,7 @@
        </dxo-texts>
      </dxo-editing>
      <dxi-column
-     dataField="EMPR_CODIGO"
+     dataField="Empr_Codigo"
      caption="Empresa"   >         
      <dxo-lookup
          [dataSource]="businessData"
@@ -56,25 +56,25 @@
          valueExpr="Empr_Codigo">
      </dxo-lookup>
  </dxi-column>
-     <dxi-column  dataField="LISP_CODIGO" caption="Código" dataType="number" >
+     <dxi-column  dataField="Lisp_Codigo" caption="Código" dataType="number" >
       <dxi-validation-rule 
         type="required"
         message="Código requerido">
     </dxi-validation-rule>
      </dxi-column>
-     <dxi-column dataField="LISP_NOMBRE" caption="Nombre" dataType="string">
+     <dxi-column dataField="Lisp_Nombre" caption="Nombre" dataType="string">
       <dxi-validation-rule 
       type="required"
       message="Nombre requerido">
   </dxi-validation-rule>
     </dxi-column>
     <dxi-column
-    dataField="SUCU_CONSEC"
+    dataField="Sucu_Consec"
     caption="Sucursal"   >         
     <dxo-lookup
-        [dataSource]="businessData"
+        [dataSource]="branchData"
         displayExpr="Sucr_Consec" 
-        valueExpr="Sucr_Nombre">
+        valueExpr="Sucu_Nombre">
     </dxo-lookup>
 </dxi-column>
      <dxi-column dataField="Sucu_Padres" caption="Nivel Padre" dataType="number">

@@ -4,6 +4,8 @@ import { PriceList } from '../../../../core/billing/_models/price-list';
 import { BillingPriceListService } from "src/app/core/billing/_services/billing-price-list";
 import { BusinessService } from "src/app/core/security/_services/business.service";
 import notify from "devextreme/ui/notify";
+import { BranchOffice } from '../../../../core/general/_models/branch-office.model';
+import { BranchOfficeService } from '../../../../core/general/_services/branch-office.service';
 
 @Component({
   selector: 'kt-billing-price-list',
@@ -13,7 +15,8 @@ import notify from "devextreme/ui/notify";
 export class BillingPriceListComponent implements OnInit {
 
   data: PriceList[] = [];
-	businessData: Business[] = [];
+  businessData: Business[] = [];
+  branchData:BranchOffice[]=[];
 	successMessage: string=null;
 	loading=false;
 	editing: {
@@ -27,9 +30,11 @@ export class BillingPriceListComponent implements OnInit {
 	];
 	constructor(
 		private _priceList: BillingPriceListService,
-		private _business: BusinessService
+    private _business: BusinessService,
+    private _branch:BranchOfficeService
 	) {
     this.GetAllBusiness();
+    this.GetAllBranchOffice();
   }
 
 	ngOnInit() {
@@ -56,7 +61,16 @@ export class BillingPriceListComponent implements OnInit {
 				this.businessData = data.ObjTransaction;
 			}
 		});
-	}
+  }
+  
+  async GetAllBranchOffice() {
+		this._branch.GetAllBranchOffice().subscribe((data) => {
+			if (data.ObjTransaction) {
+				console.log(data);
+				this.branchData = data.ObjTransaction;
+			}
+		});
+  }
 
 	updatePriceList(log: any) {
 		console.log(log.key);

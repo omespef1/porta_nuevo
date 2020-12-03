@@ -1,12 +1,12 @@
 export class PriceList {
 
-    lisp_consec:any;
-    empr_codigo:any;
-    lisp_codigo:number;
-    lisp_nombre:string;
-    sucu_consec:any;
-    prod_consec:any;
-    lisp_valorp:number;
-    lisp_valimp:number;
-    lisp_estado:string;
+    Lisp_Consec:any;
+    Empr_Codigo:any;
+    Lisp_Codigo:number;
+    Lisp_Nombre:string;
+    Sucu_Consec:any;
+    Prod_Consec:any;
+    Lisp_Valorp:number;
+    Lisp_Valimp:number;
+    Lisp_Estado:string;
 }
