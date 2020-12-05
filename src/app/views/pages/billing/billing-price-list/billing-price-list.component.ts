@@ -106,7 +106,7 @@ export class BillingPriceListComponent implements OnInit {
 			console.log(resp);
 			if (resp.Retorno == -1) {
 				console.log("actualizado");
-				notify('Sucursal creada!','success',3000);
+				notify('Lista de precios creada!','success',3000);
 			}
 		});
 	}

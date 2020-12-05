@@ -25,6 +25,7 @@ export const locale = {
 		},
 		BILLING: {
 			PRICE_LIST: 'Lista de precios',
+			MOVEMENT: 'Movimiento Facturación'
 		},
 		INVENTARY: {
 			INVENTARY_MOVEMENT:'Movimiento de inventario',

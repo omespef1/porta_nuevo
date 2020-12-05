@@ -35,7 +35,7 @@
                 </dxi-validation-rule>
             </dxi-column>
             <dxi-column dataField="Sucu_Consec" caption="Sucursal">
-                <dxo-lookup [dataSource]="[{Sucu_Consec: '8c90fea2-df9d-4ed8-9a52-842239c08bf0', Sucu_Codigo: '1', Sucu_Nombre: 'BOGOTA'}]" displayExpr="Sucu_Nombre" valueExpr="Sucu_Consec">
+                <dxo-lookup [dataSource]="branchData" displayExpr="Sucu_Nombre" valueExpr="Sucu_Consec">
                 </dxo-lookup>
             </dxi-column>
 
@@ -43,11 +43,11 @@
                 <dxo-lookup [dataSource]="productData" displayExpr="prod_nombre" valueExpr="prod_consec">
                 </dxo-lookup>
             </dxi-column>
-            <dxi-column dataField="Lisp_Valorp" caption="Valor" dataType="number">
+            <dxi-column dataField="Lisp_Valorp" format="currency" caption="Valor" dataType="number">
                 <dxi-validation-rule type="required" message="Valor requerido">
                 </dxi-validation-rule>
             </dxi-column>
-            <dxi-column dataField="Lisp_Valimp" caption="Valor Impuesto" dataType="number">
+            <dxi-column dataField="Lisp_Valimp" format="currency" caption="Valor Impuesto" dataType="number">
                 <dxi-validation-rule type="required" message="Valor impuesto requerido">
                 </dxi-validation-rule>
             </dxi-column>

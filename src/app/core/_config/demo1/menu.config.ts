@@ -111,6 +111,13 @@ export class MenuConfig {
 					page: 'billing-price-list',
 					translate: 'BILLING.PRICE_LIST'
 				},
+				{
+					title:'Movimiento de facturación',
+					icon:'flaticon2-browser-2',
+					root:true,
+					page: 'billing-movement',
+					translate: 'BILLING.MOVEMENT'
+				},
 				{section: 'Personalizado'},
 				{
 					title: 'Páginas de error',

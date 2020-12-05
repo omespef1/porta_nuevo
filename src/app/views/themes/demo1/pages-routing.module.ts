@@ -65,7 +65,11 @@ const routes: Routes = [
 			  {
 				path: 'billing-price-list', // <= Page URL
 				loadChildren :'app/views/pages/billing/billing-price-list/billing-price-list.module#BillingPriceModule',
-			},					
+			},
+			{
+				path: 'billing-movement', // <= Page URL
+				loadChildren :'app/views/pages/billing/billing-movement/billing-movement.module#BillingMovementModule',
+			},	
 			{
 				path: 'user-management',
 				loadChildren: 'app/views/pages/user-management/user-management.module#UserManagementModule'
