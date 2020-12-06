@@ -16,6 +16,9 @@ export class BillingPriceListService {
   GetAllPriceList(): Observable<Transaction<PriceList[]>> {
     return this.http.get<Transaction<PriceList[]>>(`${apiUrl}${API_PRICE_LIST_URL}`);
 }
+GetAllPriceListActive(): Observable<Transaction<PriceList[]>> {
+  return this.http.get<Transaction<PriceList[]>>(`${apiUrl}${API_PRICE_LIST_URL}/active`);
+}
 addPriceList(priceList: PriceList): Observable<TransactionSimple>{
   return this.http.post<TransactionSimple>(`${apiUrl}${API_PRICE_LIST_URL}`,priceList);
 }

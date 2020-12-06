@@ -7,7 +7,8 @@
         [showIndicator]="true" [showPane]="true" [shading]="true" [closeOnOutsideClick]="false">
     </dx-load-panel>
     <div id="priceList" class="card-body">
-        <dx-data-grid [editing]="editing" [dataSource]="data" [showBorders]="true" [repaintChangesOnly]="true"
+        <form autocomplete="off">
+        <dx-data-grid  [editing]="editing" [dataSource]="data" [showBorders]="true" [repaintChangesOnly]="true"
             [showColumnLines]="true" [showRowLines]="true" (onRowUpdated)="updatePriceList($event)"
             (onRowInserted)="addPriceList($event)" [showBorders]="true" [rowAlternationEnabled]="true">
             [highlightChanges]="true">
@@ -22,32 +23,42 @@
                     saveRowChanges="Guardar" cancelRowChanges="Cancelar">
                 </dxo-texts>
             </dxo-editing>
-            <dxi-column dataField="Empr_Codigo" caption="Empresa">
-                <dxo-lookup [dataSource]="businessData" displayExpr="Empr_Nombre" valueExpr="Empr_Codigo">
+            <dxi-column  dataField="Empr_Codigo" caption="Empresa" >
+                <dxo-lookup  [dataSource]="businessData" displayExpr="Empr_Nombre" valueExpr="Empr_Codigo">
                 </dxo-lookup>
+                <dxi-validation-rule type="required" message="Empresa requerida requerida">
+                </dxi-validation-rule>
             </dxi-column>
             <dxi-column dataField="Lisp_Codigo" caption="Código" dataType="number">
+                <dxi-validation-rule type="required" message="Código requerido">
+                </dxi-validation-rule>
                 <dxi-validation-rule type="required" message="Código requerido">
                 </dxi-validation-rule>
             </dxi-column>
             <dxi-column dataField="Lisp_Nombre" caption="Nombre" dataType="string">
                 <dxi-validation-rule type="required" message="Nombre requerido">
                 </dxi-validation-rule>
+                <dxi-validation-rule type="required" message="Nombre requerido">
+                </dxi-validation-rule>
             </dxi-column>
             <dxi-column dataField="Sucu_Consec" caption="Sucursal">
                 <dxo-lookup [dataSource]="branchData" displayExpr="Sucu_Nombre" valueExpr="Sucu_Consec">
                 </dxo-lookup>
+                <dxi-validation-rule type="required" message="Sucursal requerida">
+                </dxi-validation-rule>
             </dxi-column>
 
             <dxi-column dataField="Prod_Consec" caption="Producto">
                 <dxo-lookup [dataSource]="productData" displayExpr="prod_nombre" valueExpr="prod_consec">
                 </dxo-lookup>
+                <dxi-validation-rule type="required" message="Producto requerida">
+                </dxi-validation-rule>
             </dxi-column>
-            <dxi-column dataField="Lisp_Valorp" format="currency" caption="Valor" dataType="number">
+            <dxi-column dataField="Lisp_Valorp" format="currency" caption="Valor" dataType="number" [editorOptions]="{ format: '$ #,##0.##' }">
                 <dxi-validation-rule type="required" message="Valor requerido">
                 </dxi-validation-rule>
             </dxi-column>
-            <dxi-column dataField="Lisp_Valimp" format="currency" caption="Valor Impuesto" dataType="number">
+            <dxi-column dataField="Lisp_Valimp" format="currency" caption="Valor Impuesto" dataType="number" [editorOptions]="{ format: '$ #,##0.##' }">
                 <dxi-validation-rule type="required" message="Valor impuesto requerido">
                 </dxi-validation-rule>
             </dxi-column>
@@ -59,6 +70,7 @@
                 </dxo-lookup>
             </dxi-column>
         </dx-data-grid>
+    </form>
     </div>
 
 
