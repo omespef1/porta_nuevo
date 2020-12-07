@@ -20,6 +20,7 @@ import { BillingMovementService } from '../../../../core/billing/_services/billi
 import { BusinessUnitService } from '../../../../core/general/_services/business-unit.service';
 import { ProductService } from '../../../../core/inventary/_services/product.service';
 import { Product } from '../../../../core/inventary/models/product.model';
+import { TypeProductService } from '../../../../core/inventary/_services/type-product.service';
 
 @Component({
   selector: 'kt-billing-movement',
@@ -39,7 +40,7 @@ export class BillingMovementComponent implements OnInit {
 	productsList:Product[]=[];
 	costCenterList: CostCenter[] = [];
 	cellarList:Cellar[]=[];
-	valListPrice:number =0;
+	listPriceSelected:PriceList=new PriceList();
 	ValPorcImp:number=0;
 	editing: {
 		allowUpdating: true; // Enables editing
@@ -60,6 +61,7 @@ export class BillingMovementComponent implements OnInit {
 		private _price:BillingPriceListService,
 		private _movement:BillingMovementService,
 		private _products:ProductService,
+		private _typeProducts:TypeProductService,
 		private cd: ChangeDetectorRef
 	) {
 		this.loadBranchOffice();
@@ -118,7 +120,13 @@ export class BillingMovementComponent implements OnInit {
 
 	setPriceList(event:any){
 		this.movement.Lisp_Consec = event.value;
-		this.valListPrice = this.priceList.filter(v=>v.Lisp_Consec== event.value)[0].Lisp_Valorp;
+		this.listPriceSelected = this.priceList.filter(v=>v.Lisp_Consec== event.value)[0];
+		 this._typeProducts.GetTypeProduct(this.listPriceSelected.Prod_Consec).subscribe((resp) => {
+			 if (resp.Retorno === 0) {
+				 this.ValPorcImp = resp.ObjTransaction[0].TIPP_PIVA;
+				 console.log( this.ValPorcImp);
+			 }
+		 });
 		//Se debe obtener el producto, su tipo de producto,y despues su porcentaje para calcular el valor de impuestos
 	}
 	setCostCenter(event:any){
@@ -128,7 +136,8 @@ export class BillingMovementComponent implements OnInit {
 		this.movement.Unin_Consec = event.value;
 	}
 	onInitNewRow(e){
-			e.data.Dmfa_Valmov = this.valListPrice;
+			e.data.Dmfa_Valmov = this.listPriceSelected.Lisp_Valorp;
+			e.data.Dmfa_Valimp = this.ValPorcImp;
 	}
 	
 	onValueChanged(event: any) {

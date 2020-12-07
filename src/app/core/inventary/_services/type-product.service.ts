@@ -20,6 +20,9 @@ export class TypeProductService {
 GetAllTypeProduct(): Observable<Transaction<TypeProduct[]>> {
     return this.http.get<Transaction<TypeProduct[]>>(`${apiUrl}${API_TypeProduct_URL}`);
 }
+GetTypeProduct(id:any): Observable<Transaction<any>> {
+  return this.http.get<Transaction<TypeProduct>>(`${apiUrl}${API_TypeProduct_URL}/GetInveTiprod?prod_consec=${id}`);
+}
 addTypeProduct(typeProduct: TypeProduct): Observable<TransactionSimple>{
   return this.http.post<TransactionSimple>(`${apiUrl}${API_TypeProduct_URL}`,typeProduct);
 }
