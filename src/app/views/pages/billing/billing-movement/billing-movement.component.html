@@ -15,7 +15,7 @@
             (onClick)="aplicar()">
         </dx-button>   
         <form #formMov (submit)="save($event)"  labelLocation="top" autocomplete="off">
-        <dx-form id="form" [colCount]="3" [formData]="movement">      
+        <dx-form id="form" [colCount]="2" [formData]="movement">      
           <dxi-item dataField="Empr_Codigo" >
             <dxi-validation-rule type="required" message="Empresa es requerida"></dxi-validation-rule>
             <dxo-label text="Empresa"> </dxo-label>
@@ -40,7 +40,7 @@
             >
             <dxi-validation-rule type="required" message="Fecha is requireda"></dxi-validation-rule>
           </dxi-item>
-          <dxi-item dataField="Mofv_Fecven" [label]="{text: 'Fecha de vencimiento'}" editorType="dxDateBox" 
+          <dxi-item dataField="Movf_Fecven" [label]="{text: 'Fecha de vencimiento'}" editorType="dxDateBox" 
           >
           <dxi-validation-rule type="required" message="Fecha de vencimiento  requerida"></dxi-validation-rule>
         </dxi-item>
@@ -63,7 +63,7 @@
             <dxi-validation-rule type="required" message="Referencia es requerida"></dxi-validation-rule>
           </dxi-item>
           <dxi-item dataField="Movf_Descri" [label]="{text: 'Descripcion'}"  editorType="dxTextArea"
-            [colSpan]="3"  [editorOptions]="{ height: 100 }">
+            [colSpan]="2">
             <dxi-validation-rule type="required" message="Descripción requerida">
             </dxi-validation-rule>
           </dxi-item>
@@ -108,23 +108,16 @@
               placeholder="Seleccione Unidad de negocio...">
             </dx-lookup>
           </dxi-item>
-          <!-- <dxi-item dataField="Movf_Valsub" [label]="{text: 'Subtotal'}" editorType="dxNumberBox" [editorOptions]="{ format: '$ #,##0.##' }"  >
+          <dxi-item dataField="Movf_Valsub"  [label]="{text: 'Subtotal'}" editorType="dxNumberBox" [editorOptions]="{ format: '$ #,##0.##',disabled:true}"  >
           <dxi-validation-rule type="required" message="Subtotal requerido"></dxi-validation-rule>
         </dxi-item>
-        <dxi-item dataField="Movf_Valtim" [label]="{text: 'Impuestos'}" editorType="dxNumberBox" [editorOptions]="{ format: '$ #,##0.##' }"  >
+        <dxi-item dataField="Movf_Valtim" [label]="{text: 'Impuestos'}" editorType="dxNumberBox" [editorOptions]="{ format: '$ #,##0.##',disabled:true }"  >
           <dxi-validation-rule type="required" message="Impuestos requerido"></dxi-validation-rule>
         </dxi-item>
-        <dxi-item dataField="Movf_Valtot" [label]="{text: 'Total'}" editorType="dxNumberBox" [editorOptions]="{ format: '$ #,##0.##' }"  >
+        <dxi-item dataField="Movf_Valtot" [label]="{text: 'Total'}" editorType="dxNumberBox" [editorOptions]="{ format: '$ #,##0.##',disabled:true }"  >
           <dxi-validation-rule type="required" message="Total requerido"></dxi-validation-rule>
-        </dxi-item>          -->
-          <!-- <dxi-item>
-            <dx-button
-            text="Guardar"
-            type="success"
-            [useSubmitBehavior]="true">
-        </dx-button>
-          </dxi-item> -->
-          <dxi-item [colSpan]="3"
+        </dxi-item>                  
+          <dxi-item [colSpan]="2"
           itemType="button"
           horizontalAlignment="right"
           [buttonOptions]="{ text:'Guardar', icon:'check', type:'success', useSubmitBehavior: true}">
@@ -159,8 +152,8 @@
 
    
     
-    <dx-data-grid [editing]="editing" [dataSource]="movement.Movements" [showBorders]="true" [showRowLines]="true" (onInitNewRow)="onInitNewRow($event)"
-      [showBorders]="true" [rowAlternationEnabled]="true">
+    <dx-data-grid  [editing]="editing" [dataSource]="movement.Movements" [showBorders]="true" [showRowLines]="true"  (onRowRemoved) = "getSubtotal()" (onRowInserted)="getSubtotal()" (onInitNewRow)="onInitNewRow($event)"
+      [showBorders]="true" [rowAlternationEnabled]="true"  (onEditorPreparing)="overrideOnValueChanged($event)"
       [highlightChanges]="true">
       <dxo-paging [pageSize]="10" [enabled]="true"></dxo-paging>
       <dxo-search-panel [visible]="true" [placeholder]="'Buscar'" [highlightCaseSensitive]="true"></dxo-search-panel>
@@ -170,8 +163,8 @@
           onfirmDeleteMessage="Está seguro de eliminar este registro?">
         </dxo-texts>
       </dxo-editing> 
-      <dxi-column dataField="Prod_Consec" caption="Producto">
-        <dxo-lookup [dataSource]="productsList" displayExpr="prod_nombre" valueExpr="prod_consec">
+      <dxi-column  dataField="Prod_Consec"  caption="Producto">
+        <dxo-lookup  [dataSource]="productsList" displayExpr="Prod_Nombre" valueExpr="Prod_Consec">
         </dxo-lookup>
       </dxi-column>   
       <dxi-column dataField="Dmfa_Cantid" caption="Cantidad" dataType="number">
@@ -182,7 +175,7 @@
         <dxi-validation-rule type="required" message="Descripción requerida">
         </dxi-validation-rule>
       </dxi-column>    
-      <dxi-column dataField="Dmfa_Valmov" format="currency" caption="Valor" dataType="number"  [editorOptions]="{ format: '$ #,##0.##' }">
+      <dxi-column dataField="Dmfa_Valmov"  format="currency" caption="Valor" dataType="number"  [editorOptions]="{ format: '$ #,##0.##' }">
         <dxi-validation-rule type="required" message="Valor movimiento  requerido">
         </dxi-validation-rule>
       </dxi-column>
@@ -190,7 +183,7 @@
         <dxi-validation-rule type="required" message="Valor impuestos  requerido">
         </dxi-validation-rule>
       </dxi-column>
-      <dxi-column dataField="Dmfa_Valtot" format="currency" caption="Valor total" dataType="number"  [editorOptions]="{ format: '$ #,##0.##' }">
+      <dxi-column dataField="Dmfa_Valtot" format="currency" caption="Valor total" dataType="number"  [editorOptions]="{ format: '$ #,##0.##'} ">
         <dxi-validation-rule type="required" message="Valor total  requerido">
         </dxi-validation-rule>
       </dxi-column>

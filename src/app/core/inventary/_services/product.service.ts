@@ -19,6 +19,7 @@ export class ProductService {
   GetAllProduct(): Observable<Transaction<Product[]>> {
     return this.http.get<Transaction<Product[]>>(`${apiUrl}${API_PRODUCT_URL}`);
 }
+
 addProduct(product: Product): Observable<TransactionSimple>{
   return this.http.post<TransactionSimple>(`${apiUrl}${API_PRODUCT_URL}`,product);
 }

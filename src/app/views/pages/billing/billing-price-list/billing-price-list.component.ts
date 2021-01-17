@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Business } from "../../../../core/security/models/business.model";
-import { PriceList } from '../../../../core/billing/_models/price-list';
+import { PriceList, PriceListDetail } from '../../../../core/billing/_models/price-list';
 import { BillingPriceListService } from "../../../../core/billing/_services/billing-price-list";
 import { BusinessService } from "../../../../core/security/_services/business.service";
 import notify from "devextreme/ui/notify";
@@ -52,7 +52,7 @@ export class BillingPriceListComponent implements OnInit {
 
 	GetAllPriceList() {
 		this.loading=true;
-		this._priceList.GetAllPriceList().subscribe((data) => {
+		this._priceList.GetAllPriceListMasterDetail().subscribe((data) => {
 			this.loading=false;
 			console.log(data);
 			if (data.ObjTransaction) {
@@ -92,8 +92,18 @@ export class BillingPriceListComponent implements OnInit {
   }
 
 	updatePriceList(log: any) {
-		console.log(log.key);
-		this._priceList.updatePriceList(log.key).subscribe((resp) => {
+		console.log(log);
+		this._priceList.updatePriceList(log.data).subscribe((resp) => {
+			if (resp.Retorno == 1) {
+        console.log('respuesta obtenida');
+	   notify('Actualizado!','success',3000);
+			}
+		});
+	}
+
+	updatePriceListDetail(log: any) {
+		let data:PriceListDetail = log.data;
+		this._priceList.updatePriceListDetail(data).subscribe((resp) => {
 			if (resp.Retorno == 1) {
         console.log('respuesta obtenida');
 	   notify('Actualizado!','success',3000);
@@ -102,7 +112,7 @@ export class BillingPriceListComponent implements OnInit {
 	}
 
 	addPriceList(log: any) {
-		this._priceList.addPriceList(log.key).subscribe((resp) => {
+		this._priceList.addPriceList(log.data).subscribe((resp) => {
 			console.log(resp);
 			if (resp.Retorno == -1) {
 				console.log("actualizado");
@@ -110,5 +120,17 @@ export class BillingPriceListComponent implements OnInit {
 			}
 		});
 	}
+	addPriceListDetail(detail: any,header:PriceList) {
+	 let data:PriceListDetail = detail.data;
+	 data.Lisp_Consec = header.Lisp_Consec;	
+		this._priceList.addPriceListDetail(data).subscribe((resp) => {
+			console.log(resp);
+			if (resp.Retorno == -1) {
+				console.log("actualizado");
+				notify('Detalle creado!','success',3000);
+			}
+		});
+	}
+
 
 }
