@@ -1,4 +1,10 @@
+import { v4 as uuidv4 } from 'uuid';
 export class BillingMovement {
+    constructor(){
+        this.Movf_Consec =  uuidv4();
+        this.Movf_Fechas=new Date();
+        this.Movf_Fecven= new Date();
+    }
     Movf_Consec:any;
     Empr_Codigo:any;
     Docu_Consec:any;
@@ -28,6 +34,13 @@ export class BillingMovement {
 
 
 export class DetailBillingMovement {
+    constructor(){
+        this.Dmfa_Consec = uuidv4();
+        this.Dmfa_Valimp=0;
+        this.Dmfa_Valmov=0;
+        this.Dmfa_Cantid=0;
+        this.Dmfa_Feclot= new Date();
+    }
     Dmfa_Consec:any;
     Empr_Codigo:any;
     Movf_Consec:any;

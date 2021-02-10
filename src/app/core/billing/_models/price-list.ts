@@ -14,7 +14,7 @@ export class PriceListDetail {
     Dlis_Consec:any;
     Lisp_Consec:any;
     Prod_Consec:number;
-    Dlis_Valor:string;
+    Dlis_Valor:number;
     Dlis_Valimp:any;
     Dlis_Estado:string;
 }

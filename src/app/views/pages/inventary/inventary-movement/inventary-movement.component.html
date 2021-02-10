@@ -1,176 +1,179 @@
-<div class="card">
-  <div class="card-header bg-primary text-light darkdiv">
-    Movimiento de inventario
-    <div class="btn-aplicar">
-      <dx-button  icon="plus" text="Nuevo" type="success" (onClick)="refresh()">
-      </dx-button>       
+
+<div class="container fixed">
+  <div class="card">
+    <div class="card-header bg-primary text-light darkdiv">
+      Movimiento de inventario
+      <div class="btn-aplicar">
+        <dx-button  icon="plus" text="Nuevo" type="success" (onClick)="refresh()">
+        </dx-button>       
+      </div>
     </div>
-  </div>
-  <div class="card-body">
-
-    <div id="form-demo">
-      <div id="form-container">
-      
-        <form #formMov (submit)="save($event)" labelLocation="top">
-          <dx-form id="form" [colCount]="2" [formData]="movement">
-            <dxi-item dataField="empr_codigo">
-              <dxi-validation-rule type="required" message="Empresa es requerida"></dxi-validation-rule>
-              <dxo-label text="Empresa"> </dxo-label>
-              <dx-lookup (onValueChanged)="onValueChanged($event)" [dataSource]="businessList" valueExpr="Empr_Codigo"
-                displayExpr="Empr_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
-                searchPlaceholder="Buscar" placeholder="Seleccione empresa...">
-              </dx-lookup>
-            </dxi-item>
-            <dxi-item dataField="docu_consec">
-              <dxi-validation-rule type="required" message="Documento es requerido"></dxi-validation-rule>
-              <dxo-label text="Documento"> </dxo-label>
-              <dx-lookup (onValueChanged)="setDocument($event)" [dataSource]="documentsAccountingsList"
-                valueExpr="Docu_Consec" displayExpr="Docu_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
-                searchPlaceholder="Buscar" placeholder="Seleccione documento...">
-              </dx-lookup>
-
-            </dxi-item>
-            <dxi-item dataField="movi_numero" dataType="number" [label]="{text: 'Número'}">
-              <dxi-validation-rule type="required" message="Número es requerido"></dxi-validation-rule>
-            </dxi-item>
-
-            <dxi-item dataField="movi_fechas" [label]="{text: 'Fecha'}" editorType="dxDateBox">
-              <dxi-validation-rule type="required" message="Fecha is requireda"></dxi-validation-rule>
-            </dxi-item>
-
-            <dxi-item dataField="sucu_consec">
-              <dxi-validation-rule type="required" message="Sucursal es requerida"></dxi-validation-rule>
-              <dxo-label text="Sucursal"> </dxo-label>
+    <div class="card-body">
+  
+      <div id="form-demo">
+        <div id="form-container">
         
-              <dx-lookup (onValueChanged)="setBranchOffice($event)" [dataSource]="branchOfficeList"
-                valueExpr="Sucu_Consec" displayExpr="Sucu_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
-                searchPlaceholder="Buscar" placeholder="Seleccione sucursal...">
-              </dx-lookup>
+          <form #formMov (submit)="save($event)" labelLocation="top">
+            <dx-form id="form" [colCount]="3" [formData]="movement">
+              <dxi-item dataField="empr_codigo" >
+                <dxi-validation-rule type="required" message="Empresa es requerida"></dxi-validation-rule>
+                <dxo-label location="top" text="Empresa"> </dxo-label>
+                <dx-lookup (onValueChanged)="onValueChanged($event)" [dataSource]="businessList" valueExpr="Empr_Codigo"
+                  displayExpr="Empr_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
+                  searchPlaceholder="Buscar" placeholder="Seleccione empresa...">
+                </dx-lookup>
+              </dxi-item>
+              <dxi-item dataField="docu_consec">
+                <dxi-validation-rule type="required" message="Documento es requerido"></dxi-validation-rule>
+                <dxo-label location="top" text="Documento"> </dxo-label>
+                <dx-lookup (onValueChanged)="setDocument($event)" [dataSource]="documentsAccountingsList"
+                  valueExpr="Docu_Consec" displayExpr="Docu_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
+                  searchPlaceholder="Buscar" placeholder="Seleccione documento...">
+                </dx-lookup>
+  
+              </dxi-item>
+              <dxi-item dataField="movi_numero" dataType="number" [label]="{text: 'Número',location:'top'}">
+                <dxi-validation-rule type="required" message="Número es requerido"></dxi-validation-rule>
+              </dxi-item>
+  
+              <dxi-item dataField="movi_fechas" [label]="{text: 'Fecha',location:'top'}" editorType="dxDateBox">
+                <dxi-validation-rule type="required" message="Fecha is requireda"></dxi-validation-rule>
+              </dxi-item>
+  
+              <dxi-item dataField="sucu_consec">
+                <dxi-validation-rule type="required" message="Sucursal es requerida"></dxi-validation-rule>
+                <dxo-label location="top" text="Sucursal"> </dxo-label>
+          
+                <dx-lookup (onValueChanged)="setBranchOffice($event)" [dataSource]="branchOfficeList"
+                  valueExpr="Sucu_Consec" displayExpr="Sucu_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
+                  searchPlaceholder="Buscar" placeholder="Seleccione sucursal...">
+                </dx-lookup>
+              </dxi-item>
+  
+  
+              <dxi-item dataField="movi_descri" [label]="{text: 'Descripcion',location:'top'}" editorType="dxTextArea" [colSpan]="2"
+                >
+                <dxi-validation-rule type="required" message="Descripción requerida">
+                </dxi-validation-rule>
+              </dxi-item>
+              <dxi-item dataField="terc_consec">
+                <dxi-validation-rule type="required" message="Tercero es requerido"></dxi-validation-rule>
+                <dxo-label location="top" text="Tercero"> </dxo-label>
+                <dx-lookup (onValueChanged)="setThirdPartie($event)" [dataSource]="thirdPartiesList"
+                  valueExpr="Terc_Consec" displayExpr="Terc_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
+                  searchPlaceholder="Buscar" placeholder="Seleccione tercero...">
+                </dx-lookup>
+              </dxi-item>
+              <dxi-item dataField="movi_clamov" caption="Clase movimiento" dataType="string">
+                <dxo-label location="top" text="Clase de movimiento"> </dxo-label>
+                <dxi-validation-rule type="required" message="Clase de movimiento requerido">
+                </dxi-validation-rule>
+                <!-- <dxo-lookup [dataSource]="typeMovements" displayExpr="text" valueExpr="code">
+                </dxo-lookup> -->
+                <dx-lookup (onValueChanged)="setTypeMovement($event)" [dataSource]="typeMovements"
+                  valueExpr="code" displayExpr="text" cancelButtonText="Cancelar" noDataText="No hay datos"
+                  searchPlaceholder="Buscar" placeholder="Seleccione tipo de movimiento...">
+                </dx-lookup>
+              </dxi-item>
+              <dxi-item dataField="movi_refere" text="Referencia" [label]="{text: 'Referencia',location:'top'}">
+                <dxi-validation-rule type="required" message="Referencia es requerida"></dxi-validation-rule>
+              </dxi-item>
+              <dxi-item dataField="bode_consec">
+                <dxi-validation-rule type="required" message="Bodega es requerida"></dxi-validation-rule>
+                <dxo-label location="top" text="Bodega"> </dxo-label>
+                <dx-lookup (onValueChanged)="setCellar($event)" [dataSource]="cellarList"
+                  valueExpr="bode_consec" displayExpr="bode_nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
+                  searchPlaceholder="Buscar" placeholder="Seleccione bodega...">
+                </dx-lookup>
+              </dxi-item>
+              <dxi-item dataField="Cenc_Consec">
+                <dxi-validation-rule type="required" message="Centro de costos es requerido"></dxi-validation-rule>
+                <dxo-label location="top" text="Centro de costos"> </dxo-label>
+                <dx-lookup (onValueChanged)="setCostCenter($event)" [dataSource]="costCenterList"
+                  valueExpr="Cenc_Consec" displayExpr="Cenc_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
+                  searchPlaceholder="Buscar" placeholder="Seleccione centro de costos...">
+                </dx-lookup>
+              </dxi-item>
+              <dxi-item dataField="Unin_Consec">
+                <dxi-validation-rule type="required" message="Unidad de negocio requerida"></dxi-validation-rule>
+                <dxo-label location="top" text="Unidad de negocio"> </dxo-label>
+                <dx-lookup (onValueChanged)="setBusinessUnity($event)" [dataSource]="unitBusiness"
+                  valueExpr="Unin_Consec" displayExpr="Unin_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
+                  searchPlaceholder="Buscar" placeholder="Seleccione unidad de negocio...">
+                </dx-lookup>
+              </dxi-item>          
+              <div>
+                <dxi-item  id="dxGuardar" [colSpan]="3" itemType="button" horizontalAlignment="right"
+                [buttonOptions]="{ text:'Guardar', icon:'save', type:'success', useSubmitBehavior: true}">
+              </dxi-item>
+              <!-- <dx-button [disabled]="!isPossibleApply" icon="save" text="Aplicar" type="success" (onClick)="aplicar(formMov)">
+              </dx-button>        -->
+              <dxi-item   id="dxAplicar" [colSpan]="3" itemType="button" horizontalAlignment="left"
+              [buttonOptions]="buttonOptionsApply">
             </dxi-item>
-
-
-            <dxi-item dataField="movi_descri" [label]="{text: 'Descripcion'}" editorType="dxTextArea" [colSpan]="2"
-              >
-              <dxi-validation-rule type="required" message="Descripción requerida">
-              </dxi-validation-rule>
-            </dxi-item>
-            <dxi-item dataField="terc_consec">
-              <dxi-validation-rule type="required" message="Tercero es requerido"></dxi-validation-rule>
-              <dxo-label text="Tercero"> </dxo-label>
-              <dx-lookup (onValueChanged)="setThirdPartie($event)" [dataSource]="thirdPartiesList"
-                valueExpr="Terc_Consec" displayExpr="Terc_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
-                searchPlaceholder="Buscar" placeholder="Seleccione tercero...">
-              </dx-lookup>
-            </dxi-item>
-            <dxi-item dataField="movi_clamov" caption="Clase movimiento" dataType="string">
-              <dxo-label text="Clase de movimiento"> </dxo-label>
-              <dxi-validation-rule type="required" message="Clase de movimiento requerido">
-              </dxi-validation-rule>
-              <!-- <dxo-lookup [dataSource]="typeMovements" displayExpr="text" valueExpr="code">
-              </dxo-lookup> -->
-              <dx-lookup (onValueChanged)="setTypeMovement($event)" [dataSource]="typeMovements"
-                valueExpr="code" displayExpr="text" cancelButtonText="Cancelar" noDataText="No hay datos"
-                searchPlaceholder="Buscar" placeholder="Seleccione tipo de movimiento...">
-              </dx-lookup>
-            </dxi-item>
-            <dxi-item dataField="movi_refere" text="Referencia" [label]="{text: 'Referencia'}">
-              <dxi-validation-rule type="required" message="Referencia es requerida"></dxi-validation-rule>
-            </dxi-item>
-            <dxi-item dataField="bode_consec">
-              <dxi-validation-rule type="required" message="Bodega es requerida"></dxi-validation-rule>
-              <dxo-label text="Bodega"> </dxo-label>
-              <dx-lookup (onValueChanged)="setCellar($event)" [dataSource]="cellarList"
-                valueExpr="bode_consec" displayExpr="bode_nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
-                searchPlaceholder="Buscar" placeholder="Seleccione bodega...">
-              </dx-lookup>
-            </dxi-item>
-            <dxi-item dataField="Cenc_Consec">
-              <dxi-validation-rule type="required" message="Centro de costos es requerido"></dxi-validation-rule>
-              <dxo-label text="Centro de costos"> </dxo-label>
-              <dx-lookup (onValueChanged)="setCostCenter($event)" [dataSource]="costCenterList"
-                valueExpr="Cenc_Consec" displayExpr="Cenc_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
-                searchPlaceholder="Buscar" placeholder="Seleccione centro de costos...">
-              </dx-lookup>
-            </dxi-item>
-            <dxi-item dataField="Unin_Consec">
-              <dxi-validation-rule type="required" message="Unidad de negocio requerida"></dxi-validation-rule>
-              <dxo-label text="Unidad de negocio"> </dxo-label>
-              <dx-lookup (onValueChanged)="setBusinessUnity($event)" [dataSource]="unitBusiness"
-                valueExpr="Unin_Consec" displayExpr="Unin_Nombre" cancelButtonText="Cancelar" noDataText="No hay datos"
-                searchPlaceholder="Buscar" placeholder="Seleccione unidad de negocio...">
-              </dx-lookup>
-            </dxi-item>          
-            <div>
-              <dxi-item  id="dxGuardar" [colSpan]="3" itemType="button" horizontalAlignment="right"
-              [buttonOptions]="{ text:'Guardar', icon:'save', type:'success', useSubmitBehavior: true}">
-            </dxi-item>
-            <!-- <dx-button [disabled]="!isPossibleApply" icon="save" text="Aplicar" type="success" (onClick)="aplicar(formMov)">
-            </dx-button>        -->
-            <dxi-item   id="dxAplicar" [colSpan]="3" itemType="button" horizontalAlignment="left"
-            [buttonOptions]="buttonOptionsApply">
-          </dxi-item>
-            </div>
-          </dx-form>
-        </form>            
+              </div>
+            </dx-form>
+          </form>            
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="card">
-
-  <div class="card-header bg-primary text-light darkdiv">
-    Detalle
-  </div>
-
-
-  <div class="card-body">
-
-
-
-    <dx-data-grid [editing]="editing" [dataSource]="movement.movements" [showBorders]="true" [showRowLines]="true"
-      [showBorders]="true" [rowAlternationEnabled]="true">
-      [highlightChanges]="true">
-      <dxo-paging [pageSize]="10" [enabled]="true"></dxo-paging>
-      <dxo-search-panel [visible]="true" [placeholder]="'Buscar'" [highlightCaseSensitive]="true"></dxo-search-panel>
-      <dxo-editing mode="form" [useIcons]="true" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true">
-        <dxo-texts deleteRow="Borrar fila" addRow="Añadir" cancelAllChanges="Cancelar cambios" editRow="Editar"
-          saveRowChanges="Guardar" cancelRowChanges="Cancelar"
-          onfirmDeleteMessage="Está seguro de eliminar este registro?">
-        </dxo-texts>
-      </dxo-editing>
-      <dxi-column dataField="prod_consec" caption="Producto" >
-        <dxo-lookup [dataSource]="productsList" displayExpr="prod_nombre" valueExpr="prod_consec">
-        </dxo-lookup>
-      </dxi-column>
-      <dxi-column dataField="dmin_descri" caption="Descripción" dataType="string">
-        <dxi-validation-rule type="required" message="Descripción requerida">
-        </dxi-validation-rule>
-      </dxi-column>
-      <dxi-column dataField="dmin_cantid" caption="Cantidad" dataType="number">
-        <dxi-validation-rule type="required" message="Cantidad requerida">
-        </dxi-validation-rule>
-      </dxi-column>
-      <dxi-column dataField="dmin_valmov" format="currency" caption="Valor" dataType="number"
-        [editorOptions]="{ format: '$ #,##0.##' }">
-        <dxi-validation-rule type="required" message="Valor requerido">
-        </dxi-validation-rule>
-      </dxi-column>
-      <dxi-column dataField="dmin_valimp" format="currency" caption="Valor impuestos" dataType="number"
-        [editorOptions]="{ format: '$ #,##0.##' }">
-        <dxi-validation-rule type="required" message="Valor crédito requerido">
-        </dxi-validation-rule>
-      </dxi-column>
-      <dxi-column disabled dataField="dmin_valtot" format="currency" caption="Valor total" dataType="number" [allowEditing]="false"
-        [editorOptions]="{ format: '$ #,##0.##' }">       
-      </dxi-column>
-      <dxi-column dataField="dmin_nolote" caption="Número lote" dataType="number">
-        <dxi-validation-rule type="required" message="Número lote requerido">
-        </dxi-validation-rule>
-      </dxi-column>
-      <dxi-column dataField="dmin_feclot" caption="Fecha Lote" dataType="date">  
-        <dxi-validation-rule type="required" message="Fecha lote requerido">
-        </dxi-validation-rule>      
-      </dxi-column>     
-    </dx-data-grid>
+  <div class="card">
+  
+    <div class="card-header bg-primary text-light darkdiv">
+      Detalle
+    </div>
+  
+  
+    <div class="card-body">
+  
+  
+  
+      <dx-data-grid [editing]="editing" [dataSource]="movement.movements" [showBorders]="true" [showRowLines]="true"
+        [showBorders]="true" [rowAlternationEnabled]="true">
+        [highlightChanges]="true">
+        <dxo-paging [pageSize]="10" [enabled]="true"></dxo-paging>
+        <dxo-search-panel [visible]="true" [placeholder]="'Buscar'" [highlightCaseSensitive]="true"></dxo-search-panel>
+        <dxo-editing mode="form" [useIcons]="true" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true">
+          <dxo-texts deleteRow="Borrar fila" addRow="Añadir" cancelAllChanges="Cancelar cambios" editRow="Editar"
+            saveRowChanges="Guardar" cancelRowChanges="Cancelar"
+            onfirmDeleteMessage="Está seguro de eliminar este registro?">
+          </dxo-texts>
+        </dxo-editing>
+        <dxi-column dataField="prod_consec" caption="Producto" >
+          <dxo-lookup [dataSource]="productsList" displayExpr="prod_nombre" valueExpr="prod_consec">
+          </dxo-lookup>
+        </dxi-column>
+        <dxi-column dataField="dmin_descri" caption="Descripción" dataType="string">
+          <dxi-validation-rule type="required" message="Descripción requerida">
+          </dxi-validation-rule>
+        </dxi-column>
+        <dxi-column dataField="dmin_cantid" caption="Cantidad" dataType="number">
+          <dxi-validation-rule type="required" message="Cantidad requerida">
+          </dxi-validation-rule>
+        </dxi-column>
+        <dxi-column dataField="dmin_valmov" format="currency" caption="Valor" dataType="number"
+          [editorOptions]="{ format: '$ #,##0.##' }">
+          <dxi-validation-rule type="required" message="Valor requerido">
+          </dxi-validation-rule>
+        </dxi-column>
+        <dxi-column dataField="dmin_valimp" format="currency" caption="Valor impuestos" dataType="number"
+          [editorOptions]="{ format: '$ #,##0.##' }">
+          <dxi-validation-rule type="required" message="Valor crédito requerido">
+          </dxi-validation-rule>
+        </dxi-column>
+        <dxi-column disabled dataField="dmin_valtot" format="currency" caption="Valor total" dataType="number" [allowEditing]="false"
+          [editorOptions]="{ format: '$ #,##0.##' }">       
+        </dxi-column>
+        <dxi-column dataField="dmin_nolote" caption="Número lote" dataType="number">
+          <dxi-validation-rule type="required" message="Número lote requerido">
+          </dxi-validation-rule>
+        </dxi-column>
+        <dxi-column dataField="dmin_feclot" caption="Fecha Lote" dataType="date">  
+          <dxi-validation-rule type="required" message="Fecha lote requerido">
+          </dxi-validation-rule>      
+        </dxi-column>     
+      </dx-data-grid>
+    </div>
   </div>
 </div>

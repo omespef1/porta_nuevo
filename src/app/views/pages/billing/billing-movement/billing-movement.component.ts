@@ -1,6 +1,9 @@
-import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit, ChangeDetectorRef, ViewChild } from "@angular/core";
 import { Business } from "../../../../core/security/models/business.model";
-import { BillingMovement } from "../../../../core/billing/_models/billing-movement";
+import {
+	BillingMovement,
+	DetailBillingMovement,
+} from "../../../../core/billing/_models/billing-movement";
 import { BranchOffice } from "../../../../core/general/_models/branch-office.model";
 import { ThirdPartie } from "../../../../core/general/_models/third-partie.model";
 import { BusinessUnit } from "../../../../core/general/_models/business-unit.model";
@@ -12,10 +15,7 @@ import { CostCenterService } from "../../../../core/general/_services/cost-cente
 import { ThirdPartiesService } from "../../../../core/general/_services/third-parties.service";
 import { Cellar } from "../../../../core/inventary/models/cellar.model";
 import { CellarService } from "../../../../core/inventary/_services/cellar.service";
-import {
-	PriceList,
-	PriceListDetailProd,
-} from "../../../../core/billing/_models/price-list";
+import { PriceList } from "../../../../core/billing/_models/price-list";
 import { BillingPriceListService } from "../../../../core/billing/_services/billing-price-list";
 import { DocumentAccounting } from "../../../../core/general/_models/document.model";
 import notify from "devextreme/ui/notify";
@@ -24,6 +24,10 @@ import { BusinessUnitService } from "../../../../core/general/_services/business
 import { ProductService } from "../../../../core/inventary/_services/product.service";
 import { Product } from "../../../../core/inventary/models/product.model";
 import { TypeProductService } from "../../../../core/inventary/_services/type-product.service";
+import { BehaviorSubject } from "rxjs";
+import { PriceListDetailProd } from "../../../../core/billing/_models/price-list";
+import { each } from "lodash";
+import { DxFormComponent, DxPopupComponent } from "devextreme-angular";
 
 @Component({
 	selector: "kt-billing-movement",
@@ -31,8 +35,16 @@ import { TypeProductService } from "../../../../core/inventary/_services/type-pr
 	styleUrls: ["./billing-movement.component.scss"],
 })
 export class BillingMovementComponent implements OnInit {
+	@ViewChild(DxPopupComponent) popupProduct: DxPopupComponent;
+	@ViewChild("formDetail") formDetail: DxFormComponent;
+	@ViewChild("formFacturation") formFacturation: DxFormComponent;
+	
 	businessList: Business[] = [];
+	businessData: BehaviorSubject<Business[]> = new BehaviorSubject<Business[]>(
+		null
+	);
 	movement: BillingMovement = new BillingMovement();
+	applicated=false;
 	branchOfficeList: BranchOffice[] = [];
 	documentsAccountingsList: DocumentAccounting[] = [];
 	thirdpartiesList: ThirdPartie[] = [];
@@ -45,6 +57,11 @@ export class BillingMovementComponent implements OnInit {
 	cellarList: Cellar[] = [];
 	listPriceSelected: PriceList = new PriceList();
 	ValPorcImp: number = 0;
+	lastValue: number = 0;
+	detail: DetailBillingMovement = new DetailBillingMovement();
+	productsData: BehaviorSubject<PriceListDetailProd[]> = new BehaviorSubject<
+		PriceListDetailProd[]
+	>(null);
 	editing: {
 		allowUpdating: true; // Enables editing
 		allowAdding: true; // Enables insertion
@@ -62,7 +79,7 @@ export class BillingMovementComponent implements OnInit {
 		private _businessUnit: BusinessUnitService,
 		private _cellar: CellarService,
 		private _price: BillingPriceListService,
-		private _movement: BillingMovementService,
+		public _movement: BillingMovementService,
 		private _products: ProductService,
 		private _typeProducts: TypeProductService,
 		private cd: ChangeDetectorRef
@@ -80,32 +97,52 @@ export class BillingMovementComponent implements OnInit {
 		this.movement.Movements = [];
 	}
 
-	overrideOnValueChanged(e) {
-        if (e.dataField === 'Prod_Consec' && e.parentType === 'dataRow') {
-            const defaultValueChangeHandler = e.editorOptions.onValueChanged;
-			e.editorOptions.onValueChanged = function (args) { // Override the default handler							
-				// ...
-                // Custom commands go here
-                // ...
-                // If you want to modify the editor value, call the setValue function:
-                // e.setValue(newValue);
-                // Otherwise, call the default handler:
-			   // defaultValueChangeHandler(args);
-			   defaultValueChangeHandler().call(this,e);
-            };
-        }
-    }
-	test(){
-		console.log('hola');
+	setNewDetail() {
+		this.detail = new DetailBillingMovement();
 	}
+
+	setNewMovement() {
+		if (this.formDetail.instance.validate().isValid) {
+			this.movement.Movements.push(this.detail);
+			this.closeModal();
+			this.getSubtotal();
+		}
+	}
+
+	showpopUpDetail() {
+		if(this.movement.Lisp_Consec == undefined || this.movement.Empr_Codigo==undefined){
+			notify('Debe seleccionar Empresa y Lista de precios primero')
+		}else{
+		this.setNewDetail();
+		this.popupProduct.instance.show();
+		}
+	}
+
+	setProduct(e) {
+		if(e.value != undefined){
+			this.detail.Prod_Consec = e.value;
+			let product = this.productsData.value.filter(
+				(p) => p.Prod_Consec == e.value
+			)[0];
+			this.detail.Dmfa_Valimp = product.Dlis_Valimp;
+			this.detail.Dmfa_Valmov = product.Dlis_Valor;
+		}
+		
+	}
+
 	loadCompanes() {
 		this._business.GetAllBusiness().subscribe((businessList) => {
 			if (businessList.ObjTransaction != null) {
 				this.businessList = businessList.ObjTransaction;
+				this.businessData.next(this.businessList);
 			}
 		});
 	}
-
+	setValtot(e) {
+		this.detail.Dmfa_Cantid = e.value;
+		this.detail.Dmfa_Valtot =
+			e.value * (this.detail.Dmfa_Valimp + this.detail.Dmfa_Valmov);
+	}
 	loadBranchOffice() {
 		this._branch.GetAllBranchOffice().subscribe((data) => {
 			if (data.ObjTransaction) {
@@ -141,32 +178,16 @@ export class BillingMovementComponent implements OnInit {
 	setPriceList(event: any) {
 		this.movement.Lisp_Consec = event.value;
 
-		this.loadProducts();
-		//Se debe obtener el producto, su tipo de producto,y despues su porcentaje para calcular el valor de impuestos
+		this.loadProducts();		
 	}
-	getTypeProduct(prod_consec: any) {
-		this.listPriceSelected = this.priceList.filter(
-			(v) => v.Lisp_Consec == this.movement.Lisp_Consec
-		)[0];
-		this._typeProducts.GetTypeProduct(prod_consec).subscribe((resp) => {
-			if (resp.Retorno === 0) {
-				this.ValPorcImp = resp.ObjTransaction[0].TIPP_PIVA;
-			}
-		});
-	}
-	getProductPrice(rowData) {
-		console.log(this.productsList);
-	}
+
 	setCostCenter(event: any) {
 		this.movement.Cenc_Consec = event.value;
 	}
 	SetBusinessUnity(event: any) {
 		this.movement.Unin_Consec = event.value;
 	}
-	onInitNewRow(e) {
-		//  e.data.Dmfa_Valmov = this.listPriceSelected.Lisp_Valorp;
-		//  e.data.Dmfa_Valimp = this.ValPorcImp * this.listPriceSelected.Lisp_Valorp;
-	}
+
 
 	onValueChanged(event: any) {
 		if (event != null) {
@@ -224,42 +245,48 @@ export class BillingMovementComponent implements OnInit {
 			.subscribe((data) => {
 				if (data.ObjTransaction) {
 					this.productsList = data.ObjTransaction;
+					this.productsData.next(this.productsList);
 				}
 			});
 	}
 
 	save($event) {
-		if (
-			this.movement.Movements == undefined ||
-			this.movement.Movements.length == 0
-		) {
-			notify("Debe ingresar al menos un detalle", "warning", 3000);
-		} else {
-			this.loadIndicatorVisible = true;
-			console.log("guardando...");
-			this._movement.Save(this.movement).subscribe((data) => {
-				this.loadIndicatorVisible = false;
-				console.log(data);
-				if (data.Retorno == 0) {
-					this.token = data.ObjTransaction;
-					this.isPossibleApply = true;
-					this.cd.detectChanges();
-					notify("Registro guardado!", "success", 3000);
-				} else {
-					notify(
-						"Error generando documento contable. Verifique.",
-						"warning",
-						3000
-					);
-				}
-			});
+
+		if(this.formFacturation.instance.validate().isValid){
+			if (
+				this.movement.Movements == undefined ||
+				this.movement.Movements.length == 0
+			) {
+				notify("Debe ingresar al menos un detalle", "warning", 3000);
+			} else {
+				this.loadIndicatorVisible = true;
+				console.log("guardando...");
+				this._movement.Save(this.movement).subscribe((data) => {
+					this.loadIndicatorVisible = false;
+					console.log(data);
+					if (data.Retorno == 0) {
+						this.token = data.ObjTransaction;
+						this.isPossibleApply = true;
+						this.cd.detectChanges();
+						notify("Registro guardado!", "success", 3000);
+					} else {
+						notify(
+							"Error generando documento contable. Verifique.",
+							"warning",
+							3000
+						);
+					}
+				});
+			}
 		}
+	
 	}
 
 	aplicar() {
 		console.log("aplicando");
-		this._movement.apply(this.token).subscribe((data) => {
+		this._movement.apply(this.movement.Movf_Consec).subscribe((data) => {
 			if (data.Retorno == 0) {
+				this.applicated=true;
 				notify("Registro aplicado", "success", 3000);
 			} else {
 				notify(data.TxtError, "danger", 3000);
@@ -267,20 +294,21 @@ export class BillingMovementComponent implements OnInit {
 		});
 	}
 
+	closeModal() {
+		this.popupProduct.instance.hide();
+	}
+
 	getSubtotal() {
 		let subtotal = 0;
 		let valTaxes = 0;
-		let total= 0;
+		let total = 0;
 		for (let item of this.movement.Movements) {
-			subtotal +=
-				item.Dmfa_Cantid * (item.Dmfa_Valmov);
-				valTaxes +=
-				item.Dmfa_Cantid * (item.Dmfa_Valimp);
-				total += item.Dmfa_Valtot;
+			subtotal += item.Dmfa_Cantid * item.Dmfa_Valmov;
+			valTaxes += item.Dmfa_Cantid * item.Dmfa_Valimp;
+			total += item.Dmfa_Valtot;
 		}
 		this.movement.Movf_Valsub = subtotal;
 		this.movement.Movf_Valtim = valTaxes;
 		this.movement.Movf_Valtot = total;
 	}
-
 }
